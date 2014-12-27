@@ -21,17 +21,17 @@
 
 //===================================================================================
 //mcu object
-#define McuPeripheralNum		4//peripheral(depend on project),timer2,i2c,eusart,io(rb1)
+#define McuPeripheralNum		5//peripheral(depend on project),timer2,i2c,eusart,io(rb1),adc
 #define McuClassMember_Init(OBJ)	void (*Cpu_Init)(struct OBJ* ) 
 #define McuClassMember_GetUartFifoFalg	volatile INT8U (*Cpu_GetUartFifoFlag)(void)  
 #define McuClassMember_GetUartFifoData	INT8U (*Cpu_GetUartFifoData)(void)  
-//#define McuClassMember_IoCtrl(OBJ)	void (*Io_Ctrl)(struct OBJ* ) 
 #define McuClassMember_Ir_EmCtrl(OBJ)	void (*Ir_Emit)(OBJ) 
 #define McuClassMember_LedRedCtrl(OBJ)	void (*Led_Red)(OBJ) 
 #define McuClassMember_LedBlueCtrl(OBJ)	void (*Led_Blue)(OBJ) 
 #define McuClassMember_IcrCtrl(OBJ)	void (*Icr_Ctrl)(OBJ) 
 #define McuClassMember_IrReCtrl		INT8U (*Ir_Receive)(void) 
 #define McuClassMember_Delay(OBJ)	void (*Mcu_Dly)(OBJ) 
+#define McuClassMember_AdcRead		int (*Icr_Read)(void) 
 #define McuClassMember_Peripheral	void (*Cpu_PeriInit[McuPeripheralNum])(void) 
 
 #if _HI_TECH
@@ -62,6 +62,7 @@ typedef struct	_AutoMachineClass
 	McuClassMember_IcrCtrl(INT16U );
 	McuClassMember_IrReCtrl;		//10
 	McuClassMember_Delay(INT16U);		//10
+	McuClassMember_AdcRead;
 	McuClassMember_Peripheral;		//11
 }AutoMachineClass;
 
@@ -115,6 +116,8 @@ void McuLedRedCtrl(INT16U val );
 void McuLedBlueCtrl(INT16U val );
 void McuIcrCtrl(INT16U val );
 INT8U McuLedReceiveCtrl(void);
+void McuAdcInit(void);
+int AdcRead(void);
 
 #pragma romdata
 rom AutoMachineClass __automachineclass = 
@@ -133,10 +136,12 @@ rom AutoMachineClass __automachineclass =
 	McuIcrCtrl,
 	McuLedReceiveCtrl,
 	Time2Count,//mcu timer2 delay                           //10
+	AdcRead,
 	McuI2CInit,//peripheral->I2C                            //11-1
 	McuTimerInit,//peripheral->Timer2			//11-2
 	McuEusartInit,//peripheral->Eusart			//11-3
-	McuIoInit						//11-4
+	McuIoInit,						//11-4
+	McuAdcInit						//11-5
 };
 
 #pragma romdata

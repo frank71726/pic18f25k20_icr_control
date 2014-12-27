@@ -2570,6 +2570,7 @@ IVRST	__p18f25k20.h	/^    unsigned IVRST:1;$/;"	m	struct:__anon149::__anon152	ac
 IdleI2C	i2c.c	/^void IdleI2C( void ) 				$/;"	f	signature:( void )
 IdleI2C	i2c.c	/^void IdleI2C( void )$/;"	f	signature:( void )
 IdleI2C	i2c.h	/^void IdleI2C( void ); 				$/;"	p	signature:( void )
+Initialize_Adc	adc.c	/^static void Initialize_Adc(void)$/;"	f	file:	signature:(void)
 Initialize_I2C_Master	i2c.c	/^static void Initialize_I2C_Master(void)$/;"	f	file:	signature:(void)
 Initialize_I2C_Master	i2c.c	/^void Initialize_I2C_Master(void)$/;"	f	signature:(void)
 Initialize_Io	io.c	/^static void Initialize_Io(void)$/;"	f	file:	signature:(void)
@@ -2930,23 +2931,31 @@ MWIRE_V6	__pconfig.h	18741;"	d
 MWIRE_V6	__pconfig.h	18807;"	d
 MWIRE_V6	__pconfig.h	18873;"	d
 MWIRE_V6	__pconfig.h	18939;"	d
+McuAdcInit	adc.c	/^void McuAdcInit(void)$/;"	f	signature:(void)
+McuAdcInit	mid_api.h	/^void McuAdcInit(void);$/;"	p	signature:(void)
 McuClassMember_Delay	mid_api.h	/^	McuClassMember_Delay(INT16U);		\/\/10$/;"	p	struct:_AutoMachineClass	access:public
-McuClassMember_Delay	mid_api.h	31;"	d
+McuClassMember_Delay	mid_api.h	33;"	d
 McuClassMember_GetUartFifoData	mid_api.h	/^	McuClassMember_GetUartFifoData;		\/\/8$/;"	m	struct:_AutoMachineClass	access:public
 McuClassMember_GetUartFifoData	mid_api.h	27;"	d
 McuClassMember_GetUartFifoFalg	mid_api.h	/^	McuClassMember_GetUartFifoFalg;		\/\/7$/;"	m	struct:_AutoMachineClass	access:public
 McuClassMember_GetUartFifoFalg	mid_api.h	26;"	d
+McuClassMember_IcrCtrl	mid_api.h	/^	McuClassMember_IcrCtrl(INT16U );$/;"	p	struct:_AutoMachineClass	access:public
+McuClassMember_IcrCtrl	mid_api.h	31;"	d
 McuClassMember_Init	mid_api.h	/^	McuClassMember_Init( _AutoMachine );	\/\/5$/;"	p	struct:_AutoMachineClass	access:public
 McuClassMember_Init	mid_api.h	25;"	d
-McuClassMember_IoCtrl	mid_api.h	/^	McuClassMember_IoCtrl(INT16U );		\/\/9$/;"	p	struct:_AutoMachineClass	access:public
-McuClassMember_IoCtrl	mid_api.h	29;"	d
 McuClassMember_IrReCtrl	mid_api.h	/^	McuClassMember_IrReCtrl;		\/\/10$/;"	m	struct:_AutoMachineClass	access:public
-McuClassMember_IrReCtrl	mid_api.h	30;"	d
+McuClassMember_IrReCtrl	mid_api.h	32;"	d
+McuClassMember_Ir_EmCtrl	mid_api.h	/^	McuClassMember_Ir_EmCtrl(INT16U );	\/\/9$/;"	p	struct:_AutoMachineClass	access:public
+McuClassMember_Ir_EmCtrl	mid_api.h	28;"	d
+McuClassMember_LedBlueCtrl	mid_api.h	/^	McuClassMember_LedBlueCtrl(INT16U );$/;"	p	struct:_AutoMachineClass	access:public
+McuClassMember_LedBlueCtrl	mid_api.h	30;"	d
+McuClassMember_LedRedCtrl	mid_api.h	/^	McuClassMember_LedRedCtrl(INT16U ); $/;"	p	struct:_AutoMachineClass	access:public
+McuClassMember_LedRedCtrl	mid_api.h	29;"	d
 McuClassMember_Peripheral	mid_api.h	/^	McuClassMember_Peripheral;		\/\/11$/;"	m	struct:_AutoMachineClass	access:public
-McuClassMember_Peripheral	mid_api.h	32;"	d
+McuClassMember_Peripheral	mid_api.h	34;"	d
 McuClassMember_UartWr	mid_api.h	/^	McuClassMember_UartWr;			\/\/6$/;"	m	struct:_AutoMachineClass	access:public
-McuClassMember_UartWr	mid_api.h	35;"	d
 McuClassMember_UartWr	mid_api.h	37;"	d
+McuClassMember_UartWr	mid_api.h	39;"	d
 McuDelayCtr	mid_mcu.h	/^void McuDelayCtr(INT16U nop_num);$/;"	p	signature:(INT16U nop_num)
 McuEusartInit	eusart.c	/^void McuEusartInit(void)$/;"	f	signature:(void)
 McuEusartInit	mid_api.h	/^void McuEusartInit(void);$/;"	p	signature:(void)
@@ -2959,16 +2968,22 @@ McuGetUartFifoFlag	mid_api.h	/^volatile INT8U McuGetUartFifoFlag(void);$/;"	p	si
 McuHeaterCtr	mid_mcu.h	/^void McuHeaterCtr(INT8U value);$/;"	p	signature:(INT8U value)
 McuI2CInit	i2c.c	/^void McuI2CInit(void)$/;"	f	signature:(void)
 McuI2CInit	mid_api.h	/^void McuI2CInit(void);$/;"	p	signature:(void)
+McuIcrCtrl	io.c	/^void McuIcrCtrl(INT16U val )$/;"	f	signature:(INT16U val )
+McuIcrCtrl	mid_api.h	/^void McuIcrCtrl(INT16U val );$/;"	p	signature:(INT16U val )
 McuInit	main.c	/^static void McuInit( AutoMachine *am_val)$/;"	f	file:	signature:( AutoMachine *am_val)
 McuInit	mid_api.h	/^static void McuInit( AutoMachine *am_val);$/;"	p	signature:( AutoMachine *am_val)
 McuInit	mid_api.h	/^void McuInit( AutoMachine *am_val);$/;"	p	signature:( AutoMachine *am_val)
 McuInitCtr	mid_mcu.h	/^void McuInitCtr(void);$/;"	p	signature:(void)
-McuIoCtrl	io.c	/^void McuIoCtrl(INT16U val )$/;"	f	signature:(INT16U val )
-McuIoCtrl	mid_api.h	/^void McuIoCtrl(INT16U val );$/;"	p	signature:(INT16U val )
 McuIoInit	io.c	/^void McuIoInit(void)$/;"	f	signature:(void)
 McuIoInit	mid_api.h	/^void McuIoInit(void);$/;"	p	signature:(void)
+McuIrEmitCtrl	io.c	/^void McuIrEmitCtrl(INT16U val )$/;"	f	signature:(INT16U val )
+McuIrEmitCtrl	mid_api.h	/^void McuIrEmitCtrl(INT16U val );$/;"	p	signature:(INT16U val )
+McuLedBlueCtrl	io.c	/^void McuLedBlueCtrl(INT16U val )$/;"	f	signature:(INT16U val )
+McuLedBlueCtrl	mid_api.h	/^void McuLedBlueCtrl(INT16U val );$/;"	p	signature:(INT16U val )
 McuLedReceiveCtrl	io.c	/^INT8U McuLedReceiveCtrl(void)$/;"	f	signature:(void)
 McuLedReceiveCtrl	mid_api.h	/^INT8U McuLedReceiveCtrl(void);$/;"	p	signature:(void)
+McuLedRedCtrl	io.c	/^void McuLedRedCtrl(INT16U val )$/;"	f	signature:(INT16U val )
+McuLedRedCtrl	mid_api.h	/^void McuLedRedCtrl(INT16U val );$/;"	p	signature:(INT16U val )
 McuLedSCtr	mid_mcu.h	/^void McuLedSCtr(INT8U value);$/;"	p	signature:(INT8U value)
 McuMirrorPinCtr	mid_mcu.h	/^INT8U McuMirrorPinCtr(void);$/;"	p	signature:(void)
 McuPeripheralNum	mid_api.h	24;"	d
@@ -4806,6 +4821,7 @@ TXEN	__p18f25k20.h	/^  unsigned TXEN:1;$/;"	m	struct:__anon81	access:public
 TXIE	__p18f25k20.h	/^  unsigned TXIE:1;$/;"	m	struct:__anon64	access:public
 TXIF	__p18f25k20.h	/^  unsigned TXIF:1;$/;"	m	struct:__anon65	access:public
 TXIP	__p18f25k20.h	/^  unsigned TXIP:1;$/;"	m	struct:__anon66	access:public
+Time2Count	adc.c	/^extern void Time2Count( INT16U num);$/;"	p	file:	signature:( INT16U num)
 Time2Count	i2c.c	/^extern void Time2Count(INT16U num);$/;"	p	file:	signature:(INT16U num)
 Time2Count	i2c.c	/^extern void Time2Count(unsigned int num);$/;"	p	file:	signature:(unsigned int num)
 Time2Count	interrupt.c	/^void Time2Count( INT16U num)$/;"	f	signature:( INT16U num)
@@ -4883,9 +4899,12 @@ _AutoMachineClass::CmosClassMember_Write	mid_api.h	/^	CmosClassMember_Write;		  
 _AutoMachineClass::McuClassMember_Delay	mid_api.h	/^	McuClassMember_Delay(INT16U);		\/\/10$/;"	p	struct:_AutoMachineClass	access:public
 _AutoMachineClass::McuClassMember_GetUartFifoData	mid_api.h	/^	McuClassMember_GetUartFifoData;		\/\/8$/;"	m	struct:_AutoMachineClass	access:public
 _AutoMachineClass::McuClassMember_GetUartFifoFalg	mid_api.h	/^	McuClassMember_GetUartFifoFalg;		\/\/7$/;"	m	struct:_AutoMachineClass	access:public
+_AutoMachineClass::McuClassMember_IcrCtrl	mid_api.h	/^	McuClassMember_IcrCtrl(INT16U );$/;"	p	struct:_AutoMachineClass	access:public
 _AutoMachineClass::McuClassMember_Init	mid_api.h	/^	McuClassMember_Init( _AutoMachine );	\/\/5$/;"	p	struct:_AutoMachineClass	access:public
-_AutoMachineClass::McuClassMember_IoCtrl	mid_api.h	/^	McuClassMember_IoCtrl(INT16U );		\/\/9$/;"	p	struct:_AutoMachineClass	access:public
 _AutoMachineClass::McuClassMember_IrReCtrl	mid_api.h	/^	McuClassMember_IrReCtrl;		\/\/10$/;"	m	struct:_AutoMachineClass	access:public
+_AutoMachineClass::McuClassMember_Ir_EmCtrl	mid_api.h	/^	McuClassMember_Ir_EmCtrl(INT16U );	\/\/9$/;"	p	struct:_AutoMachineClass	access:public
+_AutoMachineClass::McuClassMember_LedBlueCtrl	mid_api.h	/^	McuClassMember_LedBlueCtrl(INT16U );$/;"	p	struct:_AutoMachineClass	access:public
+_AutoMachineClass::McuClassMember_LedRedCtrl	mid_api.h	/^	McuClassMember_LedRedCtrl(INT16U ); $/;"	p	struct:_AutoMachineClass	access:public
 _AutoMachineClass::McuClassMember_Peripheral	mid_api.h	/^	McuClassMember_Peripheral;		\/\/11$/;"	m	struct:_AutoMachineClass	access:public
 _AutoMachineClass::McuClassMember_UartWr	mid_api.h	/^	McuClassMember_UartWr;			\/\/6$/;"	m	struct:_AutoMachineClass	access:public
 _DEBUG	Parameter.h	4;"	d
@@ -5565,6 +5584,7 @@ display_terminal	eusart.c	/^static void display_terminal( INT8C *data )$/;"	f	fi
 expoval	mid_api.h	/^	INT8U	expoval[2];$/;"	m	struct:_AutoMachine	access:public
 flag	interrupt.c	/^	}flag;$/;"	m	struct:_sw_fifo_typedef	typeref:struct:_sw_fifo_typedef::_falg	file:	access:public
 flag	mid_api.h	/^	}flag;$/;"	m	struct:_AutoMachine	typeref:struct:_AutoMachine::_flag	access:public
+gStart	main.c	/^INT8U gStart=0;$/;"	v
 gTimeFalg	interrupt.c	/^volatile static INT8U gTimeFalg = _OFF;$/;"	v	file:
 gTimeFalg	interrupt.c	/^volatile static unsigned char gTimeFalg = _OFF;$/;"	v	file:
 gTimerCount	interrupt.c	/^volatile static INT16U gTimerCount = 0;$/;"	v	file:

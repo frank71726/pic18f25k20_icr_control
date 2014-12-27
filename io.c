@@ -55,7 +55,8 @@ static void Initialize_Io(void)
 	TRISBbits.TRISB1 = OUTPUT;   	//ICR on/off
 	LATBbits.LATB1 = _OFF;       	
 
-	TRISCbits.TRISC2 = INPUT;	//ir_led receive
+	TRISBbits.TRISB4 = INPUT;       //ir_led receive, ad an11
+	ANSELHbits.ANS11 = _ON; 
 	
 }
 

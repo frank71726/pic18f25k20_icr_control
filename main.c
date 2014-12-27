@@ -95,41 +95,76 @@ void main(void)
 	AutoMachine	 am;
 	INT8U	dir_udrl, rs232_temp, rec_count=0, rs232_rx_fifo_not_empty_flag ;
 	INT8U   temp=0, ir_count=0;
+	INT16S  icr_value=0;
  
 	am.class = &__automachineclass; 
 	am.class->Cpu_Init(&am);
 //	am.class->Cpu_UartWr(MSG_init);
 
-	while(!gStart);
+	am.class->Ir_Emit(_ON);
+/* 	
 	while(1)
 	{
 		am.class->Icr_Ctrl(_ON);
 		am.class->Mcu_Dly(500);
-		am.class->Icr_Ctrl(_OFF);
-		am.class->Mcu_Dly(500);
-	}
+		icr_value = am.class->Icr_Read();
+		Nop();
+		Nop();
+		Nop();
 
+		am.class->Icr_Ctrl(_OFF);
+		am.class->Mcu_Dly(1000);
+		icr_value = am.class->Icr_Read();
+		Nop();
+		Nop();
+		Nop();
+	}
+*/
+	while(!gStart);
+	gStart = _OFF;
+	
 	while(1)
 	{
-		am.class->Ir_Emit(_ON);
-		am.class->Mcu_Dly(100);
-		if(_ON == am.class->Ir_Receive()) 
+		am.class->Icr_Ctrl(_ON);
+		am.class->Mcu_Dly(500);
+		icr_value = am.class->Icr_Read();
+		if(icr_value > icr_on_threshold)
 			ir_count++;
 		else
+		{
 			am.class->Led_Red(_OFF);//turn on red led => fail
+			while(!gStart);
+			ir_count = 0;
+			gStart = _OFF;
+			am.class->Led_Blue(_ON);//turn on blue led => success
+			am.class->Led_Red(_ON);//turn on red led => fail
+		}
 		
-		am.class->Ir_Emit(_OFF);
-		am.class->Mcu_Dly(100);
-		temp = am.class->Ir_Receive();
-		if(_ON == am.class->Ir_Receive()) 
+		am.class->Icr_Ctrl(_OFF);
+		am.class->Mcu_Dly(500);
+		icr_value = am.class->Icr_Read();
+		if(icr_value < icr_off_threshold )
+			ir_count++;
+		else
+		{
 			am.class->Led_Red(_OFF);//turn on red led => fail
-				
+			while(!gStart);
+			ir_count = 0;
+			gStart = _OFF;
+			am.class->Led_Blue(_ON);//turn on blue led => success
+			am.class->Led_Red(_ON);//turn on red led => fail
+
+		}
+
 		if(ir_count >= 10)
 		{
 			am.class->Led_Blue(_OFF);//turn on blue led => success
-			while(1);
+			while(!gStart);
+			ir_count = 0;
+			gStart = _OFF;
+			am.class->Led_Blue(_ON);//turn on blue led => success
+			am.class->Led_Red(_ON);//turn on red led => fail
 		}
-
 	}
 }
 /*  	

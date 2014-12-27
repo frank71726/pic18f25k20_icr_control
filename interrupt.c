@@ -198,13 +198,7 @@ void isr_high(void)
         if(INTCONbits.INT0IF)
         {                          
 		gStart = _ON;
-		Nop();
-		Nop();
-		Nop();
 		INTCONbits.INT0IF = 0;
-		Nop();
-		Nop();
-		Nop();
 	}
 }								
 #pragma code

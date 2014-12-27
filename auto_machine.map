@@ -1,5 +1,5 @@
 MPLINK 4.44, Linker
-Linker Map File - Created Fri Dec 26 17:50:50 2014
+Linker Map File - Created Sat Dec 27 17:41:51 2014
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -8,57 +8,72 @@ Linker Map File - Created Fri Dec 26 17:50:50 2014
            .code___init.o       code   0x000006    program   0x000002
               isrhighcode       code   0x000008    program   0x000006
                    .cinit    romdata   0x00000e    program   0x000026
-             .code_main.o       code   0x000034    program   0x00052e
-       .code_mid_aptina.o       code   0x000562    program   0x00047c
-        .code_interrupt.o       code   0x0009de    program   0x0001fc
-              .code_i2c.o       code   0x000bda    program   0x0001c6
-               .code_io.o       code   0x000da0    program   0x0000de
-               _cinit_scn       code   0x000e7e    program   0x00009e
-          .romdata_main.o    romdata   0x000f1c    program   0x000094
-           .code_eusart.o       code   0x000fb0    program   0x00008e
-            .code_uopen.o       code   0x00103e    program   0x00008a
-            .code_uputs.o       code   0x0010c8    program   0x00004c
-            .code_uread.o       code   0x001114    program   0x00003e
-           .code_t2open.o       code   0x001152    program   0x000036
-         .code_i2c_open.o       code   0x001188    program   0x000036
-           .code_uwrite.o       code   0x0011be    program   0x00002e
-                    .code       code   0x0011ec    program   0x000020
-             _startup_scn       code   0x00120c    program   0x00001c
-           .code_timer2.o       code   0x001228    program   0x00001c
-         .romdata_uread.o    romdata   0x001244    program   0x000000
-         .idata_uread.o_i    romdata   0x001244    program   0x000000
-         .idata_udefs.o_i    romdata   0x001244    program   0x000000
-         .romdata_uopen.o    romdata   0x001244    program   0x000000
-         .idata_uopen.o_i    romdata   0x001244    program   0x000000
-         .romdata_udefs.o    romdata   0x001244    program   0x000000
-        .romdata_t2open.o    romdata   0x001244    program   0x000000
-        .idata_t2open.o_i    romdata   0x001244    program   0x000000
-        .idata_uwrite.o_i    romdata   0x001244    program   0x000000
-      .romdata_i2c_open.o    romdata   0x001244    program   0x000000
-        .romdata_uwrite.o    romdata   0x001244    program   0x000000
-    .idata_mid_aptina.o_i    romdata   0x001244    program   0x000000
-    .romdata_mid_aptina.o    romdata   0x001244    program   0x000000
-         .romdata_uputs.o    romdata   0x001244    program   0x000000
-           .romdata_i2c.o    romdata   0x001244    program   0x000000
-         .idata_uputs.o_i    romdata   0x001244    program   0x000000
-        .idata_timer2.o_i    romdata   0x001244    program   0x000000
-        .romdata_timer2.o    romdata   0x001244    program   0x000000
-     .romdata_interrupt.o    romdata   0x001244    program   0x000000
-             .stringtable    romdata   0x001244    program   0x000000
-          .idata_main.o_i    romdata   0x001244    program   0x000021
-         .romdata_c018i.o    romdata   0x001244    program   0x000000
-        .romdata_eusart.o    romdata   0x001244    program   0x000000
-            .romdata_io.o    romdata   0x001244    program   0x000000
-        .romdata___init.o    romdata   0x001244    program   0x000000
-     .idata_interrupt.o_i    romdata   0x001265    program   0x000071
-            .idata_io.o_i    romdata   0x001265    program   0x000000
-           .idata_i2c.o_i    romdata   0x0012d6    program   0x000002
-      .idata_i2c_open.o_i    romdata   0x0012d6    program   0x000000
-        .idata___init.o_i    romdata   0x0012d8    program   0x000000
-         .idata_c018i.o_i    romdata   0x0012d8    program   0x000000
-            .code_udefs.o       code   0x0012d8    program   0x000000
-            .code_c018i.o       code   0x0012d8    program   0x000000
-        .idata_eusart.o_i    romdata   0x0012d8    program   0x000000
+             .code_main.o       code   0x000034    program   0x0005fc
+       .code_mid_aptina.o       code   0x000630    program   0x00047c
+        .code_interrupt.o       code   0x000aac    program   0x0001f0
+              .code_i2c.o       code   0x000c9c    program   0x0001c6
+               .code_io.o       code   0x000e62    program   0x0000e0
+               _cinit_scn       code   0x000f42    program   0x00009e
+          .romdata_main.o    romdata   0x000fe0    program   0x000098
+           .code_eusart.o       code   0x001078    program   0x00008e
+            .code_uopen.o       code   0x001106    program   0x00008a
+          .code_adcopen.o       code   0x001190    program   0x00007e
+            .code_uputs.o       code   0x00120e    program   0x00004c
+              .code_adc.o       code   0x00125a    program   0x000048
+            .code_uread.o       code   0x0012a2    program   0x00003e
+           .code_t2open.o       code   0x0012e0    program   0x000036
+         .code_i2c_open.o       code   0x001316    program   0x000036
+           .code_uwrite.o       code   0x00134c    program   0x00002e
+                    .code       code   0x00137a    program   0x000020
+             _startup_scn       code   0x00139a    program   0x00001c
+           .code_timer2.o       code   0x0013b6    program   0x00001c
+          .code_adcread.o       code   0x0013d2    program   0x000012
+          .code_adcbusy.o       code   0x0013e4    program   0x00000a
+          .code_adcconv.o       code   0x0013ee    program   0x000004
+        .idata_t2open.o_i    romdata   0x0013f2    program   0x000000
+         .idata_udefs.o_i    romdata   0x0013f2    program   0x000000
+      .romdata_i2c_open.o    romdata   0x0013f2    program   0x000000
+        .romdata_t2open.o    romdata   0x0013f2    program   0x000000
+         .idata_uopen.o_i    romdata   0x0013f2    program   0x000000
+       .romdata_adcopen.o    romdata   0x0013f2    program   0x000000
+         .romdata_uopen.o    romdata   0x0013f2    program   0x000000
+         .romdata_udefs.o    romdata   0x0013f2    program   0x000000
+       .romdata_adcconv.o    romdata   0x0013f2    program   0x000000
+       .romdata_adcread.o    romdata   0x0013f2    program   0x000000
+         .idata_uread.o_i    romdata   0x0013f2    program   0x000000
+        .idata_uwrite.o_i    romdata   0x0013f2    program   0x000000
+         .romdata_uread.o    romdata   0x0013f2    program   0x000000
+         .romdata_c018i.o    romdata   0x0013f2    program   0x000000
+          .idata_main.o_i    romdata   0x0013f2    program   0x000021
+             .stringtable    romdata   0x0013f2    program   0x000000
+         .romdata_uputs.o    romdata   0x0013f2    program   0x000000
+         .idata_uputs.o_i    romdata   0x0013f2    program   0x000000
+        .romdata___init.o    romdata   0x0013f2    program   0x000000
+    .idata_mid_aptina.o_i    romdata   0x0013f2    program   0x000000
+    .romdata_mid_aptina.o    romdata   0x0013f2    program   0x000000
+           .romdata_i2c.o    romdata   0x0013f2    program   0x000000
+        .idata_timer2.o_i    romdata   0x0013f2    program   0x000000
+        .romdata_timer2.o    romdata   0x0013f2    program   0x000000
+     .romdata_interrupt.o    romdata   0x0013f2    program   0x000000
+        .romdata_eusart.o    romdata   0x0013f2    program   0x000000
+            .romdata_io.o    romdata   0x0013f2    program   0x000000
+           .romdata_adc.o    romdata   0x0013f2    program   0x000000
+        .romdata_uwrite.o    romdata   0x0013f2    program   0x000000
+       .romdata_adcbusy.o    romdata   0x0013f2    program   0x000000
+     .idata_interrupt.o_i    romdata   0x001413    program   0x000071
+            .idata_io.o_i    romdata   0x001413    program   0x000000
+           .idata_i2c.o_i    romdata   0x001484    program   0x000002
+      .idata_i2c_open.o_i    romdata   0x001484    program   0x000000
+        .idata___init.o_i    romdata   0x001486    program   0x000000
+            .code_udefs.o       code   0x001486    program   0x000000
+       .idata_adcread.o_i    romdata   0x001486    program   0x000000
+       .idata_adcopen.o_i    romdata   0x001486    program   0x000000
+       .idata_adcconv.o_i    romdata   0x001486    program   0x000000
+       .idata_adcbusy.o_i    romdata   0x001486    program   0x000000
+           .idata_adc.o_i    romdata   0x001486    program   0x000000
+        .idata_eusart.o_i    romdata   0x001486    program   0x000000
+            .code_c018i.o       code   0x001486    program   0x000000
+         .idata_c018i.o_i    romdata   0x001486    program   0x000000
     .config_300001_main.o    romdata   0x300001    program   0x000001
     .config_300002_main.o    romdata   0x300002    program   0x000001
     .config_300003_main.o    romdata   0x300003    program   0x000001
@@ -71,33 +86,43 @@ Linker Map File - Created Fri Dec 26 17:50:50 2014
            .udata_c018i.o      udata   0x0000f2       data   0x00000a
              .idata_i2c.o      idata   0x0000fc       data   0x000002
            .udata_udefs.o      udata   0x0000fe       data   0x000001
+         .idata_adcopen.o      idata   0x0000ff       data   0x000000
+        .udata_i2c_open.o      udata   0x0000ff       data   0x000000
+        .idata_i2c_open.o      idata   0x0000ff       data   0x000000
           .udata_t2open.o      udata   0x0000ff       data   0x000000
           .idata_t2open.o      idata   0x0000ff       data   0x000000
            .udata_uopen.o      udata   0x0000ff       data   0x000000
            .idata_uopen.o      idata   0x0000ff       data   0x000000
+         .udata_adcread.o      udata   0x0000ff       data   0x000000
+         .idata_adcread.o      idata   0x0000ff       data   0x000000
            .udata_uread.o      udata   0x0000ff       data   0x000000
            .idata_uread.o      idata   0x0000ff       data   0x000000
+           .idata_uputs.o      idata   0x0000ff       data   0x000000
            .idata_udefs.o      idata   0x0000ff       data   0x000000
           .udata_uwrite.o      udata   0x0000ff       data   0x000000
           .idata_uwrite.o      idata   0x0000ff       data   0x000000
           .udata___init.o      udata   0x0000ff       data   0x000000
           .idata___init.o      idata   0x0000ff       data   0x000000
            .udata_uputs.o      udata   0x0000ff       data   0x000000
-           .idata_uputs.o      idata   0x0000ff       data   0x000000
-        .idata_i2c_open.o      idata   0x0000ff       data   0x000000
-        .udata_i2c_open.o      udata   0x0000ff       data   0x000000
-              .idata_io.o      idata   0x0000ff       data   0x000000
-              .udata_io.o      udata   0x0000ff       data   0x000000
-          .idata_eusart.o      idata   0x0000ff       data   0x000000
-          .udata_eusart.o      udata   0x0000ff       data   0x000000
-       .udata_interrupt.o      udata   0x0000ff       data   0x000000
-          .idata_timer2.o      idata   0x0000ff       data   0x000000
-          .udata_timer2.o      udata   0x0000ff       data   0x000000
-             .udata_i2c.o      udata   0x0000ff       data   0x000000
-      .idata_mid_aptina.o      idata   0x0000ff       data   0x000000
-      .udata_mid_aptina.o      udata   0x0000ff       data   0x000000
-            .udata_main.o      udata   0x0000ff       data   0x000000
            .idata_c018i.o      idata   0x0000ff       data   0x000000
+            .udata_main.o      udata   0x0000ff       data   0x000000
+      .udata_mid_aptina.o      udata   0x0000ff       data   0x000000
+      .idata_mid_aptina.o      idata   0x0000ff       data   0x000000
+             .udata_i2c.o      udata   0x0000ff       data   0x000000
+          .udata_timer2.o      udata   0x0000ff       data   0x000000
+          .idata_timer2.o      idata   0x0000ff       data   0x000000
+       .udata_interrupt.o      udata   0x0000ff       data   0x000000
+          .udata_eusart.o      udata   0x0000ff       data   0x000000
+          .idata_eusart.o      idata   0x0000ff       data   0x000000
+              .udata_io.o      udata   0x0000ff       data   0x000000
+              .idata_io.o      idata   0x0000ff       data   0x000000
+             .udata_adc.o      udata   0x0000ff       data   0x000000
+             .idata_adc.o      idata   0x0000ff       data   0x000000
+         .udata_adcbusy.o      udata   0x0000ff       data   0x000000
+         .idata_adcbusy.o      idata   0x0000ff       data   0x000000
+         .udata_adcconv.o      udata   0x0000ff       data   0x000000
+         .idata_adcconv.o      idata   0x0000ff       data   0x000000
+         .udata_adcopen.o      udata   0x0000ff       data   0x000000
                    .stack      udata   0x000400       data   0x000100
             SFR_UNBANKED0      udata   0x000f77       data   0x000089
 
@@ -106,142 +131,134 @@ Linker Map File - Created Fri Dec 26 17:50:50 2014
                               Program Memory Usage 
                                Start         End      
                            ---------   ---------      
-                            0x000000    0x0012d7      
+                            0x000000    0x001485      
                             0x300001    0x300003      
                             0x300006    0x300006      
-            4828 out of 33048 program addresses used, program memory utilization is 14%
+            5258 out of 33048 program addresses used, program memory utilization is 15%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-               ASX340Read   0x0009ce    program     extern Z:\frank-icr-test\frank-ICR-rs232\mid_aptina.c
-              ASX340_data   0x000f60    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
-                ASX340_hi   0x000f40    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
-                ASX340_lo   0x000f50    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
-       ASX340_mirror_data   0x000f97    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
-         ASX340_mirror_hi   0x000f8d    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
-         ASX340_mirror_lo   0x000f92    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
-        ASX340_mirror_num   0x000fa1    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
-    ASX340_no_mirror_data   0x000fa6    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
-               ASX340_num   0x000f7d    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
-                 I2CDelay   0x000bda    program     static Z:\frank-icr-test\frank-ICR-rs232\i2c.c
-                I2CDlyClr   0x000c04    program     static Z:\frank-icr-test\frank-ICR-rs232\i2c.c
-                 I2C_Done   0x000d6c    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
-                  IdleI2C   0x000c3c    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
-    Initialize_I2C_Master   0x000d86    program     static Z:\frank-icr-test\frank-ICR-rs232\i2c.c
-            Initialize_Io   0x000e5c    program     static Z:\frank-icr-test\frank-ICR-rs232\io.c
-            McuEusartInit   0x00103a    program     extern Z:\frank-icr-test\frank-ICR-rs232\eusart.c
-              McuEusartWr   0x001018    program     extern Z:\frank-icr-test\frank-ICR-rs232\eusart.c
-       McuGetUartFifoData   0x000a46    program     extern Z:\frank-icr-test\frank-ICR-rs232\interrupt.c
-       McuGetUartFifoFlag   0x000a4c    program     extern Z:\frank-icr-test\frank-ICR-rs232\interrupt.c
-               McuI2CInit   0x000d9c    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
-               McuIcrCtrl   0x000e30    program     extern Z:\frank-icr-test\frank-ICR-rs232\io.c
+               ASX340Read   0x000a9c    program     extern Z:\frank-icr-test\frank-ICR-rs232\mid_aptina.c
+              ASX340_data   0x001028    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
+                ASX340_hi   0x001008    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
+                ASX340_lo   0x001018    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
+       ASX340_mirror_data   0x00105f    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
+         ASX340_mirror_hi   0x001055    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
+         ASX340_mirror_lo   0x00105a    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
+        ASX340_mirror_num   0x001069    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
+    ASX340_no_mirror_data   0x00106e    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
+               ASX340_num   0x001045    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
+                  AdcRead   0x00125a    program     extern Z:\frank-icr-test\frank-ICR-rs232\adc.c
+                  BusyADC   0x0013e4    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\ADC\adcbusy.c
+               ConvertADC   0x0013ee    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\ADC\adcconv.c
+                 I2CDelay   0x000c9c    program     static Z:\frank-icr-test\frank-ICR-rs232\i2c.c
+                I2CDlyClr   0x000cc6    program     static Z:\frank-icr-test\frank-ICR-rs232\i2c.c
+                 I2C_Done   0x000e2e    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
+                  IdleI2C   0x000cfe    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
+           Initialize_Adc   0x001270    program     static Z:\frank-icr-test\frank-ICR-rs232\adc.c
+    Initialize_I2C_Master   0x000e48    program     static Z:\frank-icr-test\frank-ICR-rs232\i2c.c
+            Initialize_Io   0x000f1e    program     static Z:\frank-icr-test\frank-ICR-rs232\io.c
+               McuAdcInit   0x00129e    program     extern Z:\frank-icr-test\frank-ICR-rs232\adc.c
+            McuEusartInit   0x001102    program     extern Z:\frank-icr-test\frank-ICR-rs232\eusart.c
+              McuEusartWr   0x0010e0    program     extern Z:\frank-icr-test\frank-ICR-rs232\eusart.c
+       McuGetUartFifoData   0x000b14    program     extern Z:\frank-icr-test\frank-ICR-rs232\interrupt.c
+       McuGetUartFifoFlag   0x000b1a    program     extern Z:\frank-icr-test\frank-ICR-rs232\interrupt.c
+               McuI2CInit   0x000e5e    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
+               McuIcrCtrl   0x000ef2    program     extern Z:\frank-icr-test\frank-ICR-rs232\io.c
                   McuInit   0x000186    program     static Z:\frank-icr-test\frank-ICR-rs232\main.c
-                McuIoInit   0x000e7a    program     extern Z:\frank-icr-test\frank-ICR-rs232\io.c
-            McuIrEmitCtrl   0x000da0    program     extern Z:\frank-icr-test\frank-ICR-rs232\io.c
-           McuLedBlueCtrl   0x000df8    program     extern Z:\frank-icr-test\frank-ICR-rs232\io.c
-        McuLedReceiveCtrl   0x000e24    program     extern Z:\frank-icr-test\frank-ICR-rs232\io.c
-            McuLedRedCtrl   0x000dcc    program     extern Z:\frank-icr-test\frank-ICR-rs232\io.c
-             McuTimerInit   0x001240    program     extern Z:\frank-icr-test\frank-ICR-rs232\timer2.c
-                NotAckI2C   0x000c0a    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
-                  OpenI2C   0x001188    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\i2c\i2c_open.c
-               OpenTimer2   0x001152    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\Timers\t2open.c
-                OpenUSART   0x00103e    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\USART\uopen.c
-       RamWriteCmosConfig   0x000978    program     extern Z:\frank-icr-test\frank-ICR-rs232\mid_aptina.c
-                  ReadI2C   0x000c56    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
-                ReadUSART   0x001114    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\USART\uread.c
-               Send_CR_LF   0x000fb0    program     static Z:\frank-icr-test\frank-ICR-rs232\eusart.c
+                McuIoInit   0x000f3e    program     extern Z:\frank-icr-test\frank-ICR-rs232\io.c
+            McuIrEmitCtrl   0x000e62    program     extern Z:\frank-icr-test\frank-ICR-rs232\io.c
+           McuLedBlueCtrl   0x000eba    program     extern Z:\frank-icr-test\frank-ICR-rs232\io.c
+        McuLedReceiveCtrl   0x000ee6    program     extern Z:\frank-icr-test\frank-ICR-rs232\io.c
+            McuLedRedCtrl   0x000e8e    program     extern Z:\frank-icr-test\frank-ICR-rs232\io.c
+             McuTimerInit   0x0013ce    program     extern Z:\frank-icr-test\frank-ICR-rs232\timer2.c
+                NotAckI2C   0x000ccc    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
+                  OpenADC   0x001190    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\ADC\adcopen.c
+                  OpenI2C   0x001316    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\i2c\i2c_open.c
+               OpenTimer2   0x0012e0    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\Timers\t2open.c
+                OpenUSART   0x001106    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\USART\uopen.c
+       RamWriteCmosConfig   0x000a46    program     extern Z:\frank-icr-test\frank-ICR-rs232\mid_aptina.c
+                  ReadADC   0x0013d2    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\ADC\adcread.c
+                  ReadI2C   0x000d18    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
+                ReadUSART   0x0012a2    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\USART\uread.c
+               Send_CR_LF   0x001078    program     static Z:\frank-icr-test\frank-ICR-rs232\eusart.c
                SensorInit   0x000034    program     static Z:\frank-icr-test\frank-ICR-rs232\main.c
-                 StartI2C   0x000c28    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
-                  StopI2C   0x000c1a    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
-               Time2Count   0x000a52    program     extern Z:\frank-icr-test\frank-ICR-rs232\interrupt.c
-                TimerInit   0x001228    program     static Z:\frank-icr-test\frank-ICR-rs232\timer2.c
-          WriteCmosConfig   0x000922    program     extern Z:\frank-icr-test\frank-ICR-rs232\mid_aptina.c
-                 WriteI2C   0x000cee    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
-               WriteUSART   0x0011be    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\USART\uwrite.c
-         ___else_lbl00004   0x00066c    program     static                          
-         ___else_lbl00006   0x000704    program     static                          
-         ___else_lbl00013   0x000848    program     static                          
-         ___else_lbl00015   0x000b02    program     static                          
-         ___else_lbl00015   0x0008de    program     static                          
-         ___else_lbl00020   0x000b2c    program     static                          
-          ___for_lbl00001   0x000728    program     static                          
-          ___for_lbl00002   0x000734    program     static                          
-          ___for_lbl00008   0x00057e    program     static                          
-          ___for_lbl00010   0x000902    program     static                          
-          ___for_lbl00011   0x00090e    program     static                          
-          ___for_lbl00017   0x000764    program     static                          
-           ___if_lbl00001   0x000c02    program     static                          
-           ___if_lbl00003   0x000696    program     static                          
-           ___if_lbl00005   0x000716    program     static                          
-           ___if_lbl00007   0x000728    program     static                          
-           ___if_lbl00012   0x000870    program     static                          
-           ___if_lbl00014   0x0008f0    program     static                          
-           ___if_lbl00014   0x000b10    program     static                          
-           ___if_lbl00016   0x000902    program     static                          
-           ___if_lbl00016   0x000b10    program     static                          
-           ___if_lbl00018   0x000b56    program     static                          
-           ___if_lbl00019   0x000b56    program     static                          
-           ___if_lbl00021   0x000b62    program     static                          
-           ___if_lbl00022   0x000b6e    program     static                          
-           ___if_lbl00023   0x000b72    program     static                          
-           ___if_lbl00024   0x000b8a    program     static                          
-       ___return_lbl00000   0x000734    program     static                          
+                 StartI2C   0x000cea    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
+                  StopI2C   0x000cdc    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
+               Time2Count   0x000b20    program     extern Z:\frank-icr-test\frank-ICR-rs232\interrupt.c
+                TimerInit   0x0013b6    program     static Z:\frank-icr-test\frank-ICR-rs232\timer2.c
+          WriteCmosConfig   0x0009f0    program     extern Z:\frank-icr-test\frank-ICR-rs232\mid_aptina.c
+                 WriteI2C   0x000db0    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
+               WriteUSART   0x00134c    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\USART\uwrite.c
+         ___else_lbl00004   0x00073a    program     static                          
+         ___else_lbl00006   0x0007d2    program     static                          
+         ___else_lbl00013   0x000916    program     static                          
+         ___else_lbl00015   0x0009ac    program     static                          
+          ___for_lbl00001   0x0007f6    program     static                          
+          ___for_lbl00002   0x000802    program     static                          
+          ___for_lbl00008   0x00064c    program     static                          
+          ___for_lbl00010   0x0009d0    program     static                          
+          ___for_lbl00011   0x0009dc    program     static                          
+          ___for_lbl00017   0x000832    program     static                          
+           ___if_lbl00001   0x000cc4    program     static                          
+           ___if_lbl00003   0x000764    program     static                          
+           ___if_lbl00005   0x0007e4    program     static                          
+           ___if_lbl00007   0x0007f6    program     static                          
+           ___if_lbl00012   0x00093e    program     static                          
+           ___if_lbl00014   0x0009be    program     static                          
+           ___if_lbl00016   0x0009d0    program     static                          
+       ___return_lbl00000   0x000cc4    program     static                          
+       ___return_lbl00000   0x000802    program     static                          
        ___return_lbl00000   0x000004    program     static                          
-       ___return_lbl00000   0x000c02    program     static                          
-       ___return_lbl00001   0x001226    program     static                          
-       ___return_lbl00002   0x000f1a    program     static                          
-       ___return_lbl00009   0x00090e    program     static                          
-       ___return_lbl00009   0x000c3a    program     static                          
+       ___return_lbl00001   0x0013b4    program     static                          
+       ___return_lbl00002   0x000fde    program     static                          
+       ___return_lbl00009   0x000cfc    program     static                          
+       ___return_lbl00009   0x0009dc    program     static                          
        ___return_lbl00011   0x00000c    program     static                          
-       ___return_lbl00012   0x000b8a    program     static                          
-       ___return_lbl00012   0x000c54    program     static                          
-       ___return_lbl00049   0x000d84    program     static                          
-        ___while_lbl00010   0x000c2a    program     static                          
-        ___while_lbl00011   0x000c32    program     static                          
-        ___while_lbl00013   0x000c3c    program     static                          
-        ___while_lbl00014   0x000c4c    program     static                          
-        ___while_lbl00050   0x000d6c    program     static                          
-        ___while_lbl00051   0x000d7a    program     static                          
-       __automachineclass   0x000f1c    program     extern Z:\frank-icr-test\frank-ICR-rs232\mid_api.h
+       ___return_lbl00012   0x000d16    program     static                          
+       ___return_lbl00049   0x000e46    program     static                          
+        ___while_lbl00010   0x000cec    program     static                          
+        ___while_lbl00011   0x000cf4    program     static                          
+        ___while_lbl00013   0x000cfe    program     static                          
+        ___while_lbl00014   0x000d0e    program     static                          
+        ___while_lbl00050   0x000e2e    program     static                          
+        ___while_lbl00051   0x000e3c    program     static                          
+       __automachineclass   0x000fe0    program     extern Z:\frank-icr-test\frank-ICR-rs232\mid_api.h
                __config_0   0x300001    program     static Z:\frank-icr-test\frank-ICR-rs232\main.c
                __config_1   0x300002    program     static Z:\frank-icr-test\frank-ICR-rs232\main.c
                __config_2   0x300003    program     static Z:\frank-icr-test\frank-ICR-rs232\main.c
                __config_3   0x300006    program     static Z:\frank-icr-test\frank-ICR-rs232\main.c
                    __init   0x000006    program     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
-               __tmplbl_0   0x000adc    program     static                          
-               __tmplbl_0   0x000c48    program     static                          
-               __tmplbl_1   0x000ad6    program     static                          
-               __tmplbl_1   0x000c42    program     static                          
-               __tmplbl_2   0x000b1c    program     static                          
-               __tmplbl_3   0x000b16    program     static                          
-            __zero_memory   0x0011ec    program     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                _do_cinit   0x000e7e    program     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+               __tmplbl_0   0x000d0a    program     static                          
+               __tmplbl_1   0x000d04    program     static                          
+            __zero_memory   0x00137a    program     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                _do_cinit   0x000f42    program     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                    _entry   0x000000    program     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                 _startup   0x00120c    program     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                compare_l   0x001202    program     static D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                copy_loop   0x000ef0    program     static                          
-            copy_one_byte   0x000ef6    program     static                          
-         display_terminal   0x000fce    program     static Z:\frank-icr-test\frank-ICR-rs232\eusart.c
-                     done   0x000f1a    program     static                          
-             done_copying   0x000f04    program     static                          
-       get_uart_fifo_data   0x0009de    program     static Z:\frank-icr-test\frank-ICR-rs232\interrupt.c
-       get_uart_fifo_flag   0x000a3c    program     static Z:\frank-icr-test\frank-ICR-rs232\interrupt.c
-                  getsI2C   0x000c78    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
-         initialize_usart   0x000ff4    program     static Z:\frank-icr-test\frank-ICR-rs232\eusart.c
-                 isr_high   0x000a7c    program     extern Z:\frank-icr-test\frank-ICR-rs232\interrupt.c
+                 _startup   0x00139a    program     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                compare_l   0x001390    program     static D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                copy_loop   0x000fb4    program     static                          
+            copy_one_byte   0x000fba    program     static                          
+         display_terminal   0x001096    program     static Z:\frank-icr-test\frank-ICR-rs232\eusart.c
+                     done   0x000fde    program     static                          
+             done_copying   0x000fc8    program     static                          
+       get_uart_fifo_data   0x000aac    program     static Z:\frank-icr-test\frank-ICR-rs232\interrupt.c
+       get_uart_fifo_flag   0x000b0a    program     static Z:\frank-icr-test\frank-ICR-rs232\interrupt.c
+                  getsI2C   0x000d3a    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
+         initialize_usart   0x0010bc    program     static Z:\frank-icr-test\frank-ICR-rs232\eusart.c
+                 isr_high   0x000b4a    program     extern Z:\frank-icr-test\frank-ICR-rs232\interrupt.c
           isr_high_direct   0x000008    program     extern Z:\frank-icr-test\frank-ICR-rs232\interrupt.c
-                     loop   0x00121c    program     static                          
-                   loop_h   0x0011fa    program     static D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                   loop_l   0x001204    program     static D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                     loop   0x0013aa    program     static                          
+                   loop_h   0x001388    program     static D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                   loop_l   0x001392    program     static D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                      main   0x000208    program     extern Z:\frank-icr-test\frank-ICR-rs232\main.c
-                putsUSART   0x0010c8    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\USART\uputs.c
-     ram_write_cmos_value   0x000748    program     static Z:\frank-icr-test\frank-ICR-rs232\mid_aptina.c
-                     test   0x000e98    program     static                          
-         write_cmos_value   0x000562    program     static Z:\frank-icr-test\frank-ICR-rs232\mid_aptina.c
-               zero_block   0x0011fa    program     static D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                putsUSART   0x00120e    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\USART\uputs.c
+     ram_write_cmos_value   0x000816    program     static Z:\frank-icr-test\frank-ICR-rs232\mid_aptina.c
+                     test   0x000f5c    program     static                          
+         write_cmos_value   0x000630    program     static Z:\frank-icr-test\frank-ICR-rs232\mid_aptina.c
+               zero_block   0x001388    program     static D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                    ADCON0   0x000fc2       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                ADCON0bits   0x000fc2       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                    ADCON1   0x000fc1       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
@@ -443,7 +460,9 @@ Linker Map File - Created Fri Dec 26 17:50:50 2014
                      WREG   0x000fe8       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                 __FPFLAGS   0x000007       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
             __FPFLAGSbits   0x000007       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
+                  __tmp_0   0x000000       data     static D:\3.43\pic18-lt\cxx-framework\src\pmc_common\ADC\adcread.c
                   __tmp_0   0x000000       data     static D:\3.43\pic18-lt\cxx-framework\src\pmc_common\USART\uopen.c
+                  __tmp_0   0x000000       data     static D:\3.43\pic18-lt\cxx-framework\src\pmc_common\ADC\adcopen.c
                   __tmp_0   0x000000       data     static Z:\frank-icr-test\frank-ICR-rs232\main.c
                   __tmp_0   0x000000       data     static Z:\frank-icr-test\frank-ICR-rs232\mid_aptina.c
                   __tmp_1   0x000004       data     static Z:\frank-icr-test\frank-ICR-rs232\interrupt.c
@@ -473,125 +492,119 @@ Linker Map File - Created Fri Dec 26 17:50:50 2014
                SensorInit   0x000034    program     static Z:\frank-icr-test\frank-ICR-rs232\main.c
                   McuInit   0x000186    program     static Z:\frank-icr-test\frank-ICR-rs232\main.c
                      main   0x000208    program     extern Z:\frank-icr-test\frank-ICR-rs232\main.c
-         write_cmos_value   0x000562    program     static Z:\frank-icr-test\frank-ICR-rs232\mid_aptina.c
-          ___for_lbl00008   0x00057e    program     static                          
-         ___else_lbl00004   0x00066c    program     static                          
-           ___if_lbl00003   0x000696    program     static                          
-         ___else_lbl00006   0x000704    program     static                          
-           ___if_lbl00005   0x000716    program     static                          
-           ___if_lbl00007   0x000728    program     static                          
-          ___for_lbl00001   0x000728    program     static                          
-       ___return_lbl00000   0x000734    program     static                          
-          ___for_lbl00002   0x000734    program     static                          
-     ram_write_cmos_value   0x000748    program     static Z:\frank-icr-test\frank-ICR-rs232\mid_aptina.c
-          ___for_lbl00017   0x000764    program     static                          
-         ___else_lbl00013   0x000848    program     static                          
-           ___if_lbl00012   0x000870    program     static                          
-         ___else_lbl00015   0x0008de    program     static                          
-           ___if_lbl00014   0x0008f0    program     static                          
-           ___if_lbl00016   0x000902    program     static                          
-          ___for_lbl00010   0x000902    program     static                          
-          ___for_lbl00011   0x00090e    program     static                          
-       ___return_lbl00009   0x00090e    program     static                          
-          WriteCmosConfig   0x000922    program     extern Z:\frank-icr-test\frank-ICR-rs232\mid_aptina.c
-       RamWriteCmosConfig   0x000978    program     extern Z:\frank-icr-test\frank-ICR-rs232\mid_aptina.c
-               ASX340Read   0x0009ce    program     extern Z:\frank-icr-test\frank-ICR-rs232\mid_aptina.c
-       get_uart_fifo_data   0x0009de    program     static Z:\frank-icr-test\frank-ICR-rs232\interrupt.c
-       get_uart_fifo_flag   0x000a3c    program     static Z:\frank-icr-test\frank-ICR-rs232\interrupt.c
-       McuGetUartFifoData   0x000a46    program     extern Z:\frank-icr-test\frank-ICR-rs232\interrupt.c
-       McuGetUartFifoFlag   0x000a4c    program     extern Z:\frank-icr-test\frank-ICR-rs232\interrupt.c
-               Time2Count   0x000a52    program     extern Z:\frank-icr-test\frank-ICR-rs232\interrupt.c
-                 isr_high   0x000a7c    program     extern Z:\frank-icr-test\frank-ICR-rs232\interrupt.c
-               __tmplbl_1   0x000ad6    program     static                          
-               __tmplbl_0   0x000adc    program     static                          
-         ___else_lbl00015   0x000b02    program     static                          
-           ___if_lbl00014   0x000b10    program     static                          
-           ___if_lbl00016   0x000b10    program     static                          
-               __tmplbl_3   0x000b16    program     static                          
-               __tmplbl_2   0x000b1c    program     static                          
-         ___else_lbl00020   0x000b2c    program     static                          
-           ___if_lbl00019   0x000b56    program     static                          
-           ___if_lbl00018   0x000b56    program     static                          
-           ___if_lbl00021   0x000b62    program     static                          
-           ___if_lbl00022   0x000b6e    program     static                          
-           ___if_lbl00023   0x000b72    program     static                          
-       ___return_lbl00012   0x000b8a    program     static                          
-           ___if_lbl00024   0x000b8a    program     static                          
-                 I2CDelay   0x000bda    program     static Z:\frank-icr-test\frank-ICR-rs232\i2c.c
-       ___return_lbl00000   0x000c02    program     static                          
-           ___if_lbl00001   0x000c02    program     static                          
-                I2CDlyClr   0x000c04    program     static Z:\frank-icr-test\frank-ICR-rs232\i2c.c
-                NotAckI2C   0x000c0a    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
-                  StopI2C   0x000c1a    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
-                 StartI2C   0x000c28    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
-        ___while_lbl00010   0x000c2a    program     static                          
-        ___while_lbl00011   0x000c32    program     static                          
-       ___return_lbl00009   0x000c3a    program     static                          
-        ___while_lbl00013   0x000c3c    program     static                          
-                  IdleI2C   0x000c3c    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
-               __tmplbl_1   0x000c42    program     static                          
-               __tmplbl_0   0x000c48    program     static                          
-        ___while_lbl00014   0x000c4c    program     static                          
-       ___return_lbl00012   0x000c54    program     static                          
-                  ReadI2C   0x000c56    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
-                  getsI2C   0x000c78    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
-                 WriteI2C   0x000cee    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
-                 I2C_Done   0x000d6c    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
-        ___while_lbl00050   0x000d6c    program     static                          
-        ___while_lbl00051   0x000d7a    program     static                          
-       ___return_lbl00049   0x000d84    program     static                          
-    Initialize_I2C_Master   0x000d86    program     static Z:\frank-icr-test\frank-ICR-rs232\i2c.c
-               McuI2CInit   0x000d9c    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
-            McuIrEmitCtrl   0x000da0    program     extern Z:\frank-icr-test\frank-ICR-rs232\io.c
-            McuLedRedCtrl   0x000dcc    program     extern Z:\frank-icr-test\frank-ICR-rs232\io.c
-           McuLedBlueCtrl   0x000df8    program     extern Z:\frank-icr-test\frank-ICR-rs232\io.c
-        McuLedReceiveCtrl   0x000e24    program     extern Z:\frank-icr-test\frank-ICR-rs232\io.c
-               McuIcrCtrl   0x000e30    program     extern Z:\frank-icr-test\frank-ICR-rs232\io.c
-            Initialize_Io   0x000e5c    program     static Z:\frank-icr-test\frank-ICR-rs232\io.c
-                McuIoInit   0x000e7a    program     extern Z:\frank-icr-test\frank-ICR-rs232\io.c
-                _do_cinit   0x000e7e    program     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     test   0x000e98    program     static                          
-                copy_loop   0x000ef0    program     static                          
-            copy_one_byte   0x000ef6    program     static                          
-             done_copying   0x000f04    program     static                          
-       ___return_lbl00002   0x000f1a    program     static                          
-                     done   0x000f1a    program     static                          
-       __automachineclass   0x000f1c    program     extern Z:\frank-icr-test\frank-ICR-rs232\mid_api.h
-                ASX340_hi   0x000f40    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
-                ASX340_lo   0x000f50    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
-              ASX340_data   0x000f60    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
-               ASX340_num   0x000f7d    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
-         ASX340_mirror_hi   0x000f8d    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
-         ASX340_mirror_lo   0x000f92    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
-       ASX340_mirror_data   0x000f97    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
-        ASX340_mirror_num   0x000fa1    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
-    ASX340_no_mirror_data   0x000fa6    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
-               Send_CR_LF   0x000fb0    program     static Z:\frank-icr-test\frank-ICR-rs232\eusart.c
-         display_terminal   0x000fce    program     static Z:\frank-icr-test\frank-ICR-rs232\eusart.c
-         initialize_usart   0x000ff4    program     static Z:\frank-icr-test\frank-ICR-rs232\eusart.c
-              McuEusartWr   0x001018    program     extern Z:\frank-icr-test\frank-ICR-rs232\eusart.c
-            McuEusartInit   0x00103a    program     extern Z:\frank-icr-test\frank-ICR-rs232\eusart.c
-                OpenUSART   0x00103e    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\USART\uopen.c
-                putsUSART   0x0010c8    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\USART\uputs.c
-                ReadUSART   0x001114    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\USART\uread.c
-               OpenTimer2   0x001152    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\Timers\t2open.c
-                  OpenI2C   0x001188    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\i2c\i2c_open.c
-               WriteUSART   0x0011be    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\USART\uwrite.c
-            __zero_memory   0x0011ec    program     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                   loop_h   0x0011fa    program     static D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-               zero_block   0x0011fa    program     static D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                compare_l   0x001202    program     static D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                   loop_l   0x001204    program     static D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                 _startup   0x00120c    program     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     loop   0x00121c    program     static                          
-       ___return_lbl00001   0x001226    program     static                          
-                TimerInit   0x001228    program     static Z:\frank-icr-test\frank-ICR-rs232\timer2.c
-             McuTimerInit   0x001240    program     extern Z:\frank-icr-test\frank-ICR-rs232\timer2.c
+         write_cmos_value   0x000630    program     static Z:\frank-icr-test\frank-ICR-rs232\mid_aptina.c
+          ___for_lbl00008   0x00064c    program     static                          
+         ___else_lbl00004   0x00073a    program     static                          
+           ___if_lbl00003   0x000764    program     static                          
+         ___else_lbl00006   0x0007d2    program     static                          
+           ___if_lbl00005   0x0007e4    program     static                          
+           ___if_lbl00007   0x0007f6    program     static                          
+          ___for_lbl00001   0x0007f6    program     static                          
+       ___return_lbl00000   0x000802    program     static                          
+          ___for_lbl00002   0x000802    program     static                          
+     ram_write_cmos_value   0x000816    program     static Z:\frank-icr-test\frank-ICR-rs232\mid_aptina.c
+          ___for_lbl00017   0x000832    program     static                          
+         ___else_lbl00013   0x000916    program     static                          
+           ___if_lbl00012   0x00093e    program     static                          
+         ___else_lbl00015   0x0009ac    program     static                          
+           ___if_lbl00014   0x0009be    program     static                          
+           ___if_lbl00016   0x0009d0    program     static                          
+          ___for_lbl00010   0x0009d0    program     static                          
+          ___for_lbl00011   0x0009dc    program     static                          
+       ___return_lbl00009   0x0009dc    program     static                          
+          WriteCmosConfig   0x0009f0    program     extern Z:\frank-icr-test\frank-ICR-rs232\mid_aptina.c
+       RamWriteCmosConfig   0x000a46    program     extern Z:\frank-icr-test\frank-ICR-rs232\mid_aptina.c
+               ASX340Read   0x000a9c    program     extern Z:\frank-icr-test\frank-ICR-rs232\mid_aptina.c
+       get_uart_fifo_data   0x000aac    program     static Z:\frank-icr-test\frank-ICR-rs232\interrupt.c
+       get_uart_fifo_flag   0x000b0a    program     static Z:\frank-icr-test\frank-ICR-rs232\interrupt.c
+       McuGetUartFifoData   0x000b14    program     extern Z:\frank-icr-test\frank-ICR-rs232\interrupt.c
+       McuGetUartFifoFlag   0x000b1a    program     extern Z:\frank-icr-test\frank-ICR-rs232\interrupt.c
+               Time2Count   0x000b20    program     extern Z:\frank-icr-test\frank-ICR-rs232\interrupt.c
+                 isr_high   0x000b4a    program     extern Z:\frank-icr-test\frank-ICR-rs232\interrupt.c
+                 I2CDelay   0x000c9c    program     static Z:\frank-icr-test\frank-ICR-rs232\i2c.c
+       ___return_lbl00000   0x000cc4    program     static                          
+           ___if_lbl00001   0x000cc4    program     static                          
+                I2CDlyClr   0x000cc6    program     static Z:\frank-icr-test\frank-ICR-rs232\i2c.c
+                NotAckI2C   0x000ccc    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
+                  StopI2C   0x000cdc    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
+                 StartI2C   0x000cea    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
+        ___while_lbl00010   0x000cec    program     static                          
+        ___while_lbl00011   0x000cf4    program     static                          
+       ___return_lbl00009   0x000cfc    program     static                          
+                  IdleI2C   0x000cfe    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
+        ___while_lbl00013   0x000cfe    program     static                          
+               __tmplbl_1   0x000d04    program     static                          
+               __tmplbl_0   0x000d0a    program     static                          
+        ___while_lbl00014   0x000d0e    program     static                          
+       ___return_lbl00012   0x000d16    program     static                          
+                  ReadI2C   0x000d18    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
+                  getsI2C   0x000d3a    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
+                 WriteI2C   0x000db0    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
+        ___while_lbl00050   0x000e2e    program     static                          
+                 I2C_Done   0x000e2e    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
+        ___while_lbl00051   0x000e3c    program     static                          
+       ___return_lbl00049   0x000e46    program     static                          
+    Initialize_I2C_Master   0x000e48    program     static Z:\frank-icr-test\frank-ICR-rs232\i2c.c
+               McuI2CInit   0x000e5e    program     extern Z:\frank-icr-test\frank-ICR-rs232\i2c.c
+            McuIrEmitCtrl   0x000e62    program     extern Z:\frank-icr-test\frank-ICR-rs232\io.c
+            McuLedRedCtrl   0x000e8e    program     extern Z:\frank-icr-test\frank-ICR-rs232\io.c
+           McuLedBlueCtrl   0x000eba    program     extern Z:\frank-icr-test\frank-ICR-rs232\io.c
+        McuLedReceiveCtrl   0x000ee6    program     extern Z:\frank-icr-test\frank-ICR-rs232\io.c
+               McuIcrCtrl   0x000ef2    program     extern Z:\frank-icr-test\frank-ICR-rs232\io.c
+            Initialize_Io   0x000f1e    program     static Z:\frank-icr-test\frank-ICR-rs232\io.c
+                McuIoInit   0x000f3e    program     extern Z:\frank-icr-test\frank-ICR-rs232\io.c
+                _do_cinit   0x000f42    program     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     test   0x000f5c    program     static                          
+                copy_loop   0x000fb4    program     static                          
+            copy_one_byte   0x000fba    program     static                          
+             done_copying   0x000fc8    program     static                          
+       ___return_lbl00002   0x000fde    program     static                          
+                     done   0x000fde    program     static                          
+       __automachineclass   0x000fe0    program     extern Z:\frank-icr-test\frank-ICR-rs232\mid_api.h
+                ASX340_hi   0x001008    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
+                ASX340_lo   0x001018    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
+              ASX340_data   0x001028    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
+               ASX340_num   0x001045    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
+         ASX340_mirror_hi   0x001055    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
+         ASX340_mirror_lo   0x00105a    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
+       ASX340_mirror_data   0x00105f    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
+        ASX340_mirror_num   0x001069    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
+    ASX340_no_mirror_data   0x00106e    program     extern Z:\frank-icr-test\frank-ICR-rs232\automachine_asx340_para.h
+               Send_CR_LF   0x001078    program     static Z:\frank-icr-test\frank-ICR-rs232\eusart.c
+         display_terminal   0x001096    program     static Z:\frank-icr-test\frank-ICR-rs232\eusart.c
+         initialize_usart   0x0010bc    program     static Z:\frank-icr-test\frank-ICR-rs232\eusart.c
+              McuEusartWr   0x0010e0    program     extern Z:\frank-icr-test\frank-ICR-rs232\eusart.c
+            McuEusartInit   0x001102    program     extern Z:\frank-icr-test\frank-ICR-rs232\eusart.c
+                OpenUSART   0x001106    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\USART\uopen.c
+                  OpenADC   0x001190    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\ADC\adcopen.c
+                putsUSART   0x00120e    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\USART\uputs.c
+                  AdcRead   0x00125a    program     extern Z:\frank-icr-test\frank-ICR-rs232\adc.c
+           Initialize_Adc   0x001270    program     static Z:\frank-icr-test\frank-ICR-rs232\adc.c
+               McuAdcInit   0x00129e    program     extern Z:\frank-icr-test\frank-ICR-rs232\adc.c
+                ReadUSART   0x0012a2    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\USART\uread.c
+               OpenTimer2   0x0012e0    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\Timers\t2open.c
+                  OpenI2C   0x001316    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\i2c\i2c_open.c
+               WriteUSART   0x00134c    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\USART\uwrite.c
+            __zero_memory   0x00137a    program     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+               zero_block   0x001388    program     static D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                   loop_h   0x001388    program     static D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                compare_l   0x001390    program     static D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                   loop_l   0x001392    program     static D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                 _startup   0x00139a    program     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     loop   0x0013aa    program     static                          
+       ___return_lbl00001   0x0013b4    program     static                          
+                TimerInit   0x0013b6    program     static Z:\frank-icr-test\frank-ICR-rs232\timer2.c
+             McuTimerInit   0x0013ce    program     extern Z:\frank-icr-test\frank-ICR-rs232\timer2.c
+                  ReadADC   0x0013d2    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\ADC\adcread.c
+                  BusyADC   0x0013e4    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\ADC\adcbusy.c
+               ConvertADC   0x0013ee    program     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\ADC\adcconv.c
                __config_0   0x300001    program     static Z:\frank-icr-test\frank-ICR-rs232\main.c
                __config_1   0x300002    program     static Z:\frank-icr-test\frank-ICR-rs232\main.c
                __config_2   0x300003    program     static Z:\frank-icr-test\frank-ICR-rs232\main.c
                __config_3   0x300006    program     static Z:\frank-icr-test\frank-ICR-rs232\main.c
+                  __tmp_0   0x000000       data     static D:\3.43\pic18-lt\cxx-framework\src\pmc_common\ADC\adcread.c
                   __tmp_0   0x000000       data     static D:\3.43\pic18-lt\cxx-framework\src\pmc_common\USART\uopen.c
+                  __tmp_0   0x000000       data     static D:\3.43\pic18-lt\cxx-framework\src\pmc_common\ADC\adcopen.c
                   __tmp_0   0x000000       data     static Z:\frank-icr-test\frank-ICR-rs232\main.c
                   __tmp_0   0x000000       data     static Z:\frank-icr-test\frank-ICR-rs232\mid_aptina.c
                   __tmp_1   0x000004       data     static Z:\frank-icr-test\frank-ICR-rs232\interrupt.c
@@ -618,60 +631,60 @@ Linker Map File - Created Fri Dec 26 17:50:50 2014
              USART_Status   0x0000fe       data     extern D:\3.43\pic18-lt\cxx-framework\src\pmc_common\USART\udefs.c
                SSPMSKbits   0x000f77       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                    SSPMSK   0x000f77       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-               SLRCONbits   0x000f78       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                    SLRCON   0x000f78       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-              CM2CON1bits   0x000f79       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+               SLRCONbits   0x000f78       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                   CM2CON1   0x000f79       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+              CM2CON1bits   0x000f79       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                   CM2CON0   0x000f7a       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
               CM2CON0bits   0x000f7a       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                   CM1CON0   0x000f7b       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
               CM1CON0bits   0x000f7b       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                  WPUBbits   0x000f7c       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                      WPUB   0x000f7c       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                 IOCBbits   0x000f7d       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                      IOCB   0x000f7d       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                ANSELbits   0x000f7e       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                 IOCBbits   0x000f7d       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                     ANSEL   0x000f7e       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-               ANSELHbits   0x000f7f       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                ANSELbits   0x000f7e       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                    ANSELH   0x000f7f       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                PORTAbits   0x000f80       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+               ANSELHbits   0x000f7f       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                     PORTA   0x000f80       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                PORTAbits   0x000f80       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                 PORTBbits   0x000f81       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                     PORTB   0x000f81       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                    PORTC   0x000f82       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                 PORTCbits   0x000f82       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                PORTEbits   0x000f84       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                    PORTC   0x000f82       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                     PORTE   0x000f84       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                PORTEbits   0x000f84       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                  LATAbits   0x000f89       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                      LATA   0x000f89       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                     LATB   0x000f8a       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                  LATBbits   0x000f8a       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                     LATB   0x000f8a       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                  LATCbits   0x000f8b       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                      LATC   0x000f8b       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                 DDRAbits   0x000f92       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                     DDRA   0x000f92       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                     TRISA   0x000f92       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                 TRISAbits   0x000f92       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                 DDRBbits   0x000f93       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                TRISBbits   0x000f93       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                     DDRA   0x000f92       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                 DDRAbits   0x000f92       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                     TRISB   0x000f93       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                TRISBbits   0x000f93       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                      DDRB   0x000f93       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                    TRISC   0x000f94       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                TRISCbits   0x000f94       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                 DDRBbits   0x000f93       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                      DDRC   0x000f94       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                  DDRCbits   0x000f94       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                  OSCTUNE   0x000f9b       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                    TRISC   0x000f94       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                TRISCbits   0x000f94       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
               OSCTUNEbits   0x000f9b       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                  OSCTUNE   0x000f9b       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                      PIE1   0x000f9d       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                  PIE1bits   0x000f9d       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                     PIR1   0x000f9e       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                  PIR1bits   0x000f9e       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                     PIR1   0x000f9e       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                      IPR1   0x000f9f       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                  IPR1bits   0x000f9f       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                 PIE2bits   0x000fa0       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                      PIE2   0x000fa0       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                     PIR2   0x000fa1       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                 PIE2bits   0x000fa0       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                  PIR2bits   0x000fa1       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                     PIR2   0x000fa1       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                      IPR2   0x000fa2       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                  IPR2bits   0x000fa2       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                EECON1bits   0x000fa6       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
@@ -680,30 +693,30 @@ Linker Map File - Created Fri Dec 26 17:50:50 2014
                    EEDATA   0x000fa8       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                 EEADRbits   0x000fa9       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                     EEADR   0x000fa9       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                    RCSTA   0x000fab       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                 RCSTAbits   0x000fab       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                TXSTAbits   0x000fac       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                    RCSTA   0x000fab       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                     TXSTA   0x000fac       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                TXSTAbits   0x000fac       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                     TXREG   0x000fad       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                     RCREG   0x000fae       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                     SPBRG   0x000faf       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                    SPBRGH   0x000fb0       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                T3CONbits   0x000fb1       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                     T3CON   0x000fb1       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                T3CONbits   0x000fb1       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                     TMR3L   0x000fb2       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                     TMR3H   0x000fb3       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                  CVRCON2   0x000fb4       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
               CVRCON2bits   0x000fb4       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                  CVRCON2   0x000fb4       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                CVRCONbits   0x000fb5       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                    CVRCON   0x000fb5       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                  ECCP1AS   0x000fb6       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
               ECCP1ASbits   0x000fb6       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                  ECCP1AS   0x000fb6       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
               PWM1CONbits   0x000fb7       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                   PWM1CON   0x000fb7       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-              BAUDCONbits   0x000fb8       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                  BAUDCTL   0x000fb8       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                  BAUDCON   0x000fb8       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
               BAUDCTLbits   0x000fb8       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                  BAUDCON   0x000fb8       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                  BAUDCTL   0x000fb8       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+              BAUDCONbits   0x000fb8       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
               PSTRCONbits   0x000fb9       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                   PSTRCON   0x000fb9       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                   CCP2CON   0x000fba       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
@@ -727,14 +740,14 @@ Linker Map File - Created Fri Dec 26 17:50:50 2014
                    ADRESH   0x000fc4       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
               SSPCON2bits   0x000fc5       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                   SSPCON2   0x000fc5       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-              SSPCON1bits   0x000fc6       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                   SSPCON1   0x000fc6       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+              SSPCON1bits   0x000fc6       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
               SSPSTATbits   0x000fc7       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                   SSPSTAT   0x000fc7       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                    SSPADD   0x000fc8       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                    SSPBUF   0x000fc9       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                    T2CON   0x000fca       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                 T2CONbits   0x000fca       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                    T2CON   0x000fca       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                       PR2   0x000fcb       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                      TMR2   0x000fcc       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                 T1CONbits   0x000fcd       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
@@ -743,16 +756,16 @@ Linker Map File - Created Fri Dec 26 17:50:50 2014
                     TMR1H   0x000fcf       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                  RCONbits   0x000fd0       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                      RCON   0x000fd0       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-               WDTCONbits   0x000fd1       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                    WDTCON   0x000fd1       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-              HLVDCONbits   0x000fd2       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+               WDTCONbits   0x000fd1       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                   HLVDCON   0x000fd2       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                   LVDCON   0x000fd2       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+              HLVDCONbits   0x000fd2       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                LVDCONbits   0x000fd2       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-               OSCCONbits   0x000fd3       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                   LVDCON   0x000fd2       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                    OSCCON   0x000fd3       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                    T0CON   0x000fd5       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+               OSCCONbits   0x000fd3       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                 T0CONbits   0x000fd5       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                    T0CON   0x000fd5       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                     TMR0L   0x000fd6       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                     TMR0H   0x000fd7       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                    STATUS   0x000fd8       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
@@ -766,16 +779,16 @@ Linker Map File - Created Fri Dec 26 17:50:50 2014
                  POSTINC2   0x000fde       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                     INDF2   0x000fdf       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                       BSR   0x000fe0       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                     FSR1   0x000fe1       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                     FSR1L   0x000fe1       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                     FSR1   0x000fe1       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                     FSR1H   0x000fe2       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                    PLUSW1   0x000fe3       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                   PREINC1   0x000fe4       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                  POSTDEC1   0x000fe5       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                  POSTINC1   0x000fe6       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                     INDF1   0x000fe7       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                        W   0x000fe8       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                      WREG   0x000fe8       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                        W   0x000fe8       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                     FSR0L   0x000fe9       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                      FSR0   0x000fe9       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                     FSR0H   0x000fea       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
@@ -788,24 +801,24 @@ Linker Map File - Created Fri Dec 26 17:50:50 2014
               INTCON3bits   0x000ff0       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
               INTCON2bits   0x000ff1       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                   INTCON2   0x000ff1       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                   INTCON   0x000ff2       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                INTCONbits   0x000ff2       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                     PROD   0x000ff3       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                   INTCON   0x000ff2       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                     PRODL   0x000ff3       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                     PROD   0x000ff3       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                     PRODH   0x000ff4       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                    TABLAT   0x000ff5       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                   TBLPTRL   0x000ff6       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                    TBLPTR   0x000ff6       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                   TBLPTRH   0x000ff7       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                   TBLPTRU   0x000ff8       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                       PC   0x000ff9       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                       PCL   0x000ff9       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                       PC   0x000ff9       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                    PCLATH   0x000ffa       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                    PCLATU   0x000ffb       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                   STKPTR   0x000ffc       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                STKPTRbits   0x000ffc       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
-                     TOSL   0x000ffd       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                   STKPTR   0x000ffc       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                       TOS   0x000ffd       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
+                     TOSL   0x000ffd       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                      TOSH   0x000ffe       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
                      TOSU   0x000fff       data     extern D:\3.43\pic18-lt\cxx-framework\src\traditional\proc\p18f25k20.asm
 

@@ -18,3 +18,4 @@
 ./__pconfig.h
 ./io.c
 ./mid_api.h
+./adc.c

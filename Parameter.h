@@ -121,11 +121,15 @@
 	   1 degree : 510mV => 510/3.222 = 158
 	  50 degree : 1000mV => 1000/3.222 = 310
 	   each degree will add 10mV
+	3. ICR ON : 3000mv => 3000/3.22 = 931
+	   ICR OFF: 1900mv => 1900/3.22 = 590
 	---------------*/
 	enum temp_mode
 	{
-	    temp_high = 201,//15,
-	    temp_low = 186,//10
+//	    temp_high = 201,//15,
+//	    temp_low = 186,//10
+	    icr_on_threshold = 931,
+	    icr_off_threshold = 590,
 	};
 #else
 //none
