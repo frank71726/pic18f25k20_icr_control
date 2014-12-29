@@ -1,4 +1,4 @@
-cscope 15 $HOME/frank-samba/frank-icr-test/frank-ICR-rs232               0000163464
+cscope 15 $HOME/frank-samba/frank-icr-test/frank-ICR-rs232 -q 0000001628 0000164160
 	@Parameter.h
 
 1 #i‚de‡
@@ -319,25 +319,25 @@ _AD28V_10BIT
 _AD33V_10BIT
 
 
-125 
+127 
 	eãmp_mode
 
 
-127 
-	mãmp_high
- = 201,
+131 
+	mi¸_⁄_thªshﬁd
+ = 931,
 
-128 
-	mãmp_low
- = 186,
+132 
+	mi¸_off_thªshﬁd
+ = 590,
 
-135 
+139 
 	#MS_1
  (1)
 
 	)
 
-136 
+140 
 	#MS_3
  (5)
 
@@ -31609,7 +31609,7 @@ _PIC_C18
 	~<adc.h
 >
 
-12 
+11 
 Time2Cou¡
 –
 INT16U
@@ -31617,51 +31617,69 @@ INT16U
 num
 );
 
-24 
+13 
+	$AdcRód
+()
+
+15 
+	`C⁄vîtADC
+();
+
+16 
+	`BusyADC
+( ));
+
+17  
+	`RódADC
+();
+
+18 
+	}
+}
+
+30 
 	$Inôülize_Adc
 ()
 
-26 
+32 
 	`O≥nADC
 –
 ADC_FOSC_32
  & 
 ADC_RIGHT_JUST
  & 
-ADC_4_TAD
+ADC_20_TAD
 ,
 
-27 
+33 
 ADC_CH11
  & 
 ADC_INT_OFF
  & 
-ADC_REF_VREFPLUS_VREFMINUS
+ADC_REF_VDD_VSS
 ,
 
-30 
+36 
 	`Time2Cou¡
-(
-MS_2
-);
+(2);
 
-31 
+37 
 	`C⁄vîtADC
 ();
 
-32 
+38 
 	}
 }
 
-35 
+41 
 	$McuAdcInô
 ()
 
-37 
+43 
 	`Inôülize_Adc
 ();
 
-38 
+44 
 	}
 }
 
@@ -34589,7 +34607,13 @@ INT8U
 ú_cou¡
 =0;
 
-99 
+98 
+INT16S
+ 
+i¸_vÆue
+=0;
+
+100 
 am
 .
 ˛ass
@@ -34597,7 +34621,7 @@ am
 __automachöe˛ass
 ;
 
-100 
+101 
 am
 .
 ˛ass
@@ -34605,7 +34629,7 @@ am
 	`Cpu_Inô
 (&am);
 
-103 
+104 
 am
 .
 ˛ass
@@ -34615,11 +34639,17 @@ am
 _ON
 );
 
-104 !
+123 !
 gSèπ
 );
 
-107 
+124 
+gSèπ
+ = 
+_OFF
+;
+
+128 
 am
 .
 ˛ass
@@ -34629,7 +34659,7 @@ am
 _ON
 );
 
-108 
+129 
 am
 .
 ˛ass
@@ -34637,69 +34667,27 @@ am
 	`Mcu_Dly
 (500);
 
-109 if(
-_ON
- =
-am
-.
-˛ass
-->
-	`Ir_Re˚ive
-())
-
-110 
-ú_cou¡
-++;
-
-113 
-am
-.
-˛ass
-->
-	`Led_Red
-(
-_OFF
-);
-
-117 
-am
-.
-˛ass
-->
-	`I¸_Cål
-(
-_OFF
-);
-
-119 
-am
-.
-˛ass
-->
-	`Mcu_Dly
-(500);
-
-120 
-ãmp
+130 
+i¸_vÆue
  = 
 am
 .
 ˛ass
 ->
-	`Ir_Re˚ive
+	`I¸_Ród
 ();
 
-121 if(
-_ON
- =
-am
-.
-˛ass
-->
-	`Ir_Re˚ive
-())
+131 if(
+i¸_vÆue
+ > 
+i¸_⁄_thªshﬁd
+)
 
-123 
+132 
+ú_cou¡
+++;
+
+135 
 am
 .
 ˛ass
@@ -34709,11 +34697,127 @@ am
 _OFF
 );
 
-127 if(
+136 !
+gSèπ
+);
+
+137 
+ú_cou¡
+ = 0;
+
+138 
+gSèπ
+ = 
+_OFF
+;
+
+139 
+am
+.
+˛ass
+->
+	`Led_Blue
+(
+_ON
+);
+
+140 
+am
+.
+˛ass
+->
+	`Led_Red
+(
+_ON
+);
+
+143 
+am
+.
+˛ass
+->
+	`I¸_Cål
+(
+_OFF
+);
+
+144 
+am
+.
+˛ass
+->
+	`Mcu_Dly
+(500);
+
+145 
+i¸_vÆue
+ = 
+am
+.
+˛ass
+->
+	`I¸_Ród
+();
+
+146 if(
+i¸_vÆue
+ < 
+i¸_off_thªshﬁd
+ )
+
+147 
+ú_cou¡
+++;
+
+150 
+am
+.
+˛ass
+->
+	`Led_Red
+(
+_OFF
+);
+
+151 !
+gSèπ
+);
+
+152 
+ú_cou¡
+ = 0;
+
+153 
+gSèπ
+ = 
+_OFF
+;
+
+154 
+am
+.
+˛ass
+->
+	`Led_Blue
+(
+_ON
+);
+
+155 
+am
+.
+˛ass
+->
+	`Led_Red
+(
+_ON
+);
+
+159 if(
 ú_cou¡
  >= 10)
 
-129 
+161 
 am
 .
 ˛ass
@@ -34723,7 +34827,41 @@ am
 _OFF
 );
 
-134 
+162 !
+gSèπ
+);
+
+163 
+ú_cou¡
+ = 0;
+
+164 
+gSèπ
+ = 
+_OFF
+;
+
+165 
+am
+.
+˛ass
+->
+	`Led_Blue
+(
+_ON
+);
+
+166 
+am
+.
+˛ass
+->
+	`Led_Red
+(
+_ON
+);
+
+169 
 	}
 }
 
@@ -35004,6 +35142,14 @@ Mcu_Dly
 	)
 
 34 
+	#McuCœssMembî_AdcRód
+ (*
+I¸_Ród
+)()
+
+	)
+
+35 
 	#McuCœssMembî_PîùhîÆ
  (*
 Cpu_PîiInô
@@ -35013,11 +35159,11 @@ McuPîùhîÆNum
 
 	)
 
-36 #i‡
+37 #i‡
 _HI_TECH
 
 
-37 
+38 
 	#McuCœssMembî_U¨tWr
  (*
 Cpu_U¨tWr
@@ -35027,11 +35173,11 @@ INT8S
 
 	)
 
-38 #ñi‡
+39 #ñi‡
 _PIC_C18
 
 
-39 
+40 
 	#McuCœssMembî_U¨tWr
  (*
 Cpu_U¨tWr
@@ -35041,97 +35187,101 @@ INT8C
 
 	)
 
-46 
+47 
 	g_AutoMachöe
 ;
 
-48 
+49 
 	s_AutoMachöeCœss
 
 
-50 
+51 
 CmosCœssMembî_Inô
 –
 _AutoMachöe
  );
 
-51 
+52 
 	mCmosCœssMembî_Ród
 ;
 
-52 
+53 
 	mCmosCœssMembî_Wrôe
 ;
 
-53 
+54 
 	mCmosCœssMembî_RamWrôe
 ;
 
-54 
+55 
 McuCœssMembî_Inô
 –
 _AutoMachöe
  );
 
-55 
+56 
 	mMcuCœssMembî_U¨tWr
 ;
 
-56 
+57 
 	mMcuCœssMembî_GëU¨tFifoFÆg
 ;
 
-57 
+58 
 	mMcuCœssMembî_GëU¨tFifoD©a
 ;
 
-58 
+59 
 McuCœssMembî_Ir_EmCål
 (
 INT16U
  );
 
-59 
+60 
 McuCœssMembî_LedRedCål
 (
 INT16U
  );
 
-60 
+61 
 McuCœssMembî_LedBlueCål
 (
 INT16U
  );
 
-61 
+62 
 McuCœssMembî_I¸Cål
 (
 INT16U
  );
 
-62 
+63 
 	mMcuCœssMembî_IrReCål
 ;
 
-63 
+64 
 McuCœssMembî_Dñay
 (
 INT16U
 );
 
-64 
+65 
+	mMcuCœssMembî_AdcRód
+;
+
+66 
 	mMcuCœssMembî_PîùhîÆ
 ;
 
-65 }
+67 }
 	tAutoMachöeCœss
 ;
 
-67 
+69 
 	s_AutoMachöe
 
 
-69 
+71 
 rom
  
 AutoMachöeCœss
@@ -35139,51 +35289,51 @@ AutoMachöeCœss
 	m˛ass
 ;
 
-72 
+74 
 INT8U
  
 	mgaövÆ
 [2];
 
-73 
+75 
 INT8U
  
 	mexpovÆ
 [2];
 
-75 
+77 
 	s_Êag
 {
 
-76 
+78 
 INT8U
  
 	mmúr‹
  : 1;
 
-77 
+79 
 INT8U
  
 	mhóãr
  : 1;
 
-78 
+80 
 	mINT8U
  : 6;
 
-79 }
+81 }
 	mÊag
 ;
 
-81 }
+83 }
 	tAutoMachöe
 ;
 
-90 #i‡
+92 #i‡
 _HI_TECH
 
 
-91 
+93 
 WrôeCmosC⁄fig
 –
 INT8U
@@ -35201,11 +35351,11 @@ INT16U
 ôem_num
 );
 
-92 #ñi‡ 
+94 #ñi‡ 
 _PIC_C18
 
 
-93 
+95 
 WrôeCmosC⁄fig
 –
 rom
@@ -35225,7 +35375,7 @@ INT16U
 ôem_num
 );
 
-96 
+98 
 RamWrôeCmosC⁄fig
 –
 INT8U
@@ -35243,7 +35393,7 @@ INT16U
 ôem_num
 );
 
-97 
+99 
 ASX340Ród
 –
 INT8U
@@ -35257,7 +35407,7 @@ lﬂddr
 size
 );
 
-99 
+101 
 Sís‹Inô
 –
 AutoMachöe
@@ -35265,7 +35415,7 @@ AutoMachöe
 am_vÆ
 );
 
-100 
+102 
 Sís‹Inô
 –
 AutoMachöe
@@ -35273,7 +35423,7 @@ AutoMachöe
 am_vÆ
 );
 
-102 
+104 
 McuInô
 –
 AutoMachöe
@@ -35281,7 +35431,7 @@ AutoMachöe
 am_vÆ
 );
 
-103 
+105 
 McuInô
 –
 AutoMachöe
@@ -35289,37 +35439,37 @@ AutoMachöe
 am_vÆ
 );
 
-104 
+106 
 McuI2CInô
 ();
 
-105 
+107 
 McuTimîInô
 ();
 
-106 
+108 
 McuEußπWr
 –
 INT8C
  *);
 
-107 
+109 
 McuEußπInô
 ();
 
-108 
+110 
 INT8U
  
 McuGëU¨tFifoD©a
 ();
 
-109 vﬁ©ûê
+111 vﬁ©ûê
 INT8U
  
 McuGëU¨tFifoFœg
 ();
 
-110 
+112 
 Time2Cou¡
 –
 INT16U
@@ -35327,28 +35477,12 @@ INT16U
 num
 );
 
-111 
+113 
 McuIoInô
 ();
 
-112 
-McuIrEmôCål
-(
-INT16U
- 
-vÆ
- );
-
-113 
-McuLedRedCål
-(
-INT16U
- 
-vÆ
- );
-
 114 
-McuLedBlueCål
+McuIrEmôCål
 (
 INT16U
  
@@ -35356,6 +35490,22 @@ vÆ
  );
 
 115 
+McuLedRedCål
+(
+INT16U
+ 
+vÆ
+ );
+
+116 
+McuLedBlueCål
+(
+INT16U
+ 
+vÆ
+ );
+
+117 
 McuI¸Cål
 (
 INT16U
@@ -35363,21 +35513,25 @@ INT16U
 vÆ
  );
 
-116 
+118 
 INT8U
  
 McuLedRe˚iveCål
 ();
 
-117 
+119 
 McuAdcInô
 ();
 
-119 #¥agm®
+120 
+AdcRód
+();
+
+122 #¥agm®
 romd©a
 
 
-120 
+123 
 rom
  
 AutoMachöeCœss
@@ -35385,83 +35539,87 @@ AutoMachöeCœss
 	g__automachöe˛ass
  =
 
-122 
+125 
 Sís‹Inô
 ,
 
-123 
+126 
 ASX340Ród
 ,
 
-124 
+127 
 WrôeCmosC⁄fig
 ,
 
-125 
+128 
 RamWrôeCmosC⁄fig
 ,
 
-126 
+129 
 McuInô
 ,
 
-127 
+130 
 McuEußπWr
 ,
 
-128 
+131 
 McuGëU¨tFifoFœg
 ,
 
-129 
+132 
 McuGëU¨tFifoD©a
 ,
 
-130 
+133 
 McuIrEmôCål
 ,
 
-131 
+134 
 McuLedRedCål
 ,
 
-132 
+135 
 McuLedBlueCål
 ,
 
-133 
+136 
 McuI¸Cål
 ,
 
-134 
+137 
 McuLedRe˚iveCål
 ,
 
-135 
+138 
 Time2Cou¡
 ,
 
-136 
-McuI2CInô
-,
-
-137 
-McuTimîInô
-,
-
-138 
-McuEußπInô
-,
-
 139 
-McuIoInô
+AdcRód
 ,
 
 140 
+McuI2CInô
+,
+
+141 
+McuTimîInô
+,
+
+142 
+McuEußπInô
+,
+
+143 
+McuIoInô
+,
+
+144 
 McuAdcInô
 
 
-143 #¥agm®
+147 #¥agm®
 romd©a
 
 
@@ -36460,8 +36618,7 @@ TimîInô
 	@
 1
 .
-1
-/usr/include
+0
 21
 214
 Parameter.h

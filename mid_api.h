@@ -57,13 +57,13 @@ typedef struct	_AutoMachineClass
 	McuClassMember_GetUartFifoFalg;		//7
 	McuClassMember_GetUartFifoData;		//8
 	McuClassMember_Ir_EmCtrl(INT16U );	//9
-	McuClassMember_LedRedCtrl(INT16U ); 
-	McuClassMember_LedBlueCtrl(INT16U );
-	McuClassMember_IcrCtrl(INT16U );
-	McuClassMember_IrReCtrl;		//10
-	McuClassMember_Delay(INT16U);		//10
-	McuClassMember_AdcRead;
-	McuClassMember_Peripheral;		//11
+	McuClassMember_LedRedCtrl(INT16U ); 	//10
+	McuClassMember_LedBlueCtrl(INT16U );	//11
+	McuClassMember_IcrCtrl(INT16U );	//12
+	McuClassMember_IrReCtrl;		//13
+	McuClassMember_Delay(INT16U);		//14
+	McuClassMember_AdcRead;			//15
+	McuClassMember_Peripheral;		//16
 }AutoMachineClass;
 
 typedef struct _AutoMachine
@@ -122,26 +122,26 @@ int AdcRead(void);
 #pragma romdata
 rom AutoMachineClass __automachineclass = 
 {
-	SensorInit,						//1
-	ASX340Read, //not ready                                 //2
+	SensorInit,						//1 
+	ASX340Read, //not ready                                 //2 
 	WriteCmosConfig,                                        //3 
-	RamWriteCmosConfig,                                     //4
-	McuInit,                                                //5
-	McuEusartWr,//peripheral->Eusart wirte                  //6
-	McuGetUartFifoFlag,//peripheral->get uard fifo flag     //7
-	McuGetUartFifoData,//peripheral->get uard fifo data     //8
-	McuIrEmitCtrl,//ir led emit control                     //9
-	McuLedRedCtrl,
-	McuLedBlueCtrl,
-	McuIcrCtrl,
-	McuLedReceiveCtrl,
-	Time2Count,//mcu timer2 delay                           //10
-	AdcRead,
-	McuI2CInit,//peripheral->I2C                            //11-1
-	McuTimerInit,//peripheral->Timer2			//11-2
-	McuEusartInit,//peripheral->Eusart			//11-3
-	McuIoInit,						//11-4
-	McuAdcInit						//11-5
+	RamWriteCmosConfig,                                     //4 
+	McuInit,                                                //5 
+	McuEusartWr,//peripheral->Eusart wirte                  //6 
+	McuGetUartFifoFlag,//peripheral->get uard fifo flag     //7 
+	McuGetUartFifoData,//peripheral->get uard fifo data     //8 
+	McuIrEmitCtrl,//ir led emit control                     //9 
+	McuLedRedCtrl,                                          //10
+	McuLedBlueCtrl,                                         //11
+	McuIcrCtrl,                                             //12
+	McuLedReceiveCtrl,                                      //13
+	Time2Count,//mcu timer2 delay                           //14
+	AdcRead,                                                //15
+	McuI2CInit,//peripheral->I2C                            //16-1
+	McuTimerInit,//peripheral->Timer2			//16-2
+	McuEusartInit,//peripheral->Eusart			//16-3
+	McuIoInit,						//16-4
+	McuAdcInit						//16-5
 };
 
 #pragma romdata

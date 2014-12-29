@@ -99,27 +99,13 @@ void main(void)
  
 	am.class = &__automachineclass; 
 	am.class->Cpu_Init(&am);
-//	am.class->Cpu_UartWr(MSG_init);
 
-	am.class->Ir_Emit(_ON);
-/* 	
 	while(1)
 	{
-		am.class->Icr_Ctrl(_ON);
-		am.class->Mcu_Dly(500);
-		icr_value = am.class->Icr_Read();
-		Nop();
-		Nop();
-		Nop();
-
-		am.class->Icr_Ctrl(_OFF);
-		am.class->Mcu_Dly(1000);
-		icr_value = am.class->Icr_Read();
-		Nop();
-		Nop();
-		Nop();
+		am.class->Cpu_UartWr(MSG_init);
 	}
-*/
+
+	am.class->Ir_Emit(_ON);
 	while(!gStart);
 	gStart = _OFF;
 	
