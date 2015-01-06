@@ -240,9 +240,22 @@ void StartIcrTest(AutoMachine *am)
 		}
 	}
 }
+#include <pwm.h>
+#include <timers.h>
 //==========================================================================
 void main(void)
 {
+	
+	//void InitializePWM2(void)
+	TRISCbits.TRISC1=0;	//* setup RC1 for PWM output
+	OpenPWM2(0xff); 	//* set period to 0xFF
+
+	//void InitializeTMR2(void)
+	OpenTimer2(T2_PS_1_4 & T2_POST_1_16);
+	SetDCPWM2(1000);
+	while(1);
+		
+	/*  
 	//AutoMachineClass automachineclass;
 	AutoMachine	 am;
 	INT8U	temp=0;
@@ -300,6 +313,7 @@ void main(void)
 		}
 		am.class->Cpu_UartWr(MSG_init);
 	}
+	*/
 }
 /* 
 //==========================================================================
