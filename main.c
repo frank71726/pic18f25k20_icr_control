@@ -240,6 +240,8 @@ void StartIcrTest(AutoMachine *am)
 		}
 	}
 }
+
+#include    "timers.h"
 //==========================================================================
 void main(void)
 {
