@@ -109,7 +109,7 @@ void McuEusartWr( INT8C *);
 void McuEusartInit(void);
 INT8U McuGetUartFifoData(void);
 volatile INT8U McuGetUartFifoFlag(void);
-void Time2Count( INT16U num);
+void Time0Count( INT16U num);
 void McuIoInit(void);
 void McuIrEmitCtrl(INT16U val );
 void McuLedRedCtrl(INT16U val );
@@ -135,7 +135,7 @@ rom AutoMachineClass __automachineclass =
 	McuLedBlueCtrl,                                         //11
 	McuIcrCtrl,                                             //12
 	McuLedReceiveCtrl,                                      //13
-	Time2Count,//mcu timer2 delay                           //14
+	Time0Count,//mcu timer2 delay                           //14
 	AdcRead,                                                //15
 	McuI2CInit,//peripheral->I2C                            //16-1
 	McuTimerInit,//peripheral->Timer2			//16-2

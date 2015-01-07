@@ -3,6 +3,7 @@
 #include    <HTC.h>
 #elif	_PIC_C18
 #include    <p18cxxx.h>
+#include    <timers.h>
 #else
 //none
 #endif
@@ -117,6 +118,13 @@ isr(void)			// Here be interrupt function - the name is unimportant.
 volatile static INT8U gTimeFalg = _OFF;
 volatile static INT16U gTimerCount = 0;
 
+void Time0Count( INT16U num)
+{
+	gTimerCount = num;
+	T0CONbits.TMR0ON = _ON;     // Turn on Timer
+	while(gTimeFalg != _ON );
+	gTimeFalg = _OFF;
+}
 void Time2Count( INT16U num)
 {
 	gTimerCount = num;
@@ -155,6 +163,7 @@ void isr_high(void)
 	volatile static INT16U count=0;
 	INT8U Rec_Data;
 
+	/*
 	if(PIR1bits.TMR2IF && PIE1bits.TMR2IE)	// TMR2 Interrupt
 	{
 		PIR1bits.TMR2IF=0;		// Clear Timer2 interrupt Flag
@@ -168,6 +177,7 @@ void isr_high(void)
 			gTimeFalg = _ON; 
 		}
 	}
+	*/
 
 	if( PIR1bits.RCIF && PIE1bits.RCIE)	// RS232 Interrupt
 	{
@@ -199,6 +209,22 @@ void isr_high(void)
         {                          
 		gStart = _ON;
 		INTCONbits.INT0IF = 0;
+	}
+	
+	
+	if(INTCONbits.TMR0IF)
+	{
+		WriteTimer0(0xf05f);
+		INTCONbits.TMR0IF = 0; // Reset interrupt flag
+
+		if (count < (gTimerCount-1)) 	//because first times not count
+			count++;    
+		else
+		{   
+			T0CONbits.TMR0ON = _OFF;     // Turn on Timer
+			count = 0;
+			gTimeFalg = _ON; 
+		}
 	}
 }								
 #pragma code

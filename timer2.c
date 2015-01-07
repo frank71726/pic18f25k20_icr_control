@@ -33,18 +33,18 @@ void TimerInit(void)
 }
 
 #elif	_PIC_C18
-
-static void TimerInit(void)
+/*
+static void Timer2Init(void)
 {
 	//  T1CONbits.TMR1ON = _OFF;
 	RCONbits.IPEN=1;			// Enable Interrupt Priority bit
 	IPR1bits.TMR2IP=1;			// Set Timer2 for High Priority
 	INTCONbits.GIEH=1;			// Enable High Priority Interrupt
 
-	/***********************************/
-	/*        Interrupt Time	   */ 		
-	/*(1/(16Mhz/4)) (16*10*(24+1)) = 1mS */
-	/***********************************/
+	//==================================
+	//        Interrupt Time	    		
+	//(1/(16Mhz/4)) (16*10*(24+1)) = 1mS 
+	//==================================
 	OpenTimer2 ( TIMER_INT_ON		// Turn On the Timer2 with Interrupt
 			& T2_PS_1_16
 			& T2_POST_1_10);
@@ -53,11 +53,25 @@ static void TimerInit(void)
 
 	T2CONbits.TMR2ON = _OFF; // Turn off Timer2
 }
+*/
+static void Timer0Init(void)
+{//1ms
+	RCONbits.IPEN=1;			// Enable Interrupt Priority bit
+	INTCONbits.GIEH=1;			// Enable High Priority Interrupt
+	INTCON2bits.TMR0IP=1;			// Set Timer2 for High Priority
+
+	OpenTimer0 ( TIMER_INT_ON		// Turn On the Timer2 with Interrupt
+			& T0_16BIT
+			& T0_SOURCE_INT
+			& T0_PS_1_1	);
+
+	WriteTimer0(0xf05f);
+}
 
 //connect from outside
 void McuTimerInit(void)
 {
-	TimerInit();
+	Timer0Init();
 }
 #else
 //none

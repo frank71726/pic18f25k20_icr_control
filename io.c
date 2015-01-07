@@ -19,8 +19,8 @@ void McuLedRedCtrl(INT16U val )
 }
 void McuLedBlueCtrl(INT16U val )
 {
-	if(val == _ON) 	LATCbits.LATC1 = _ON; 
-	else		 LATCbits.LATC1 = _OFF; 
+	if(val == _ON) 	LATAbits.LATA4 = _ON; 
+	else		LATAbits.LATA4 = _OFF; 
 }
 INT8U McuLedReceiveCtrl(void)
 {
@@ -49,8 +49,8 @@ static void Initialize_Io(void)
 	TRISCbits.TRISC0 = OUTPUT;	//red led
         LATCbits.LATC0 = _ON;    
 
-	TRISCbits.TRISC1 = OUTPUT;	//bule led
-	LATCbits.LATC1 = _ON;    
+	TRISAbits.TRISA4 = OUTPUT;	//bule led
+	LATAbits.LATA4 = _ON;    
 
 	TRISBbits.TRISB1 = OUTPUT;   	//ICR on/off
 	LATBbits.LATB1 = _OFF;       	
