@@ -33,27 +33,26 @@ void TimerInit(void)
 }
 
 #elif	_PIC_C18
-/*
 static void Timer2Init(void)
 {
-	//  T1CONbits.TMR1ON = _OFF;
+	//fro SG-90 servo motor
 	RCONbits.IPEN=1;			// Enable Interrupt Priority bit
 	IPR1bits.TMR2IP=1;			// Set Timer2 for High Priority
 	INTCONbits.GIEH=1;			// Enable High Priority Interrupt
 
 	//==================================
 	//        Interrupt Time	    		
-	//(1/(16Mhz/4)) (16*10*(24+1)) = 1mS 
+	//(1/(16Mhz/4)) (4*10*(49+1)) = 0.5mS 
 	//==================================
 	OpenTimer2 ( TIMER_INT_ON		// Turn On the Timer2 with Interrupt
-			& T2_PS_1_16
+			& T2_PS_1_4
 			& T2_POST_1_10);
 
-	PR2 = 24;//1ms by cyh
+	PR2 = 49;//0.5ms by cyh
 
-	T2CONbits.TMR2ON = _OFF; // Turn off Timer2
+	T2CONbits.TMR2ON = _ON; // Turn on Timer2
+//	T2CONbits.TMR2ON = _OFF; // Turn on Timer2
 }
-*/
 static void Timer0Init(void)
 {//1ms
 	RCONbits.IPEN=1;			// Enable Interrupt Priority bit
@@ -72,6 +71,7 @@ static void Timer0Init(void)
 void McuTimerInit(void)
 {
 	Timer0Init();
+	Timer2Init();
 }
 #else
 //none

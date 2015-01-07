@@ -3,6 +3,7 @@
 ./interrupt.c
 ./__p18f25k20.h
 ./i2c.h
+./pwm.c
 ./eusart.h
 ./mid_aptina.h
 ./Parameter.h

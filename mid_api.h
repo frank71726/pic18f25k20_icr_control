@@ -21,7 +21,7 @@
 
 //===================================================================================
 //mcu object
-#define McuPeripheralNum		5//peripheral(depend on project),timer2,i2c,eusart,io(rb1),adc
+#define McuPeripheralNum		6//peripheral(depend on project),timer2,i2c,eusart,io(rb1),adc,pwm
 #define McuClassMember_Init(OBJ)	void (*Cpu_Init)(struct OBJ* ) 
 #define McuClassMember_GetUartFifoFalg	volatile INT8U (*Cpu_GetUartFifoFlag)(void)  
 #define McuClassMember_GetUartFifoData	INT8U (*Cpu_GetUartFifoData)(void)  
@@ -31,6 +31,7 @@
 #define McuClassMember_IcrCtrl(OBJ)	void (*Icr_Ctrl)(OBJ) 
 #define McuClassMember_IrReCtrl		INT8U (*Ir_Receive)(void) 
 #define McuClassMember_Delay(OBJ)	void (*Mcu_Dly)(OBJ) 
+#define McuClassMember_ServoDC(OBJ)	void (*Mcu_ServoDC)(OBJ) 
 #define McuClassMember_AdcRead		int (*Icr_Read)(void) 
 #define McuClassMember_Peripheral	void (*Cpu_PeriInit[McuPeripheralNum])(void) 
 
@@ -62,8 +63,9 @@ typedef struct	_AutoMachineClass
 	McuClassMember_IcrCtrl(INT16U );	//12
 	McuClassMember_IrReCtrl;		//13
 	McuClassMember_Delay(INT16U);		//14
-	McuClassMember_AdcRead;			//15
-	McuClassMember_Peripheral;		//16
+	McuClassMember_ServoDC(ServoDC);	//15
+	McuClassMember_AdcRead;			//16
+	McuClassMember_Peripheral;		//17
 }AutoMachineClass;
 
 typedef struct _AutoMachine
@@ -110,6 +112,7 @@ void McuEusartInit(void);
 INT8U McuGetUartFifoData(void);
 volatile INT8U McuGetUartFifoFlag(void);
 void Time0Count( INT16U num);
+void Time2Count( ServoDC item);
 void McuIoInit(void);
 void McuIrEmitCtrl(INT16U val );
 void McuLedRedCtrl(INT16U val );
@@ -118,6 +121,7 @@ void McuIcrCtrl(INT16U val );
 INT8U McuLedReceiveCtrl(void);
 void McuAdcInit(void);
 int AdcRead(void);
+void McuPwmInit(void);
 
 #pragma romdata
 rom AutoMachineClass __automachineclass = 
@@ -136,12 +140,14 @@ rom AutoMachineClass __automachineclass =
 	McuIcrCtrl,                                             //12
 	McuLedReceiveCtrl,                                      //13
 	Time0Count,//mcu timer2 delay                           //14
-	AdcRead,                                                //15
-	McuI2CInit,//peripheral->I2C                            //16-1
-	McuTimerInit,//peripheral->Timer2			//16-2
-	McuEusartInit,//peripheral->Eusart			//16-3
-	McuIoInit,						//16-4
-	McuAdcInit						//16-5
+	Time2Count,//mcu timer2 delay                           //15
+	AdcRead,                                                //16
+	McuI2CInit,//peripheral->I2C                            //17-1
+	McuTimerInit,//peripheral->Timer2			//17-2
+	McuEusartInit,//peripheral->Eusart			//17-3
+	McuIoInit,						//17-4
+	McuAdcInit,						//17-5
+	McuPwmInit						//17-6
 };
 
 #pragma romdata

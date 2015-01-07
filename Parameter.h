@@ -139,4 +139,12 @@
 #define     MS_1       (1)
 #define     MS_3       (5)
 
+typedef enum 
+{
+	servo_90DC  = 4,//2ms   => 0.5*4
+	servo_0DC   = 3,//1.5ms => 0.5*3
+	servo_n90DC = 2,//1ms   => 0.5*2
+	servo_NoDC  = 100//50ms   => 0.5*100
+}ServoDC;
+
 #endif

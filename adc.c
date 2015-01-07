@@ -8,7 +8,7 @@
 //none
 #endif
 
-extern void Time2Count( INT16U num);
+extern void Time0Count( INT16U num);
 
 int AdcRead(void)
 {
@@ -32,8 +32,7 @@ static void Initialize_Adc(void)
 	OpenADC(  ADC_FOSC_32 & ADC_RIGHT_JUST & ADC_20_TAD,
 			ADC_CH11 & ADC_INT_OFF & ADC_REF_VDD_VSS,
 			0x0);
-
-	Time2Count(2);
+	Time0Count(2);
 	ConvertADC();
 }
 //====================================================================

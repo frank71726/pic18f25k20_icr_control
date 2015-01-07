@@ -58,6 +58,8 @@ static void Initialize_Io(void)
 	TRISBbits.TRISB4 = INPUT;       //ir_led receive, ad an11
 	ANSELHbits.ANS11 = _ON; 
 	
+	TRISCbits.TRISC1 = OUTPUT;	//test pwm
+        LATCbits.LATC1 = _ON;    
 }
 
 //====================================================================

@@ -240,8 +240,6 @@ void StartIcrTest(AutoMachine *am)
 		}
 	}
 }
-
-#include    "timers.h"
 //==========================================================================
 void main(void)
 {
@@ -252,12 +250,12 @@ void main(void)
 	am.class = &__automachineclass; 
 	am.class->Cpu_Init(&am);
 
+	am.class->Mcu_ServoDC(servo_90DC);
 	am.class->Cpu_UartWr(MSG_Start);
 	am.class->Ir_Emit(_ON);
 
 	while(wait_start(&am));
 	am.class->Cpu_UartWr(MSG_init);
-
 	while(1)
 	{
 		switch(GetR232Value(&am))
@@ -265,30 +263,42 @@ void main(void)
 			case 0://start
 				am.class->Cpu_UartWr(MSG_AllTest);
 				//rotate 0 degree
+				am.class->Mcu_ServoDC(servo_90DC);
+				am.class->Mcu_Dly(1000);
 				am.class->Cpu_UartWr(MSG_0_degree);
 				StartIcrTest(&am);
 				//rotate 90 degree
+				am.class->Mcu_ServoDC(servo_0DC);
+				am.class->Mcu_Dly(1000);
 				am.class->Cpu_UartWr(MSG_90_degree);
 				StartIcrTest(&am);
 				//rotate 180 degree
+				am.class->Mcu_ServoDC(servo_n90DC);
+				am.class->Mcu_Dly(1000);
 				am.class->Cpu_UartWr(MSG_180_degree);
 				StartIcrTest(&am);
 				am.class->Cpu_UartWr(MSG_Finish);
 				break;
 			case 1://moving 0 degree
 				//rotate 0 degree
+				am.class->Mcu_ServoDC(servo_90DC);
+				am.class->Mcu_Dly(1000);
 				am.class->Cpu_UartWr(MSG_0_degree);
 				StartIcrTest(&am);
 				am.class->Cpu_UartWr(MSG_Finish);
 				break;
 			case 2://moving 90 degree
 				//rotate 90 degree
+				am.class->Mcu_ServoDC(servo_0DC);
+				am.class->Mcu_Dly(1000);
 				am.class->Cpu_UartWr(MSG_90_degree);
 				StartIcrTest(&am);
 				am.class->Cpu_UartWr(MSG_Finish);
 				break;
 			case 3://moving 180 degree
 				//rotate 180 degree
+				am.class->Mcu_ServoDC(servo_n90DC);
+				am.class->Mcu_Dly(1000);
 				am.class->Cpu_UartWr(MSG_180_degree);
 				StartIcrTest(&am);
 				am.class->Cpu_UartWr(MSG_Finish);
