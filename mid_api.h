@@ -21,19 +21,19 @@
 
 //===================================================================================
 //mcu object
-#define McuPeripheralNum		6//peripheral(depend on project),timer2,i2c,eusart,io(rb1),adc,pwm
-#define McuClassMember_Init(OBJ)	void (*Cpu_Init)(struct OBJ* ) 
-#define McuClassMember_GetUartFifoFalg	volatile INT8U (*Cpu_GetUartFifoFlag)(void)  
-#define McuClassMember_GetUartFifoData	INT8U (*Cpu_GetUartFifoData)(void)  
-#define McuClassMember_Ir_EmCtrl(OBJ)	void (*Ir_Emit)(OBJ) 
-#define McuClassMember_LedRedCtrl(OBJ)	void (*Led_Red)(OBJ) 
-#define McuClassMember_LedBlueCtrl(OBJ)	void (*Led_Blue)(OBJ) 
-#define McuClassMember_IcrCtrl(OBJ)	void (*Icr_Ctrl)(OBJ) 
-#define McuClassMember_IrReCtrl		INT8U (*Ir_Receive)(void) 
-#define McuClassMember_Delay(OBJ)	void (*Mcu_Dly)(OBJ) 
-#define McuClassMember_ServoDC(OBJ)	void (*Mcu_ServoDC)(OBJ) 
-#define McuClassMember_AdcRead		int (*Icr_Read)(void) 
-#define McuClassMember_Peripheral	void (*Cpu_PeriInit[McuPeripheralNum])(void) 
+#define McuPeripheralNum			6//peripheral(depend on project),timer2,i2c,eusart,io(rb1),adc,pwm
+#define McuClassMember_Init(OBJ)		void (*Cpu_Init)(struct OBJ* ) 
+#define McuClassMember_GetUartFifoFalg		volatile INT8U (*Cpu_GetUartFifoFlag)(void)  
+#define McuClassMember_GetUartFifoData		INT8U (*Cpu_GetUartFifoData)(void)  
+#define McuClassMember_Ir_EmCtrl(OBJ)		void (*Ir_Emit)(OBJ) 
+#define McuClassMember_LedRedCtrl(OBJ)		void (*Led_Red)(OBJ) 
+#define McuClassMember_IcrCtrl(OBJ, OBJ1)	void (*Icr_Ctrl)(OBJ, OBJ1) 
+#define McuClassMember_IcrCh(OBJ)		void (*Icr_Ch)(OBJ) 
+#define McuClassMember_IrReCtrl			INT8U (*Ir_Receive)(void) 
+#define McuClassMember_Delay(OBJ)		void (*Mcu_Dly)(OBJ) 
+#define McuClassMember_ServoDC(OBJ)		void (*Mcu_ServoDC)(OBJ) 
+#define McuClassMember_AdcRead			int (*Icr_Read)(void) 
+#define McuClassMember_Peripheral		void (*Cpu_PeriInit[McuPeripheralNum])(void) 
 
 #if _HI_TECH
 #define McuClassMember_UartWr		void (*Cpu_UartWr)( INT8S const * )  
@@ -59,8 +59,8 @@ typedef struct	_AutoMachineClass
 	McuClassMember_GetUartFifoData;		//8
 	McuClassMember_Ir_EmCtrl(INT16U );	//9
 	McuClassMember_LedRedCtrl(INT16U ); 	//10
-	McuClassMember_LedBlueCtrl(INT16U );	//11
-	McuClassMember_IcrCtrl(INT16U );	//12
+	McuClassMember_IcrCh(IcrItem );		//11
+	McuClassMember_IcrCtrl(INT16U, IcrItem );//12
 	McuClassMember_IrReCtrl;		//13
 	McuClassMember_Delay(INT16U);		//14
 	McuClassMember_ServoDC(ServoDC);	//15
@@ -116,12 +116,12 @@ void Time2Count( ServoDC item);
 void McuIoInit(void);
 void McuIrEmitCtrl(INT16U val );
 void McuLedRedCtrl(INT16U val );
-void McuLedBlueCtrl(INT16U val );
-void McuIcrCtrl(INT16U val );
+void McuIcrCtrl(INT16U val, IcrItem item );
 INT8U McuLedReceiveCtrl(void);
 void McuAdcInit(void);
 int AdcRead(void);
 void McuPwmInit(void);
+void AdcIcrCh( IcrItem item );
 
 #pragma romdata
 rom AutoMachineClass __automachineclass = 
@@ -136,7 +136,7 @@ rom AutoMachineClass __automachineclass =
 	McuGetUartFifoData,//peripheral->get uard fifo data     //8 
 	McuIrEmitCtrl,//ir led emit control                     //9 
 	McuLedRedCtrl,                                          //10
-	McuLedBlueCtrl,                                         //11
+	AdcIcrCh,						//11
 	McuIcrCtrl,                                             //12
 	McuLedReceiveCtrl,                                      //13
 	Time0Count,//mcu timer2 delay                           //14

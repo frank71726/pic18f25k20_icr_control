@@ -48,7 +48,7 @@ static void Timer2Init(void)
 			& T2_PS_1_4
 			& T2_POST_1_10);
 
-	PR2 = 49;//0.5ms by cyh
+	PR2 = 9;//0.5ms by cyh
 
 	T2CONbits.TMR2ON = _ON; // Turn on Timer2
 //	T2CONbits.TMR2ON = _OFF; // Turn on Timer2

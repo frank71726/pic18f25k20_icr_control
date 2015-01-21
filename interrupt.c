@@ -116,7 +116,6 @@ isr(void)			// Here be interrupt function - the name is unimportant.
 
 #elif	_PIC_C18
 #include <usart.h>
-//void Time2Count(unsigned int num);
 volatile static INT8U gTimeFalg = _OFF;
 volatile static INT16U gTimerCount = 0;
 ServoDC gDutyCycle;

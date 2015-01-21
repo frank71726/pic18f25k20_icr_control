@@ -656,6 +656,8 @@ AUSART_V2	__pconfig.h	1626;"	d
 AUSART_V2	__pconfig.h	1692;"	d
 AckI2C	i2c.c	/^void AckI2C( void )$/;"	f	signature:( void )
 AckI2C	i2c.h	/^void AckI2C( void );$/;"	p	signature:( void )
+AdcIcrCh	adc.c	/^void AdcIcrCh( IcrItem item )$/;"	f	signature:( IcrItem item )
+AdcIcrCh	mid_api.h	/^void AdcIcrCh( IcrItem item );$/;"	p	signature:( IcrItem item )
 AdcRead	adc.c	/^int AdcRead(void)$/;"	f	signature:(void)
 AdcRead	mid_api.h	/^int AdcRead(void);$/;"	p	signature:(void)
 AutoMachine	mid_api.h	/^}AutoMachine;$/;"	t	typeref:struct:_AutoMachine
@@ -2507,6 +2509,11 @@ I2C_V6_1	__pconfig.h	18726;"	d
 I2C_V6_1	__pconfig.h	18792;"	d
 I2C_V6_1	__pconfig.h	18858;"	d
 I2C_V6_1	__pconfig.h	18924;"	d
+ICR_1	Parameter.h	/^	ICR_1	= 1,$/;"	e	enum:__anon175
+ICR_2	Parameter.h	/^	ICR_2	= 2,$/;"	e	enum:__anon175
+ICR_3	Parameter.h	/^	ICR_3	= 3,$/;"	e	enum:__anon175
+ICR_4	Parameter.h	/^	ICR_4	= 4,$/;"	e	enum:__anon175
+ICR_5	Parameter.h	/^	ICR_5	= 5$/;"	e	enum:__anon175
 IDLEN	__p18f25k20.h	/^    unsigned IDLEN:1;$/;"	m	struct:__anon154::__anon155	access:public
 INPUT	Parameter.h	58;"	d
 INT0	__p18f25k20.h	/^    unsigned INT0:1;$/;"	m	struct:__anon22::__anon24	access:public
@@ -2566,6 +2573,7 @@ IRVST	__p18f25k20.h	/^    unsigned IRVST:1;$/;"	m	struct:__anon144::__anon145	ac
 IRVST	__p18f25k20.h	/^    unsigned IRVST:1;$/;"	m	struct:__anon149::__anon150	access:public
 IVRST	__p18f25k20.h	/^    unsigned IVRST:1;$/;"	m	struct:__anon144::__anon147	access:public
 IVRST	__p18f25k20.h	/^    unsigned IVRST:1;$/;"	m	struct:__anon149::__anon152	access:public
+IcrItem	Parameter.h	/^}IcrItem;$/;"	t	typeref:enum:__anon175
 IdleI2C	i2c.c	/^void IdleI2C( void ) 				$/;"	f	signature:( void )
 IdleI2C	i2c.c	/^void IdleI2C( void )$/;"	f	signature:( void )
 IdleI2C	i2c.h	/^void IdleI2C( void ); 				$/;"	p	signature:( void )
@@ -2948,16 +2956,16 @@ McuClassMember_GetUartFifoData	mid_api.h	/^	McuClassMember_GetUartFifoData;		\/\
 McuClassMember_GetUartFifoData	mid_api.h	27;"	d
 McuClassMember_GetUartFifoFalg	mid_api.h	/^	McuClassMember_GetUartFifoFalg;		\/\/7$/;"	m	struct:_AutoMachineClass	access:public
 McuClassMember_GetUartFifoFalg	mid_api.h	26;"	d
-McuClassMember_IcrCtrl	mid_api.h	/^	McuClassMember_IcrCtrl(INT16U );	\/\/12$/;"	p	struct:_AutoMachineClass	access:public
-McuClassMember_IcrCtrl	mid_api.h	31;"	d
+McuClassMember_IcrCh	mid_api.h	/^	McuClassMember_IcrCh(IcrItem );		\/\/11$/;"	p	struct:_AutoMachineClass	access:public
+McuClassMember_IcrCh	mid_api.h	31;"	d
+McuClassMember_IcrCtrl	mid_api.h	/^	McuClassMember_IcrCtrl(INT16U, IcrItem );\/\/12$/;"	p	struct:_AutoMachineClass	access:public
+McuClassMember_IcrCtrl	mid_api.h	30;"	d
 McuClassMember_Init	mid_api.h	/^	McuClassMember_Init( _AutoMachine );	\/\/5$/;"	p	struct:_AutoMachineClass	access:public
 McuClassMember_Init	mid_api.h	25;"	d
 McuClassMember_IrReCtrl	mid_api.h	/^	McuClassMember_IrReCtrl;		\/\/13$/;"	m	struct:_AutoMachineClass	access:public
 McuClassMember_IrReCtrl	mid_api.h	32;"	d
 McuClassMember_Ir_EmCtrl	mid_api.h	/^	McuClassMember_Ir_EmCtrl(INT16U );	\/\/9$/;"	p	struct:_AutoMachineClass	access:public
 McuClassMember_Ir_EmCtrl	mid_api.h	28;"	d
-McuClassMember_LedBlueCtrl	mid_api.h	/^	McuClassMember_LedBlueCtrl(INT16U );	\/\/11$/;"	p	struct:_AutoMachineClass	access:public
-McuClassMember_LedBlueCtrl	mid_api.h	30;"	d
 McuClassMember_LedRedCtrl	mid_api.h	/^	McuClassMember_LedRedCtrl(INT16U ); 	\/\/10$/;"	p	struct:_AutoMachineClass	access:public
 McuClassMember_LedRedCtrl	mid_api.h	29;"	d
 McuClassMember_Peripheral	mid_api.h	/^	McuClassMember_Peripheral;		\/\/17$/;"	m	struct:_AutoMachineClass	access:public
@@ -2979,8 +2987,8 @@ McuGetUartFifoFlag	mid_api.h	/^volatile INT8U McuGetUartFifoFlag(void);$/;"	p	si
 McuHeaterCtr	mid_mcu.h	/^void McuHeaterCtr(INT8U value);$/;"	p	signature:(INT8U value)
 McuI2CInit	i2c.c	/^void McuI2CInit(void)$/;"	f	signature:(void)
 McuI2CInit	mid_api.h	/^void McuI2CInit(void);$/;"	p	signature:(void)
-McuIcrCtrl	io.c	/^void McuIcrCtrl(INT16U val )$/;"	f	signature:(INT16U val )
-McuIcrCtrl	mid_api.h	/^void McuIcrCtrl(INT16U val );$/;"	p	signature:(INT16U val )
+McuIcrCtrl	io.c	/^void McuIcrCtrl(INT16U val, IcrItem item )$/;"	f	signature:(INT16U val, IcrItem item )
+McuIcrCtrl	mid_api.h	/^void McuIcrCtrl(INT16U val, IcrItem item );$/;"	p	signature:(INT16U val, IcrItem item )
 McuInit	main.c	/^static void McuInit( AutoMachine *am_val)$/;"	f	file:	signature:( AutoMachine *am_val)
 McuInit	mid_api.h	/^static void McuInit( AutoMachine *am_val);$/;"	p	signature:( AutoMachine *am_val)
 McuInit	mid_api.h	/^void McuInit( AutoMachine *am_val);$/;"	p	signature:( AutoMachine *am_val)
@@ -2989,8 +2997,6 @@ McuIoInit	io.c	/^void McuIoInit(void)$/;"	f	signature:(void)
 McuIoInit	mid_api.h	/^void McuIoInit(void);$/;"	p	signature:(void)
 McuIrEmitCtrl	io.c	/^void McuIrEmitCtrl(INT16U val )$/;"	f	signature:(INT16U val )
 McuIrEmitCtrl	mid_api.h	/^void McuIrEmitCtrl(INT16U val );$/;"	p	signature:(INT16U val )
-McuLedBlueCtrl	io.c	/^void McuLedBlueCtrl(INT16U val )$/;"	f	signature:(INT16U val )
-McuLedBlueCtrl	mid_api.h	/^void McuLedBlueCtrl(INT16U val );$/;"	p	signature:(INT16U val )
 McuLedReceiveCtrl	io.c	/^INT8U McuLedReceiveCtrl(void)$/;"	f	signature:(void)
 McuLedReceiveCtrl	mid_api.h	/^INT8U McuLedReceiveCtrl(void);$/;"	p	signature:(void)
 McuLedRedCtrl	io.c	/^void McuLedRedCtrl(INT16U val )$/;"	f	signature:(INT16U val )
@@ -4837,9 +4843,9 @@ TXEN	__p18f25k20.h	/^  unsigned TXEN:1;$/;"	m	struct:__anon81	access:public
 TXIE	__p18f25k20.h	/^  unsigned TXIE:1;$/;"	m	struct:__anon64	access:public
 TXIF	__p18f25k20.h	/^  unsigned TXIF:1;$/;"	m	struct:__anon65	access:public
 TXIP	__p18f25k20.h	/^  unsigned TXIP:1;$/;"	m	struct:__anon66	access:public
+Time0Count	adc.c	/^extern void Time0Count( INT16U num);$/;"	p	file:	signature:( INT16U num)
 Time0Count	interrupt.c	/^void Time0Count( INT16U num)$/;"	f	signature:( INT16U num)
 Time0Count	mid_api.h	/^void Time0Count( INT16U num);$/;"	p	signature:( INT16U num)
-Time2Count	adc.c	/^extern void Time2Count( INT16U num);$/;"	p	file:	signature:( INT16U num)
 Time2Count	i2c.c	/^extern void Time2Count(INT16U num);$/;"	p	file:	signature:(INT16U num)
 Time2Count	i2c.c	/^extern void Time2Count(unsigned int num);$/;"	p	file:	signature:(unsigned int num)
 Time2Count	interrupt.c	/^void Time2Count( ServoDC item)$/;"	f	signature:( ServoDC item)
@@ -4919,11 +4925,11 @@ _AutoMachineClass::McuClassMember_AdcRead	mid_api.h	/^	McuClassMember_AdcRead;		
 _AutoMachineClass::McuClassMember_Delay	mid_api.h	/^	McuClassMember_Delay(INT16U);		\/\/14$/;"	p	struct:_AutoMachineClass	access:public
 _AutoMachineClass::McuClassMember_GetUartFifoData	mid_api.h	/^	McuClassMember_GetUartFifoData;		\/\/8$/;"	m	struct:_AutoMachineClass	access:public
 _AutoMachineClass::McuClassMember_GetUartFifoFalg	mid_api.h	/^	McuClassMember_GetUartFifoFalg;		\/\/7$/;"	m	struct:_AutoMachineClass	access:public
-_AutoMachineClass::McuClassMember_IcrCtrl	mid_api.h	/^	McuClassMember_IcrCtrl(INT16U );	\/\/12$/;"	p	struct:_AutoMachineClass	access:public
+_AutoMachineClass::McuClassMember_IcrCh	mid_api.h	/^	McuClassMember_IcrCh(IcrItem );		\/\/11$/;"	p	struct:_AutoMachineClass	access:public
+_AutoMachineClass::McuClassMember_IcrCtrl	mid_api.h	/^	McuClassMember_IcrCtrl(INT16U, IcrItem );\/\/12$/;"	p	struct:_AutoMachineClass	access:public
 _AutoMachineClass::McuClassMember_Init	mid_api.h	/^	McuClassMember_Init( _AutoMachine );	\/\/5$/;"	p	struct:_AutoMachineClass	access:public
 _AutoMachineClass::McuClassMember_IrReCtrl	mid_api.h	/^	McuClassMember_IrReCtrl;		\/\/13$/;"	m	struct:_AutoMachineClass	access:public
 _AutoMachineClass::McuClassMember_Ir_EmCtrl	mid_api.h	/^	McuClassMember_Ir_EmCtrl(INT16U );	\/\/9$/;"	p	struct:_AutoMachineClass	access:public
-_AutoMachineClass::McuClassMember_LedBlueCtrl	mid_api.h	/^	McuClassMember_LedBlueCtrl(INT16U );	\/\/11$/;"	p	struct:_AutoMachineClass	access:public
 _AutoMachineClass::McuClassMember_LedRedCtrl	mid_api.h	/^	McuClassMember_LedRedCtrl(INT16U ); 	\/\/10$/;"	p	struct:_AutoMachineClass	access:public
 _AutoMachineClass::McuClassMember_Peripheral	mid_api.h	/^	McuClassMember_Peripheral;		\/\/17$/;"	m	struct:_AutoMachineClass	access:public
 _AutoMachineClass::McuClassMember_ServoDC	mid_api.h	/^	McuClassMember_ServoDC(ServoDC);	\/\/15$/;"	p	struct:_AutoMachineClass	access:public
@@ -5606,7 +5612,7 @@ expoval	mid_api.h	/^	INT8U	expoval[2];$/;"	m	struct:_AutoMachine	access:public
 flag	interrupt.c	/^	}flag;$/;"	m	struct:_sw_fifo_typedef	typeref:struct:_sw_fifo_typedef::_falg	file:	access:public
 flag	mid_api.h	/^	}flag;$/;"	m	struct:_AutoMachine	typeref:struct:_AutoMachine::_flag	access:public
 gDutyCycle	interrupt.c	/^ServoDC gDutyCycle;$/;"	v
-gIcrDlyTime	main.c	/^INT16U gIcrDlyTime=0;$/;"	v
+gIcrDlyTime	main.c	/^INT16U gIcrDlyTime=500;$/;"	v
 gStart	main.c	/^INT8U gStart=0;$/;"	v
 gTimeFalg	interrupt.c	/^volatile static INT8U gTimeFalg = _OFF;$/;"	v	file:
 gTimeFalg	interrupt.c	/^volatile static unsigned char gTimeFalg = _OFF;$/;"	v	file:
@@ -5654,10 +5660,10 @@ pmp_v1_3	__pconfig.h	16248;"	d
 pmp_v1_3	__pconfig.h	16314;"	d
 ram_write_cmos_value	mid_aptina.c	/^static void ram_write_cmos_value( INT8U *hiaddr, INT8U *loaddr, INT8U *data, INT8U *dnum, INT16U item_num)$/;"	f	file:	signature:( INT8U *hiaddr, INT8U *loaddr, INT8U *data, INT8U *dnum, INT16U item_num)
 rx_fifo	interrupt.c	/^sw_fifo_typedef rx_fifo = { {0}, 0, 0, 0 }; \/\/ declare a receive software buffer$/;"	v
-servo_0DC	Parameter.h	/^	servo_0DC   = 3,\/\/1.5ms => 0.5*3$/;"	e	enum:__anon174
-servo_90DC	Parameter.h	/^	servo_90DC  = 4,\/\/2ms   => 0.5*4$/;"	e	enum:__anon174
-servo_NoDC	Parameter.h	/^	servo_NoDC  = 100\/\/50ms   => 0.5*100$/;"	e	enum:__anon174
-servo_n90DC	Parameter.h	/^	servo_n90DC = 2,\/\/1ms   => 0.5*2$/;"	e	enum:__anon174
+servo_0DC	Parameter.h	/^	servo_0DC   = 14,\/\/1.5ms => 0.1*15$/;"	e	enum:__anon174
+servo_90DC	Parameter.h	/^	servo_90DC  = 21,\/\/2ms   => 0.1*20$/;"	e	enum:__anon174
+servo_NoDC	Parameter.h	/^	servo_NoDC  = 500\/\/50ms   => 0.1*500$/;"	e	enum:__anon174
+servo_n90DC	Parameter.h	/^	servo_n90DC = 6,\/\/1ms   => 0.1*10$/;"	e	enum:__anon174
 sw_fifo_typedef	interrupt.c	/^}sw_fifo_typedef;$/;"	t	typeref:struct:_sw_fifo_typedef	file:
 temp_30	Parameter.h	/^	    temp_30 = 292,\/\/30$/;"	e	enum:temp_mode
 temp_35	Parameter.h	/^	    temp_35 = 311,\/\/35$/;"	e	enum:temp_mode

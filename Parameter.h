@@ -141,10 +141,18 @@
 
 typedef enum 
 {
-	servo_90DC  = 4,//2ms   => 0.5*4
-	servo_0DC   = 3,//1.5ms => 0.5*3
-	servo_n90DC = 2,//1ms   => 0.5*2
-	servo_NoDC  = 100//50ms   => 0.5*100
+	servo_90DC  = 21,//2ms   => 0.1*20
+	servo_0DC   = 14,//1.5ms => 0.1*15
+	servo_n90DC = 6,//1ms   => 0.1*10
+	servo_NoDC  = 500//50ms   => 0.1*500
 }ServoDC;
 
+typedef enum
+{
+	ICR_1	= 1,
+	ICR_2	= 2,
+	ICR_3	= 3,
+	ICR_4	= 4,
+	ICR_5	= 5
+}IcrItem;
 #endif

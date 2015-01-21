@@ -51,8 +51,8 @@ INT8C MSG_AllTest[]="$f02";//"$Starting all test (0, 90, 180 degree)#";
 INT8C MSG_0_degree[]="$f03";//"$Starting 0 degree test#";
 INT8C MSG_90_degree[]="$f04";//"$Starting 90 degree test#";
 INT8C MSG_180_degree[]="$f05";//"$Starting 180 degree test#";
-INT8C MSG_Ok[]="$f06";//"$test OK#";
-INT8C MSG_Ng[]="$f07";//"$test NG#";
+INT8C MSG_Ok[6][5]={"$f06", "$f16", "$f26", "$f36", "$f46", "$f56"};//"$test OK#";
+INT8C MSG_Ng[6][5]={"$f07", "$f17", "$f27", "$f37", "$f47", "$f57"};//"$test NG#";
 INT8C MSG_Finish[]="$f08";
 
 //==========================================================================
@@ -195,10 +195,12 @@ void StartIcrTest(AutoMachine *am)
 {
 	INT8U   ir_count=0;
 	INT16S  icr_value=0;
-
+	IcrItem icr_num= ICR_1;
+	
 	while(1)
 	{
-		am->class->Icr_Ctrl(_ON);
+		am->class->Icr_Ch(icr_num);
+		am->class->Icr_Ctrl(_ON, icr_num);
 		am->class->Mcu_Dly(gIcrDlyTime);
 		icr_value = am->class->Icr_Read();
 		if(icr_value > icr_on_threshold)
@@ -206,14 +208,14 @@ void StartIcrTest(AutoMachine *am)
 		else
 		{
 			am->class->Led_Red(_OFF);//turn on red led => fail
-			am->class->Cpu_UartWr(MSG_Ng);//"$ng"
+			am->class->Cpu_UartWr(MSG_Ng[icr_num]);//"$ng"
 			while(wait_start(am));
 			ir_count = 0;
-			am->class->Led_Blue(_ON);//turn on blue led => success
+			icr_num= ICR_1;
 			am->class->Led_Red(_ON);//turn on red led => fail
 		}
 		
-		am->class->Icr_Ctrl(_OFF);
+		am->class->Icr_Ctrl(_OFF, icr_num);
 		am->class->Mcu_Dly(gIcrDlyTime);
 		icr_value = am->class->Icr_Read();
 		if(icr_value < icr_off_threshold )
@@ -221,22 +223,23 @@ void StartIcrTest(AutoMachine *am)
 		else
 		{
 			am->class->Led_Red(_OFF);//turn on red led => fail
-			am->class->Cpu_UartWr(MSG_Ng);//"$ng"
+			am->class->Cpu_UartWr(MSG_Ng[icr_num]);//"$ng"
 			while(wait_start(am));
 			ir_count = 0;
-			am->class->Led_Blue(_ON);//turn on blue led => success
+			icr_num= ICR_1;
 			am->class->Led_Red(_ON);//turn on red led => fail
 		}
 
 		if(ir_count >= 6)
 		{
-			am->class->Led_Blue(_OFF);//turn on blue led => success
-			am->class->Cpu_UartWr(MSG_Ok);
+			am->class->Cpu_UartWr(MSG_Ok[icr_num]);
 			am->class->Mcu_Dly(1000);
 			ir_count = 0;
-			am->class->Led_Blue(_ON);//turn on blue led => success
 			am->class->Led_Red(_ON);//turn on red led => fail
-			break;
+
+			icr_num += 1;
+			if(icr_num > ICR_5)
+				break;
 		}
 	}
 }
@@ -307,7 +310,6 @@ void main(void)
 				Reset();
 				break;
 			default:
-				//am.class->Cpu_UartWr(MSG_Ng);//"$ng"
 				break;
 		}
 		am.class->Cpu_UartWr(MSG_init);
