@@ -25,6 +25,7 @@
 #include "mid_api.h"
 #include "mid_aptina.h"
 #include "automachine_asx340_para.h"
+#include "ldo.h"
 
 #if _HI_TECH
 #elif	_PIC_C18
@@ -44,16 +45,17 @@
 #endif
 
 INT16U gIcrDlyTime=0;
+LdoVol gAnyOutLdo=0;
 INT8U gStart=0;
-INT8C MSG_Start[]="$f00";//"$Please push start button#";
-INT8C MSG_init[]="$f01";//"$please input $00(all), $01(0 degree), $02(90 degree), $03(180 degree)#";
-INT8C MSG_AllTest[]="$f02";//"$Starting all test (0, 90, 180 degree)#";
-INT8C MSG_0_degree[]="$f03";//"$Starting 0 degree test#";
-INT8C MSG_90_degree[]="$f04";//"$Starting 90 degree test#";
-INT8C MSG_180_degree[]="$f05";//"$Starting 180 degree test#";
-INT8C MSG_Ok[6][5]={"$f06", "$f16", "$f26", "$f36", "$f46", "$f56"};//"$test OK#";
-INT8C MSG_Ng[6][5]={"$f07", "$f17", "$f27", "$f37", "$f47", "$f57"};//"$test NG#";
-INT8C MSG_Finish[]="$f08";
+INT8C MSG_Start[]="$f00@";//"$Please push start button#";
+INT8C MSG_init[]="$f01@";//"$please input $00(all), $01(0 degree), $02(90 degree), $03(180 degree)#";
+INT8C MSG_AllTest[]="$f02@";//"$Starting all test (0, 90, 180 degree)#";
+INT8C MSG_0_degree[]="$f03@";//"$Starting 0 degree test#";
+INT8C MSG_90_degree[]="$f04@";//"$Starting 90 degree test#";
+INT8C MSG_180_degree[]="$f05@";//"$Starting 180 degree test#";
+INT8C MSG_Ok[6][6]={"$f06@", "$f16@", "$f26@", "$f36@", "$f46@", "$f56@"};//"$test OK#";
+INT8C MSG_Ng[6][6]={"$f07@", "$f17@", "$f27@", "$f37@", "$f47@", "$f57@"};//"$test NG#";
+INT8C MSG_Finish[]="$f08@";
 
 //==========================================================================
 static void SensorInit( AutoMachine *am_val)
@@ -87,6 +89,14 @@ static void McuInit( AutoMachine *am_val)
 	am_val->flag.mirror = 0;//no mirror
 }
 //==========================================================================
+static void AnyOutLdoInit(AutoMachine *am_val)
+{
+	INT8U LdoAddr[1]={0x03};
+	am_val->class->Ldo_Write( Ldo_cmd, Ldo_data, sizeof(Ldo_cmd)/sizeof(Ldo_cmd[0]) );
+	am_val->class->Ldo_Write( LdoAddr, (INT8U*)&gAnyOutLdo, 1);
+}
+
+//==========================================================================
 INT8U GetR232Value(AutoMachine *am)
 {
 	INT8U rs232_vlaue[3], temp, count=0, rs232_rx_fifo_not_empty_flag=0 ; 
@@ -115,30 +125,23 @@ INT8U GetR232Value(AutoMachine *am)
 						case '0':
 							switch(rs232_vlaue[2]) {
 								case '0':
-									return_value = 0;//all test
-									break;
+									return_value = 0; break;//all test
 								case '1':
-									return_value = 1;//moving 0 degree 
-									break;
+									return_value = 1; break;//0 degree
 								case '2':
-									return_value = 2; //moving 90 degree
-									break;
+									return_value = 2; break;//90 degree 
 								case '3':
-									return_value = 3; //moving 180 degree
-									break;
+									return_value = 3; break;//180 degree 
 								default:
-									return_value = 100;//NG
-									break;
+									return_value = 100; break;//NG
 							}
 							break;
 						case '9':
 							switch(rs232_vlaue[2]) {
 								case '0':
-									return_value = 200;//button start
-									break;
+									return_value = 200; break;//button start
 								case '1':
-									return_value = 201;//button reset 
-									break;
+									return_value = 201; break;//button reset
 								default:
 									break;
 							}
@@ -155,17 +158,109 @@ INT8U GetR232Value(AutoMachine *am)
 								case '7': gIcrDlyTime = 800; break;
 								case '8': gIcrDlyTime = 900; break;
 								case '9': gIcrDlyTime = 1000; break;
-								default:			      break;
+								default:		      break;
 							}
 							break;
-						default:
-							return_value = 100;//NG 
+						
+						case 'B':
+							switch(rs232_vlaue[2]) {
+								case '0': gAnyOutLdo = V365; break;
+								case '1': gAnyOutLdo = V360; break;
+								case '2': gAnyOutLdo = V355; break;
+								case '3': gAnyOutLdo = V350; break;
+								case '4': gAnyOutLdo = V345; break;
+								case '5': gAnyOutLdo = V340; break;
+								case '6': gAnyOutLdo = V335; break;
+								case '7': gAnyOutLdo = V330; break;
+								case '8': gAnyOutLdo = V325; break;
+								case '9': gAnyOutLdo = V320; break;
+								case 'A': gAnyOutLdo = V315; break;
+								case 'B': gAnyOutLdo = V310; break;
+								case 'C': gAnyOutLdo = V305; break;
+								case 'D': gAnyOutLdo = V300; break;
+								case 'E': gAnyOutLdo = V295; break;
+								case 'F': gAnyOutLdo = V290; break;
+								default:		     break;
+							}
+							AnyOutLdoInit(am);
+							am->class->Mcu_Dly(500);
 							break;
+						case 'C':
+							switch(rs232_vlaue[2]) {
+								case '0': gAnyOutLdo = V285; break;
+								case '1': gAnyOutLdo = V280; break;
+								case '2': gAnyOutLdo = V275; break;
+								case '3': gAnyOutLdo = V270; break;
+								case '4': gAnyOutLdo = V265; break;
+								case '5': gAnyOutLdo = V260; break;
+								case '6': gAnyOutLdo = V255; break;
+								case '7': gAnyOutLdo = V250; break;
+								case '8': gAnyOutLdo = V245; break;
+								case '9': gAnyOutLdo = V240; break;
+								case 'A': gAnyOutLdo = V235; break;
+								case 'B': gAnyOutLdo = V230; break;
+								case 'C': gAnyOutLdo = V225; break;
+								case 'D': gAnyOutLdo = V220; break;
+								case 'E': gAnyOutLdo = V215; break;
+								case 'F': gAnyOutLdo = V210; break;
+								default:		     break;
+							}
+							AnyOutLdoInit(am);
+							am->class->Mcu_Dly(500);
+							break;
+						case 'D':
+							switch(rs232_vlaue[2]) {
+								case '0': gAnyOutLdo = V205; break;
+								case '1': gAnyOutLdo = V200; break;
+								case '2': gAnyOutLdo = V195; break;
+								case '3': gAnyOutLdo = V190; break;
+								case '4': gAnyOutLdo = V185; break;
+								case '5': gAnyOutLdo = V180; break;
+								case '6': gAnyOutLdo = V175; break;
+								case '7': gAnyOutLdo = V170; break;
+								case '8': gAnyOutLdo = V165; break;
+								case '9': gAnyOutLdo = V160; break;
+								case 'A': gAnyOutLdo = V155; break;
+								case 'B': gAnyOutLdo = V150; break;
+								case 'C': gAnyOutLdo = V145; break;
+								case 'D': gAnyOutLdo = V140; break;
+								case 'E': gAnyOutLdo = V135; break;
+								case 'F': gAnyOutLdo = V130; break;
+								default:		     break;
+							}
+							AnyOutLdoInit(am);
+							am->class->Mcu_Dly(500);
+							break;
+						case 'E':
+							switch(rs232_vlaue[2]) {
+								case '0': gAnyOutLdo = V125; break;
+								case '1': gAnyOutLdo = V120; break;
+								case '2': gAnyOutLdo = V115; break;
+								case '3': gAnyOutLdo = V110; break;
+								case '4': gAnyOutLdo = V105; break;
+								case '5': gAnyOutLdo = V100; break;
+								case '6': gAnyOutLdo = V095; break;
+								case '7': gAnyOutLdo = V090; break;
+								case '8': gAnyOutLdo = V085; break;
+								case '9': gAnyOutLdo = V080; break;
+								case 'A': gAnyOutLdo = V075; break;
+								case 'B': gAnyOutLdo = V070; break;
+								case 'C': gAnyOutLdo = V065; break;
+								case 'D': gAnyOutLdo = V060; break;
+								case 'E': gAnyOutLdo = V055; break;
+								case 'F': gAnyOutLdo = V050; break;
+								default:		     break;
+							}
+							AnyOutLdoInit(am);
+							am->class->Mcu_Dly(500);
+							break;
+						default:
+							return_value = 100; break;
 					}
 					return return_value;
 					break;
 				default:
-					return_value = 100;//NG 
+					return_value = 100; 
 					return return_value;
 					break;
 			}
@@ -209,10 +304,21 @@ void StartIcrTest(AutoMachine *am)
 		{
 			am->class->Led_Red(_OFF);//turn on red led => fail
 			am->class->Cpu_UartWr(MSG_Ng[icr_num]);//"$ng"
-			while(wait_start(am));
+			am->class->Icr_Ctrl(_OFF, icr_num);
+			//while(wait_start(am));
+			//ir_count = 0;
+			//icr_num= ICR_1;
+			//am->class->Led_Red(_ON);//turn on red led => fail
 			ir_count = 0;
-			icr_num= ICR_1;
-			am->class->Led_Red(_ON);//turn on red led => fail
+			icr_num += 1;
+			if(icr_num > ICR_5)
+			{
+				am->class->Mcu_Dly(500);
+				am->class->Led_Red(_ON);
+				break;
+			}
+			else
+				continue;
 		}
 		
 		am->class->Icr_Ctrl(_OFF, icr_num);
@@ -224,22 +330,36 @@ void StartIcrTest(AutoMachine *am)
 		{
 			am->class->Led_Red(_OFF);//turn on red led => fail
 			am->class->Cpu_UartWr(MSG_Ng[icr_num]);//"$ng"
-			while(wait_start(am));
+			am->class->Icr_Ctrl(_OFF, icr_num);
+			//while(wait_start(am));
+			//ir_count = 0;
+			//icr_num= ICR_1;
+			//am->class->Led_Red(_ON);//turn on red led => fail
 			ir_count = 0;
-			icr_num= ICR_1;
-			am->class->Led_Red(_ON);//turn on red led => fail
+			icr_num += 1;
+			if(icr_num > ICR_5)
+			{
+				am->class->Mcu_Dly(500);
+				am->class->Led_Red(_ON);
+				break;
+			}
+			else
+				continue;
 		}
 
 		if(ir_count >= 6)
 		{
 			am->class->Cpu_UartWr(MSG_Ok[icr_num]);
-			am->class->Mcu_Dly(1000);
 			ir_count = 0;
-			am->class->Led_Red(_ON);//turn on red led => fail
+			am->class->Mcu_Dly(500);
+		//	am->class->Led_Red(_ON);
 
 			icr_num += 1;
 			if(icr_num > ICR_5)
+			{
+				am->class->Led_Red(_ON);
 				break;
+			}
 		}
 	}
 }
@@ -276,10 +396,12 @@ void main(void)
 				am.class->Cpu_UartWr(MSG_90_degree);
 				StartIcrTest(&am);
 				//rotate 180 degree
+				/*
 				am.class->Mcu_ServoDC(servo_n90DC);
 				am.class->Mcu_Dly(1000);
 				am.class->Cpu_UartWr(MSG_180_degree);
 				StartIcrTest(&am);
+				*/
 				am.class->Cpu_UartWr(MSG_Finish);
 				break;
 			case 1://moving 0 degree
@@ -312,7 +434,7 @@ void main(void)
 			default:
 				break;
 		}
-		am.class->Cpu_UartWr(MSG_init);
+		//am.class->Cpu_UartWr(MSG_init);
 	}
 }
 /* 

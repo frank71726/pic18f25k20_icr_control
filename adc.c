@@ -44,7 +44,7 @@ void AdcIcrCh( IcrItem item )
 		default:
 			break;
 	}
-	Time0Count(2);
+	Time0Count(10);
 	ConvertADC();
 }
 //************************************************

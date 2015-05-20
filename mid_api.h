@@ -33,6 +33,7 @@
 #define McuClassMember_Delay(OBJ)		void (*Mcu_Dly)(OBJ) 
 #define McuClassMember_ServoDC(OBJ)		void (*Mcu_ServoDC)(OBJ) 
 #define McuClassMember_AdcRead			int (*Icr_Read)(void) 
+#define McuClassMember_LdoWrite			void (*Ldo_Write)(INT8U *,INT8U *,INT16U )
 #define McuClassMember_Peripheral		void (*Cpu_PeriInit[McuPeripheralNum])(void) 
 
 #if _HI_TECH
@@ -65,6 +66,7 @@ typedef struct	_AutoMachineClass
 	McuClassMember_Delay(INT16U);		//14
 	McuClassMember_ServoDC(ServoDC);	//15
 	McuClassMember_AdcRead;			//16
+	McuClassMember_LdoWrite;			
 	McuClassMember_Peripheral;		//17
 }AutoMachineClass;
 
@@ -122,6 +124,7 @@ void McuAdcInit(void);
 int AdcRead(void);
 void McuPwmInit(void);
 void AdcIcrCh( IcrItem item );
+void WriteLdoConfig( INT8U *cmd, INT8U *data, INT16U item_num);
 
 #pragma romdata
 rom AutoMachineClass __automachineclass = 
@@ -142,6 +145,7 @@ rom AutoMachineClass __automachineclass =
 	Time0Count,//mcu timer2 delay                           //14
 	Time2Count,//mcu timer2 delay                           //15
 	AdcRead,                                                //16
+	WriteLdoConfig,
 	McuI2CInit,//peripheral->I2C                            //17-1
 	McuTimerInit,//peripheral->Timer2			//17-2
 	McuEusartInit,//peripheral->Eusart			//17-3
