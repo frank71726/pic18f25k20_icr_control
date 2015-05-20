@@ -151,6 +151,48 @@ static void ram_write_cmos_value( INT8U *hiaddr, INT8U *loaddr, INT8U *data, INT
 	}
 }
 //////////////////////////////////////////////////////////////
+void write_ldo_config( INT8U *cmd, INT8U *data, INT16U item_num)
+{
+	INT8S Runt,a,b;
+	INT16U index;
+
+	for(index=0 ; index < item_num ; index++)
+	{
+		a = cmd[index];
+		b = data[index];
+		Nop();
+		Nop();
+		Nop();
+		IdleI2C();
+		StartI2C();
+		I2C_Done();
+		
+		Runt = WriteI2C( PCA9557ID| WrtCmd);//ID	  
+		I2C_Done();					
+
+		//Runt = WriteI2C(cmd[index]);//slave cmd
+		Runt = WriteI2C(a);//slave data
+		I2C_Done();	
+
+		//Runt = WriteI2C(cmd[index]);//slave data
+		Runt = WriteI2C(b);//slave data
+		I2C_Done();						
+
+		StopI2C();
+		I2C_Done();
+		
+		if( Runt < 0 )
+		{
+#if _HI_TECH
+			RESET();
+#elif	_PIC_C18
+			Reset();
+#else
+#endif
+		}
+	}
+}
+//////////////////////////////////////////////////////////////
 //extern function
 #if _HI_TECH
 void WriteCmosConfig( INT8U const *hiaddr, INT8U const *loaddr, INT8U const *data,  INT8U const *dnum, INT16U item_num)
@@ -166,6 +208,12 @@ void RamWriteCmosConfig( INT8U *hiaddr, INT8U *loaddr, INT8U *data, INT8U *dnum,
 {
 	ram_write_cmos_value( hiaddr, loaddr, data, dnum, item_num);
 }
+
+void WriteLdoConfig( INT8U *cmd, INT8U *data, INT16U item_num)
+{
+	write_ldo_config(cmd, data, item_num );
+}
+
 #elif  _OV
 	// waiting for me porting	
 #endif

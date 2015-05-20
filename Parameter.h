@@ -96,6 +96,9 @@
 #endif
 
 //===============================================================
+//any ldo module i2c id
+#define PCA9557ID	0x30
+//===============================================================
 #if _AD28V_10BIT    
 	/*--------------
 	1. pic16f1824: ADC 10bit, 2.8v/1024 = 2.734375mV
@@ -139,4 +142,20 @@
 #define     MS_1       (1)
 #define     MS_3       (5)
 
+typedef enum 
+{
+	servo_90DC  = 21,//2ms   => 0.1*20
+	servo_0DC   = 14,//1.5ms => 0.1*15
+	servo_n90DC = 6,//1ms   => 0.1*10
+	servo_NoDC  = 500//50ms   => 0.1*500
+}ServoDC;
+
+typedef enum
+{
+	ICR_1	= 1,
+	ICR_2	= 2,
+	ICR_3	= 3,
+	ICR_4	= 4,
+	ICR_5	= 5
+}IcrItem;
 #endif

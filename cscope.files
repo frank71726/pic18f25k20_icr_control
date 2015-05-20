@@ -3,6 +3,7 @@
 ./interrupt.c
 ./__p18f25k20.h
 ./i2c.h
+./pwm.c
 ./eusart.h
 ./mid_aptina.h
 ./Parameter.h
@@ -10,6 +11,7 @@
 ./mid_aptina.c
 ./automachine_asx340_para.h
 ./timer2.h
+./ldo.h
 ./eusart.c
 ./mid_mcu.c
 ./mid_api.c
