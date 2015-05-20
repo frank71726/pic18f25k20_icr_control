@@ -178,13 +178,15 @@ void Initialize_I2C_Master(void)
 #define   SLEW_OFF  			0b10000000  	/* Slew rate disabled for 100kHz mode */
 #define   SLEW_ON   			0b00000000  	/* Slew rate enabled for 400kHz mode  */
 
-extern void Time2Count(unsigned int num);
+//extern void Time2Count(unsigned int num);
+extern void Time0Count(unsigned int num);
 static unsigned char i2c_dly_num = 0;
 static unsigned char i2c_dly_num1 = 0;
 
 static void I2CDelay(void)
 {
-	Time2Count(MS_1);
+	//Time2Count(MS_1);
+	Time0Count(MS_1);
 	i2c_dly_num++;
 	if(i2c_dly_num >= MS_3)
 	{
@@ -393,13 +395,13 @@ void OpenI2C( INT8U sync_mode, INT8U slew )
 #endif
 //************************************************
 //* Initial I2C Master Mode with 7 bits Address  *
-//* Clock Speed : 100KHz @12MHz			 *
+//* Clock Speed : 100KHz @16MHz			 *
+//* SSPADD = (F CY/F SCL ) -1
 //************************************************
 static void Initialize_I2C_Master(void)
 {
 	OpenI2C(MASTER,SLEW_OFF);
-	//	SSPADD=29;//16 MHz
-	SSPADD=39;
+	SSPADD = 0x27;//16 MHz
 }
 
 //for outside connect

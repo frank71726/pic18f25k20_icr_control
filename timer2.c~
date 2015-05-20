@@ -17,12 +17,12 @@
 
 void TimerInit(void)
 {
-	PIE1bits.TMR2IE = 1;
+	PIE1bits.TMR2IE = 1;              
 	INTCONbits.GIE = 1;
 	INTCONbits.PEIE = 1;
 
 	/***********************************/
-	/*        Interrupt Time	   */
+	/*        Interrupt Time	   */ 		
 	/*(1/(16Mhz/4)) (16*10*(24+1)) = 1mS */
 	/***********************************/
 	T2CON = (0xfb & (T2_PS_1_16 | T2_POST_1_10));  // Set all configuration values, but
@@ -41,8 +41,8 @@ static void Timer2Init(void)
 	INTCONbits.GIEH=1;			// Enable High Priority Interrupt
 
 	//==================================
-	//        Interrupt Time
-	//(1/(16Mhz/4)) (4*10*(49+1)) = 0.5mS
+	//        Interrupt Time	    		
+	//(1/(16Mhz/4)) (4*10*(49+1)) = 0.5mS 
 	//==================================
 	OpenTimer2 ( TIMER_INT_ON		// Turn On the Timer2 with Interrupt
 			& T2_PS_1_4

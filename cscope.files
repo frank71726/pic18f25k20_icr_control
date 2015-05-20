@@ -11,6 +11,7 @@
 ./mid_aptina.c
 ./automachine_asx340_para.h
 ./timer2.h
+./ldo.h
 ./eusart.c
 ./mid_mcu.c
 ./mid_api.c

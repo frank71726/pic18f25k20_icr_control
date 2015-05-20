@@ -1,4 +1,4 @@
-cscope 15 $HOME/frank-samba/frank-icr-test/frank-ICR-rs232               0000167632
+cscope 15 $HOME/frank-samba/frank-icr-test/frank-ICR-rs232               0000175586
 	@Parameter.h
 
 1 #i‚de‡
@@ -291,76 +291,106 @@ ASX340
 _OV
 
 
-99 #i‡
+100 
+	#PCA9557ID
+ 0x30
+
+	)
+
+102 #i‡
 _AD28V_10BIT
 
 
-110 
+113 
 	eãmp_mode
 
 
-112 
+115 
 	mãmp_high
  = 238,
 
-113 
+116 
 	mãmp_low
  = 220,
 
-114 
+117 
 	mãmp_30
  = 292,
 
-115 
+118 
 	mãmp_35
  = 311,
 
-117 #ñi‡
+120 #ñi‡
 _AD33V_10BIT
 
 
-127 
+130 
 	eãmp_mode
 
 
-131 
+134 
 	mi¸_⁄_thªshﬁd
  = 931,
 
-132 
+135 
 	mi¸_off_thªshﬁd
  = 590,
 
-139 
+142 
 	#MS_1
  (1)
 
 	)
 
-140 
+143 
 	#MS_3
  (5)
 
 	)
 
-144 
+147 
 	m£rvo_90DC
- = 4,
+ = 21,
 
-145 
+148 
 	m£rvo_0DC
- = 3,
+ = 14,
 
-146 
+149 
 	m£rvo_n90DC
+ = 6,
+
+150 
+	m£rvo_NoDC
+ = 500
+
+151 }
+	tSîvoDC
+;
+
+155 
+	mICR_1
+ = 1,
+
+156 
+	mICR_2
  = 2,
 
-147 
-	m£rvo_NoDC
- = 100
+157 
+	mICR_3
+ = 3,
 
-148 }
-	tSîvoDC
+158 
+	mICR_4
+ = 4,
+
+159 
+	mICR_5
+ = 5
+
+160 }
+	tI¸Iãm
 ;
 
 	@__p18f25k20.h
@@ -31630,7 +31660,7 @@ _PIC_C18
 >
 
 11 
-Time2Cou¡
+Time0Cou¡
 –
 INT16U
  
@@ -31657,11 +31687,23 @@ num
 	}
 }
 
-30 
-	$Inôülize_Adc
-()
+20 
+	$AdcI¸Ch
+–
+I¸Iãm
+ 
+ôem
+ )
 
-32 
+22 
+ôem
+)
+
+24 
+ICR_1
+:
+
+25 
 	`O≥nADC
 –
 ADC_FOSC_32
@@ -31671,35 +31713,157 @@ ADC_RIGHT_JUST
 ADC_20_TAD
 ,
 
+26 
+ADC_CH0
+ & 
+ADC_INT_OFF
+ & 
+ADC_REF_VDD_VSS
+, 0x0);
+
+28 
+ICR_2
+:
+
+29 
+	`O≥nADC
+–
+ADC_FOSC_32
+ & 
+ADC_RIGHT_JUST
+ & 
+ADC_20_TAD
+,
+
+30 
+ADC_CH1
+ & 
+ADC_INT_OFF
+ & 
+ADC_REF_VDD_VSS
+, 0x0);
+
+32 
+ICR_3
+:
+
 33 
-ADC_CH11
+	`O≥nADC
+–
+ADC_FOSC_32
+ & 
+ADC_RIGHT_JUST
+ & 
+ADC_20_TAD
+,
+
+34 
+ADC_CH2
+ & 
+ADC_INT_OFF
+ & 
+ADC_REF_VDD_VSS
+, 0x0);
+
+36 
+ICR_4
+:
+
+37 
+	`O≥nADC
+–
+ADC_FOSC_32
+ & 
+ADC_RIGHT_JUST
+ & 
+ADC_20_TAD
+,
+
+38 
+ADC_CH3
+ & 
+ADC_INT_OFF
+ & 
+ADC_REF_VDD_VSS
+, 0x0);
+
+40 
+ICR_5
+:
+
+41 
+	`O≥nADC
+–
+ADC_FOSC_32
+ & 
+ADC_RIGHT_JUST
+ & 
+ADC_20_TAD
+,
+
+42 
+ADC_CH4
+ & 
+ADC_INT_OFF
+ & 
+ADC_REF_VDD_VSS
+, 0x0);
+
+47 
+	`Time0Cou¡
+(10);
+
+48 
+	`C⁄vîtADC
+();
+
+49 
+	}
+}
+
+61 
+	$Inôülize_Adc
+()
+
+63 
+	`O≥nADC
+–
+ADC_FOSC_32
+ & 
+ADC_RIGHT_JUST
+ & 
+ADC_20_TAD
+,
+
+64 
+ADC_CH0
  & 
 ADC_INT_OFF
  & 
 ADC_REF_VDD_VSS
 ,
 
-35 
+66 
 	`Time0Cou¡
 (2);
 
-36 
+67 
 	`C⁄vîtADC
 ();
 
-37 
+68 
 	}
 }
 
-40 
+71 
 	$McuAdcInô
 ()
 
-42 
+73 
 	`Inôülize_Adc
 ();
 
-43 
+74 
 	}
 }
 
@@ -32555,47 +32719,39 @@ _PIC_C18
 
 	)
 
-181 
-Time2Cou¡
+182 
+Time0Cou¡
 (
 num
 );
 
-182 
+183 
 	gi2c_dly_num
  = 0;
 
-183 
+184 
 	gi2c_dly_num1
  = 0;
 
-185 
+186 
 	$I2CDñay
 ()
 
-187 
-	`Time2Cou¡
+189 
+	`Time0Cou¡
 (
 MS_1
 );
 
-188 
+190 
 i2c_dly_num
 ++;
 
-189 if(
+191 if(
 i2c_dly_num
  >
 MS_3
 )
-
-191 
-	`N›
-();
-
-192 
-	`N›
-();
 
 193 
 	`N›
@@ -32614,117 +32770,117 @@ MS_3
 ();
 
 197 
+	`N›
+();
+
+198 
+	`N›
+();
+
+199 
 	`Re£t
 ();
 
-200 
+202 
 	}
 }
 
-201 
+203 
 	$I2CDlyCÃ
 ()
 
-203 
+205 
 i2c_dly_num
  = 0;
 
-204 
+206 
 	}
 }
 
-206 
+208 
 	$NŸAckI2C
 ( )
 
-208 
+210 
 SSPCON2bôs
 .
 ACKDT
  = 1;
 
-209 
+211 
 SSPCON2bôs
 .
 ACKEN
  = 1;
 
-211 
+213 
 SSPCON2bôs
 .
 ACKEN
  == 1)
 
-213 
+215 
 	`I2CDñay
 ();
 
-215 
+217 
 	`I2CDlyCÃ
 ();
 
-216 
+218 
 	}
 }
 
-218 
+220 
 	$St›I2C
 ( )
 
-220 
+222 
 SSPCON2bôs
 .
 PEN
  = 1;
 
-222 
+224 
 SSPCON2bôs
 .
 PEN
  == 1)
 
-224 
+226 
 	`I2CDñay
 ();
 
-226 
+228 
 	`I2CDlyCÃ
 ();
 
-227 
+229 
 	}
 }
 
-229 
+231 
 	$SèπI2C
 ( )
 
-231 
+233 
 SSPCON2bôs
 .
 SEN
  = 1;
 
-233 
+235 
 SSPCON2bôs
 .
 SEN
  == 1)
 
-235 
+237 
 	`I2CDñay
 ();
 
-237 
-	`I2CDlyCÃ
-();
-
-238 
-	`N›
-();
-
 239 
-	`N›
+	`I2CDlyCÃ
 ();
 
 240 
@@ -32732,14 +32888,22 @@ SEN
 ();
 
 241 
+	`N›
+();
+
+242 
+	`N›
+();
+
+243 
 	}
 }
 
-243 
+245 
 	$IdÀI2C
 ( )
 
-245  ( 
+247  ( 
 SSPCON2
  & 0x1F ) || ( 
 SSPSTATbôs
@@ -32747,20 +32911,12 @@ SSPSTATbôs
 R_W
  ) )
 
-247 
+249 
 	`I2CDñay
 ();
 
-249 
-	`I2CDlyCÃ
-();
-
-250 
-	`N›
-();
-
 251 
-	`N›
+	`I2CDlyCÃ
 ();
 
 252 
@@ -32768,48 +32924,56 @@ R_W
 ();
 
 253 
+	`N›
+();
+
+254 
+	`N›
+();
+
+255 
 	}
 }
 
-255 
+257 
 INT8U
  
 	$RódI2C
 ( )
 
-257 if–((
+259 if–((
 SSPCON1
 &0x0F)==0x08) || ((SSPCON1&0x0F)==0x0B) )
 
-258 
+260 
 SSPCON2bôs
 .
 RCEN
  = 1;
 
-259  !
+261  !
 SSPSTATbôs
 .
 BF
  )
 
-261 
+263 
 	`I2CDñay
 ();
 
-263 
+265 
 	`I2CDlyCÃ
 ();
 
-265  ( 
+267  ( 
 SSPBUF
  );
 
-266 
+268 
 	}
 }
 
-269 
+271 
 INT8U
  
 	$gësI2C
@@ -32821,75 +32985,75 @@ rd±r
 Àngth
  )
 
-271  
+273  
 Àngth
 -- )
 
-273 *
+275 *
 rd±r
 ++ = 
 	`RódI2C
 ();
 
-274  
+276  
 SSPCON2bôs
 .
 RCEN
  )
 
-276 
+278 
 	`I2CDñay
 ();
 
-278 
+280 
 	`I2CDlyCÃ
 ();
 
-280 i‡–
+282 i‡–
 PIR2bôs
 .
 BCLIF
  )
 
-285 if–((
+287 if–((
 SSPCON1
 &0x0F)==0x08) || ((SSPCON1&0x0F)==0x0B) )
 
-287 i‡–
+289 i‡–
 Àngth
  )
 
-289 
+291 
 SSPCON2bôs
 .
 ACKDT
  = 0;
 
-290 
+292 
 SSPCON2bôs
 .
 ACKEN
  = 1;
 
-291  
+293  
 SSPCON2bôs
 .
 ACKEN
  )
 
-293 
+295 
 	`I2CDñay
 ();
 
-295 
+297 
 	`I2CDlyCÃ
 ();
 
-301 
+303 
 	}
 }
 
-304 
+306 
 INT8S
  
 	$WrôeI2C
@@ -32899,43 +33063,43 @@ INT8U
 d©a_out
  )
 
-306 
+308 
 SSPBUF
  = 
 d©a_out
 ;
 
-307 i‡–
+309 i‡–
 SSPCON1bôs
 .
 WCOL
  )
 
-311 if–((
+313 if–((
 SSPCON1
 &0x0F)!=0x08) && ((SSPCON1&0x0F)!=0x0B) )
 
-313 
+315 
 SSPCON1bôs
 .
 CKP
  = 1;
 
-314  !
+316  !
 PIR1bôs
 .
 SSPIF
  )
 
-316 
+318 
 	`I2CDñay
 ();
 
-318 
+320 
 	`I2CDlyCÃ
 ();
 
-320 i‡––!
+322 i‡––!
 SSPSTATbôs
 .
 R_W
@@ -32943,74 +33107,66 @@ R_W
 BF
  ) )
 
-329 if–((
+331 if–((
 SSPCON1
 &0x0F)==0x08) || ((SSPCON1&0x0F)==0x0B) )
 
-331  
+333  
 SSPSTATbôs
 .
 BF
  )
 
-333 
+335 
 	`I2CDñay
 ();
 
-335 
+337 
 	`I2CDlyCÃ
 ();
 
-337 
+339 
 	`IdÀI2C
 ();
 
-338 i‡–
+340 i‡–
 SSPCON2bôs
 .
 ACKSTAT
  )
 
-343 
+345 
 	}
 }
 
-347 
+349 
 	$I2C_D⁄e
 ()
 
-349 !
+351 !
 PIR1bôs
 .
 SSPIF
 )
-
-351 
-	`N›
-();
-
-352 
-	`N›
-();
 
 353 
 	`N›
 ();
 
 354 
-	`I2CDñay
+	`N›
+();
+
+355 
+	`N›
 ();
 
 356 
-	`I2CDlyCÃ
-();
-
-357 
-	`N›
+	`I2CDñay
 ();
 
 358 
-	`N›
+	`I2CDlyCÃ
 ();
 
 359 
@@ -33018,22 +33174,30 @@ SSPIF
 ();
 
 360 
+	`N›
+();
+
+361 
+	`N›
+();
+
+362 
 PIR1bôs
 .
 SSPIF
 =0;
 
-361 
+363 
 	}
 }
 
-363 #i‡
+365 #i‡
 deföed
  (
 I2C_V1
 )
 
-365 
+367 
 	$O≥nI2C
 –
 INT8U
@@ -33043,55 +33207,55 @@ sync_mode
 ¶ew
  )
 
-367 
+369 
 SSPSTAT
  &= 0x3F;
 
-368 
+370 
 SSPCON1
  = 0x00;
 
-369 
+371 
 SSPCON2
  = 0x00;
 
-370 
+372 
 SSPCON1
  |
 sync_mode
 ;
 
-371 
+373 
 SSPSTAT
  |
 ¶ew
 ;
 
-373 
+375 
 I2C_SCL
  = 1;
 
-374 
+376 
 I2C_SDA
  = 1;
 
-375 
+377 
 SSPCON1
  |
 SSPENB
 ;
 
-376 
+378 
 	}
 }
 
-379 #i‡
+381 #i‡
 deföed
  (
 I2C_V4
 )
 
-381 
+383 
 	$O≥nI2C
 –
 INT8U
@@ -33101,49 +33265,49 @@ sync_mode
 ¶ew
  )
 
-383 
+385 
 SSPSTAT
  &= 0x3F;
 
-384 
+386 
 SSPCON
  = 0x00;
 
-385 
+387 
 SSPCON
  |
 sync_mode
 ;
 
-386 
+388 
 SSPSTAT
  |
 ¶ew
 ;
 
-388 
+390 
 I2C_SCL
  = 1;
 
-389 
+391 
 I2C_SDA
  = 1;
 
-390 
+392 
 SSPCON
  |
 SSPENB
 ;
 
-392 
+394 
 	}
 }
 
-398 
+401 
 	$Inôülize_I2C_Ma°î
 ()
 
-400 
+403 
 	`O≥nI2C
 (
 MASTER
@@ -33151,23 +33315,23 @@ MASTER
 SLEW_OFF
 );
 
-402 
+404 
 SSPADD
-=39;
+ = 0x27;
 
-403 
+405 
 	}
 }
 
-406 
+408 
 	$McuI2CInô
 ()
 
-408 
+410 
 	`Inôülize_I2C_Ma°î
 ();
 
-409 
+411 
 	}
 }
 
@@ -33613,7 +33777,7 @@ _PIC_C18
 	~<ußπ.h
 >
 
-120 vﬁ©ûê
+119 vﬁ©ûê
 INT8U
  
 	ggTimeFÆg
@@ -33621,19 +33785,19 @@ INT8U
 _OFF
 ;
 
-121 vﬁ©ûê
+120 vﬁ©ûê
 INT16U
  
 	ggTimîCou¡
  = 0;
 
-122 
+121 
 SîvoDC
  
 	ggDutyCy˛e
 ;
 
-124 
+123 
 	$Time0Cou¡
 –
 INT16U
@@ -33641,13 +33805,13 @@ INT16U
 num
 )
 
-126 
+125 
 gTimîCou¡
  = 
 num
 ;
 
-127 
+126 
 T0CONbôs
 .
 TMR0ON
@@ -33655,23 +33819,23 @@ TMR0ON
 _ON
 ;
 
-128 
+127 
 gTimeFÆg
  !
 _ON
  );
 
-129 
+128 
 gTimeFÆg
  = 
 _OFF
 ;
 
-130 
+129 
 	}
 }
 
-131 
+130 
 	$Time2Cou¡
 –
 SîvoDC
@@ -33679,79 +33843,131 @@ SîvoDC
 ôem
 )
 
-133 
+132 
 gDutyCy˛e
  = 
 ôem
 ;
 
-134 
+133 
 	}
 }
 
-142 #¥agm®
+141 #¥agm®
 code
  
 i§highcode
  = 0x0008
 
-144 
+143 
 i§_high
 ();
 
-145 
+144 
 	$i§_high_dúe˘
 ()
 
-147 
+146 
 _asm
 
 
-148 
+147 
 i§_high
 
 
-149 
+148 
 _ídasm
 
 
-150 
+149 
 	}
 }
 
-151 #¥agm®
+150 #¥agm®
 code
 
 
-159 #¥agm®
+158 #¥agm®
 öãºu±
  
 i§_high
 
 
-161 
+160 
 	$i§_high
 ()
 
-163 vﬁ©ûê
+162 vﬁ©ûê
 INT16U
  
 cou¡
 =0;
 
-164 vﬁ©ûê
+163 vﬁ©ûê
 INT16U
  
 cou¡_timî2
 =0;
 
-165 
+164 
 INT8U
  
 Rec_D©a
 ;
 
-184 if–
+166 if(
+PIR1bôs
+.
+TMR2IF
+ && 
+PIE1bôs
+.
+TMR2IE
+)
+
+168 
+PIR1bôs
+.
+TMR2IF
+=0;
+
+169 
+cou¡_timî2
+++;
+
+171 if(
+cou¡_timî2
+ <
+gDutyCy˛e
+)
+
+172 
+LATCbôs
+.
+LATC1
+ = 
+_ON
+;
+
+173 if(
+cou¡_timî2
+ >
+£rvo_NoDC
+ )
+
+175 
+cou¡_timî2
+=0;
+
+178 
+LATCbôs
+.
+LATC1
+ = 
+_OFF
+;
+
+181 if–
 PIR1bôs
 .
 RCIF
@@ -33761,13 +33977,13 @@ PIE1bôs
 RCIE
 )
 
-186 
+183 
 PIR1bôs
 .
 RCIF
 =0;
 
-188 if(
+185 if(
 rx_fifo
 .
 num_byãs
@@ -33775,7 +33991,7 @@ num_byãs
 FIFO_BUFFER_SIZE
 )
 
-190 
+187 
 rx_fifo
 .
 Êag
@@ -33783,7 +33999,7 @@ rx_fifo
 u¨t_rx_fifo_ovf_Êag
  = 1;
 
-192 if(
+189 if(
 rx_fifo
 .
 num_byãs
@@ -33791,7 +34007,7 @@ num_byãs
 FIFO_BUFFER_SIZE
 )
 
-194 
+191 
 rx_fifo
 .
 d©a_buf
@@ -33801,19 +34017,19 @@ i_œ°
 	`RódUSART
 ();
 
-195 
+192 
 rx_fifo
 .
 i_œ°
 ++;
 
-196 
+193 
 rx_fifo
 .
 num_byãs
 ++;
 
-198 if(
+195 if(
 rx_fifo
 .
 num_byãs
@@ -33821,7 +34037,7 @@ num_byãs
 FIFO_BUFFER_SIZE
 )
 
-200 
+197 
 rx_fifo
 .
 Êag
@@ -33829,7 +34045,7 @@ rx_fifo
 u¨t_rx_fifo_fuŒ_Êag
  = 1;
 
-202 if(
+199 if(
 rx_fifo
 .
 i_œ°
@@ -33837,13 +34053,13 @@ i_œ°
 FIFO_BUFFER_SIZE
 )
 
-204 
+201 
 rx_fifo
 .
 i_œ°
  = 0;
 
-207 
+204 
 rx_fifo
 .
 Êag
@@ -33851,51 +34067,51 @@ rx_fifo
 u¨t_rx_fifo_nŸ_em±y_Êag
  = 1;
 
-210 if(
+207 if(
 INTCONbôs
 .
 INT0IF
 )
 
-212 
+209 
 gSèπ
  = 
 _ON
 ;
 
-213 
+210 
 INTCONbôs
 .
 INT0IF
  = 0;
 
-217 if(
+214 if(
 INTCONbôs
 .
 TMR0IF
 )
 
-219 
+216 
 	`WrôeTimî0
 (0xf05f);
 
-220 
+217 
 INTCONbôs
 .
 TMR0IF
  = 0;
 
-222 i‡(
+219 i‡(
 cou¡
  < (
 gTimîCou¡
 -1))
 
-223 
+220 
 cou¡
 ++;
 
-226 
+223 
 T0CONbôs
 .
 TMR0ON
@@ -33903,25 +34119,25 @@ TMR0ON
 _OFF
 ;
 
-227 
+224 
 cou¡
  = 0;
 
-228 
+225 
 gTimeFÆg
  = 
 _ON
 ;
 
-231 
+228 
 	}
 }
 
-232 #¥agm®
+229 #¥agm®
 code
 
 
-252 if(
+249 if(
 	gtx_fifo
 .
 	gnum_byãs
@@ -33929,17 +34145,17 @@ code
 FIFO_BUFFER_SIZE
 ) {
 
-253 
+250 
 u¨t_tx_fifo_fuŒ_Êag
  = 0;
 
-255 if(
+252 if(
 	gtx_fifo
 .
 	gnum_byãs
  > 0) {
 
-258  = 
+255  = 
 tx_fifo
 .
 d©a_buf
@@ -33947,19 +34163,19 @@ d©a_buf
 i_fú°
 ];
 
-261 
+258 
 	gtx_fifo
 .
 	gi_fú°
 ++;
 
-262 
+259 
 	gtx_fifo
 .
 	gnum_byãs
 --;
 
-264 if(
+261 if(
 	gtx_fifo
 .
 	gi_fú°
@@ -33967,23 +34183,23 @@ i_fú°
 FIFO_BUFFER_SIZE
 ) {
 
-265 
+262 
 tx_fifo
 .
 i_fú°
  = 0;
 
-267 if(
+264 if(
 	gtx_fifo
 .
 	gnum_byãs
  == 0) {
 
-269 
+266 
 u¨t_tx_fifo_nŸ_em±y_Êag
  = 0;
 
-288 
+285 
 	$u¨t_£nd_byã
 (
 uöt8_t
@@ -33991,7 +34207,7 @@ uöt8_t
 byã
 ) {
 
-294 if(
+291 if(
 tx_fifo
 .
 num_byãs
@@ -33999,11 +34215,11 @@ num_byãs
 FIFO_BUFFER_SIZE
 ) {
 
-295 
+292 
 u¨t_tx_fifo_ovf_Êag
  = 1;
 
-296 }if(
+293 }if(
 tx_fifo
 .
 num_byãs
@@ -34011,7 +34227,7 @@ num_byãs
 FIFO_BUFFER_SIZE
 ) {
 
-297 
+294 
 tx_fifo
 .
 d©a_buf
@@ -34021,55 +34237,55 @@ i_œ°
 byã
 ;
 
-298 
+295 
 tx_fifo
 .
 i_œ°
 ++;
 
-299 
+296 
 tx_fifo
 .
 num_byãs
 ++;
 
-301 if(
+298 if(
 tx_fifo
 .
 num_byãs
+ =
+FIFO_BUFFER_SIZE
+) {
+
+299 
+u¨t_tx_fifo_fuŒ_Êag
+ = 1;
+
+301 if(
+tx_fifo
+.
+i_œ°
  =
 FIFO_BUFFER_SIZE
 ) {
 
 302 
-u¨t_tx_fifo_fuŒ_Êag
- = 1;
-
-304 if(
-tx_fifo
-.
-i_œ°
- =
-FIFO_BUFFER_SIZE
-) {
-
-305 
 tx_fifo
 .
 i_œ°
  = 0;
 
-312 if(
+309 if(
 tx_fifo
 .
 num_byãs
  > 0) {
 
-314 
+311 
 u¨t_tx_fifo_nŸ_em±y_Êag
  = 1;
 
-322 
+319 
 	}
 }
 
@@ -34108,15 +34324,15 @@ vÆ
  =
 _ON
 Ë
-LATBbôs
+LATCbôs
 .
-LATB2
+LATC0
  = _ON;
 
 13 
-LATBbôs
+LATCbôs
 .
-LATB2
+LATC0
  = 
 _OFF
 ;
@@ -34138,15 +34354,15 @@ vÆ
  =
 _ON
 Ë
-LATCbôs
+LATAbôs
 .
-LATC0
+LATA4
  = _ON;
 
 18 
-LATCbôs
+LATAbôs
 .
-LATC0
+LATA4
  = 
 _OFF
 ;
@@ -34155,59 +34371,41 @@ _OFF
 	}
 }
 
-20 
-	$McuLedBlueCål
-(
-INT16U
- 
-vÆ
- )
-
-22 if(
-vÆ
- =
-_ON
-Ë
-LATAbôs
-.
-LATA4
- = _ON;
-
-23 
-LATAbôs
-.
-LATA4
- = 
-_OFF
-;
-
-24 
-	}
-}
-
-25 
+22 
 INT8U
  
 	$McuLedRe˚iveCål
 ()
 
-27  
+24  
 PORTCbôs
 .
 RC2
 ;
 
-28 
+25 
 	}
 }
 
-29 
+26 
 	$McuI¸Cål
 (
 INT16U
  
 vÆ
+, 
+I¸Iãm
+ 
+ôem
  )
+
+28 
+ôem
+)
+
+30 
+ICR_1
+:
 
 31 if(
 vÆ
@@ -34216,66 +34414,10 @@ _ON
 Ë
 LATBbôs
 .
-LATB1
+LATB2
  = _ON;
 
 32 
-LATBbôs
-.
-LATB1
- = 
-_OFF
-;
-
-33 
-	}
-}
-
-34 
-	$Inôülize_Io
-()
-
-37 
-ANSEL
- = 
-_OFF
-;
-
-38 
-ANSELH
- = 
-_OFF
-;
-
-41 
-TRISBbôs
-.
-TRISB0
- = 
-INPUT
-;
-
-42 
-INTCON2bôs
-.
-INTEDG0
- = 1;
-
-43 
-INTCONbôs
-.
-INT0IE
- = 1;
-
-46 
-TRISBbôs
-.
-TRISB2
- = 
-OUTPUT
-;
-
-47 
 LATBbôs
 .
 LATB2
@@ -34283,47 +34425,43 @@ LATB2
 _OFF
 ;
 
-49 
-TRISCbôs
-.
-TRISC0
- = 
-OUTPUT
-;
+34 
+ICR_2
+:
 
-50 
-LATCbôs
-.
-LATC0
- = 
+35 if(
+vÆ
+ =
 _ON
+Ë
+LATBbôs
+.
+LATB3
+ = _ON;
+
+36 
+LATBbôs
+.
+LATB3
+ = 
+_OFF
 ;
 
-52 
-TRISAbôs
-.
-TRISA4
- = 
-OUTPUT
-;
+38 
+ICR_3
+:
 
-53 
-LATAbôs
-.
-LATA4
- = 
+39 if(
+vÆ
+ =
 _ON
-;
-
-55 
-TRISBbôs
+Ë
+LATBbôs
 .
-TRISB1
- = 
-OUTPUT
-;
+LATB1
+ = _ON;
 
-56 
+40 
 LATBbôs
 .
 LATB1
@@ -34331,37 +34469,483 @@ LATB1
 _OFF
 ;
 
+42 
+ICR_4
+:
+
+43 if(
+vÆ
+ =
+_ON
+Ë
+LATBbôs
+.
+LATB4
+ = _ON;
+
+44 
+LATBbôs
+.
+LATB4
+ = 
+_OFF
+;
+
+46 
+ICR_5
+:
+
+47 if(
+vÆ
+ =
+_ON
+Ë
+LATBbôs
+.
+LATB0
+ = _ON;
+
+48 
+LATBbôs
+.
+LATB0
+ = 
+_OFF
+;
+
+53 
+	}
+}
+
+54 
+	$Inôülize_Io
+()
+
+57 
+ANSEL
+ = 
+_OFF
+;
+
 58 
+ANSELH
+ = 
+_OFF
+;
+
+66 
+TRISCbôs
+.
+TRISC0
+ = 
+OUTPUT
+;
+
+67 
+LATCbôs
+.
+LATC0
+ = 
+_OFF
+;
+
+69 
+TRISBbôs
+.
+TRISB2
+ = 
+OUTPUT
+;
+
+70 
+LATBbôs
+.
+LATB2
+ = 
+_OFF
+;
+
+71 
+TRISBbôs
+.
+TRISB3
+ = 
+OUTPUT
+;
+
+72 
+LATBbôs
+.
+LATB3
+ = 
+_OFF
+;
+
+73 
+TRISBbôs
+.
+TRISB1
+ = 
+OUTPUT
+;
+
+74 
+LATBbôs
+.
+LATB1
+ = 
+_OFF
+;
+
+75 
 TRISBbôs
 .
 TRISB4
  = 
+OUTPUT
+;
+
+76 
+LATBbôs
+.
+LATB4
+ = 
+_OFF
+;
+
+77 
+TRISBbôs
+.
+TRISB0
+ = 
+OUTPUT
+;
+
+78 
+LATBbôs
+.
+LATB0
+ = 
+_OFF
+;
+
+80 
+TRISAbôs
+.
+TRISA0
+ = 
 INPUT
 ;
 
-59 
-ANSELHbôs
+81 
+ANSELbôs
 .
-ANS11
+ANS0
  = 
 _ON
 ;
 
-63 
+82 
+TRISAbôs
+.
+TRISA1
+ = 
+INPUT
+;
+
+83 
+ANSELbôs
+.
+ANS1
+ = 
+_ON
+;
+
+84 
+TRISAbôs
+.
+TRISA2
+ = 
+INPUT
+;
+
+85 
+ANSELbôs
+.
+ANS2
+ = 
+_ON
+;
+
+86 
+TRISAbôs
+.
+TRISA3
+ = 
+INPUT
+;
+
+87 
+ANSELbôs
+.
+ANS3
+ = 
+_ON
+;
+
+88 
+TRISAbôs
+.
+TRISA4
+ = 
+INPUT
+;
+
+89 
+ANSELbôs
+.
+ANS4
+ = 
+_ON
+;
+
+91 
+TRISCbôs
+.
+TRISC1
+ = 
+OUTPUT
+;
+
+92 
+LATCbôs
+.
+LATC1
+ = 
+_ON
+;
+
+94 
+TRISAbôs
+.
+TRISA4
+ = 
+OUTPUT
+;
+
+95 
+LATAbôs
+.
+LATA4
+ = 
+_ON
+;
+
+96 
 	}
 }
 
-67 
+100 
 	$McuIoInô
 ()
 
-69 
+102 
 	`Inôülize_Io
 ();
 
-70 
+103 
 	}
 }
+
+	@ldo.h
+
+1 #i‚de‡
+_LEO_H
+
+
+2 
+	#_LDO_H
+
+
+	)
+
+4 
+	#LDO_NUM
+ 3
+
+	)
+
+9 
+	mV365
+ = 0x80, 
+	mV360
+ = 0x81, 
+	mV355
+ = 0x82, 
+	mV350
+ = 0x83, 
+	mV345
+ = 0x84,
+
+10 
+	mV340
+ = 0x85, 
+	mV335
+ = 0x86, 
+	mV330
+ = 0x87, 
+	mV325
+ = 0x88, 
+	mV320
+ = 0x89,
+
+11 
+	mV315
+ = 0x8A, 
+	mV310
+ = 0x8B, 
+	mV305
+ = 0x8C, 
+	mV300
+ = 0x8D, 
+	mV295
+ = 0x8E, 
+	mV290
+ = 0x8F,
+
+12 
+	mV285
+ = 0x90, 
+	mV280
+ = 0x91, 
+	mV275
+ = 0x92, 
+	mV270
+ = 0x93, 
+	mV265
+ = 0x94,
+
+13 
+	mV260
+ = 0x95, 
+	mV255
+ = 0x96, 
+	mV250
+ = 0x97, 
+	mV245
+ = 0x98, 
+	mV240
+ = 0x99,
+
+14 
+	mV235
+ = 0x9A, 
+	mV230
+ = 0x9B, 
+	mV225
+ = 0x9C, 
+	mV220
+ = 0x9D, 
+	mV215
+ = 0x9E, 
+	mV210
+ = 0x9F,
+
+15 
+	mV205
+ = 0xA0, 
+	mV200
+ = 0xA1, 
+	mV195
+ = 0xA2, 
+	mV190
+ = 0xA3, 
+	mV185
+ = 0xA4,
+
+16 
+	mV180
+ = 0xA5, 
+	mV175
+ = 0xA6, 
+	mV170
+ = 0xA7, 
+	mV165
+ = 0xA8, 
+	mV160
+ = 0xA9,
+
+17 
+	mV155
+ = 0xAA, 
+	mV150
+ = 0xAB, 
+	mV145
+ = 0xAC, 
+	mV140
+ = 0xAD, 
+	mV135
+ = 0xAE, 
+	mV130
+ = 0xAF,
+
+18 
+	mV125
+ = 0xB0, 
+	mV120
+ = 0xB1, 
+	mV115
+ = 0xB2, 
+	mV110
+ = 0xB3, 
+	mV105
+ = 0xB4,
+
+19 
+	mV100
+ = 0xB5, 
+	mV095
+ = 0xB6, 
+	mV090
+ = 0xB7, 
+	mV085
+ = 0xB8, 
+	mV080
+ = 0xB9,
+
+20 
+	mV075
+ = 0xBA, 
+	mV070
+ = 0xBB, 
+	mV065
+ = 0xBC, 
+	mV060
+ = 0xBD, 
+	mV055
+ = 0xBE, 
+	mV050
+ = 0xBF
+
+21 }
+	tLdoVﬁ
+;
+
+23 
+INT8U
+ 
+	gLdo_cmd
+[
+LDO_NUM
+]={
+
+26 
+INT8U
+ 
+	gLdo_d©a
+[
+LDO_NUM
+]={
 
 	@main.c
 
@@ -34397,15 +34981,19 @@ _PIC_C18
 	~"automachöe_asx340_∑ø.h
 "
 
-29 #i‡
+28 
+	~"ldo.h
+"
+
+30 #i‡
 _HI_TECH
 
 
-30 #ñif 
+31 #ñif 
 _PIC_C18
 
 
-32 #¥agm®
+33 #¥agm®
 c⁄fig
  
 IESO
@@ -34413,7 +35001,7 @@ IESO
 OFF
 
 
-33 #¥agm®
+34 #¥agm®
 c⁄fig
  
 FCMEN
@@ -34421,7 +35009,7 @@ FCMEN
 OFF
 
 
-34 #¥agm®
+35 #¥agm®
 c⁄fig
  
 FOSC
@@ -34429,7 +35017,7 @@ FOSC
 HS
 
 
-35 #¥agm®
+36 #¥agm®
 c⁄fig
  
 XINST
@@ -34437,7 +35025,7 @@ XINST
 OFF
 
 
-36 #¥agm®
+37 #¥agm®
 c⁄fig
  
 WDTEN
@@ -34445,7 +35033,7 @@ WDTEN
 OFF
 
 
-38 #¥agm®
+39 #¥agm®
 c⁄fig
  
 PWRT
@@ -34453,7 +35041,7 @@ PWRT
 OFF
 
 
-39 #¥agm®
+40 #¥agm®
 c⁄fig
  
 BOREN
@@ -34461,7 +35049,7 @@ BOREN
 OFF
 
 
-40 #¥agm®
+41 #¥agm®
 c⁄fig
  
 STVREN
@@ -34469,7 +35057,7 @@ STVREN
 OFF
 
 
-41 #¥agm®
+42 #¥agm®
 c⁄fig
  
 LVP
@@ -34477,73 +35065,79 @@ LVP
 OFF
 
 
-46 
+47 
 INT16U
  
 	ggI¸DlyTime
 =0;
 
-47 
+48 
+LdoVﬁ
+ 
+	ggAnyOutLdo
+=0;
+
+49 
 INT8U
  
 	ggSèπ
 =0;
 
-48 
-INT8C
- 
-	gMSG_Sèπ
-[]="$f00";
-
-49 
-INT8C
- 
-	gMSG_öô
-[]="$f01";
-
 50 
 INT8C
  
-	gMSG_AŒTe°
-[]="$f02";
+	gMSG_Sèπ
+[]="$f00@";
 
 51 
 INT8C
  
-	gMSG_0_degªe
-[]="$f03";
+	gMSG_öô
+[]="$f01@";
 
 52 
 INT8C
  
-	gMSG_90_degªe
-[]="$f04";
+	gMSG_AŒTe°
+[]="$f02@";
 
 53 
 INT8C
  
-	gMSG_180_degªe
-[]="$f05";
+	gMSG_0_degªe
+[]="$f03@";
 
 54 
 INT8C
  
-	gMSG_Ok
-[]="$f06";
+	gMSG_90_degªe
+[]="$f04@";
 
 55 
 INT8C
  
-	gMSG_Ng
-[]="$f07";
+	gMSG_180_degªe
+[]="$f05@";
 
 56 
 INT8C
  
-	gMSG_Föish
-[]="$f08";
+	gMSG_Ok
+[6][6]={"$f06@", "$f16@", "$f26@", "$f36@", "$f46@", "$f56@"};
 
-59 
+57 
+INT8C
+ 
+	gMSG_Ng
+[6][6]={"$f07@", "$f17@", "$f27@", "$f37@", "$f47@", "$f57@"};
+
+58 
+INT8C
+ 
+	gMSG_Föish
+[]="$f08@";
+
+61 
 	$Sís‹Inô
 –
 AutoMachöe
@@ -34551,7 +35145,7 @@ AutoMachöe
 am_vÆ
 )
 
-62 
+64 
 am_vÆ
 ->
 ˛ass
@@ -34567,7 +35161,7 @@ ASX340_d©a
 ASX340_num
 , (ASX340_hi)/(ASX340_hi[0]) );
 
-64 if(
+66 if(
 am_vÆ
 ->
 Êag
@@ -34575,7 +35169,7 @@ am_vÆ
 múr‹
  == 1 )
 
-66 
+68 
 am_vÆ
 ->
 ˛ass
@@ -34589,13 +35183,13 @@ ASX340_múr‹_lo
 ASX340_múr‹_d©a
 ,\
 
-67 
+69 
 ASX340_múr‹_num
 , (
 ASX340_múr‹_hi
 )/(ASX340_mirror_hi[0]) );
 
-70 
+72 
 am_vÆ
 ->
 ˛ass
@@ -34609,17 +35203,17 @@ ASX340_múr‹_lo
 ASX340_no_múr‹_d©a
 ,\
 
-71 
+73 
 ASX340_múr‹_num
 , (
 ASX340_múr‹_hi
 )/(ASX340_mirror_hi[0]) );
 
-73 
+75 
 	}
 }
 
-75 
+77 
 	$McuInô
 –
 AutoMachöe
@@ -34627,19 +35221,19 @@ AutoMachöe
 am_vÆ
 )
 
-78 
+80 
 INT8U
  
 cou¡
 ;
 
-81  
+83  
 cou¡
 =0 ; cou¡ < 
 McuPîùhîÆNum
  ; count++ )
 
-83 
+85 
 am_vÆ
 ->
 ˛ass
@@ -34649,7 +35243,7 @@ Cpu_PîiInô
 cou¡
 ]();
 
-87 
+89 
 am_vÆ
 ->
 Êag
@@ -34657,11 +35251,55 @@ am_vÆ
 múr‹
  = 0;
 
-88 
+90 
 	}
 }
 
-90 
+92 
+	$AnyOutLdoInô
+(
+AutoMachöe
+ *
+am_vÆ
+)
+
+94 
+INT8U
+ 
+LdoAddr
+[1]={0x03};
+
+95 
+am_vÆ
+->
+˛ass
+->
+	`Ldo_Wrôe
+–
+Ldo_cmd
+, 
+Ldo_d©a
+, (Ldo_cmd)/(Ldo_cmd[0]) );
+
+96 
+am_vÆ
+->
+˛ass
+->
+	`Ldo_Wrôe
+–
+LdoAddr
+, (
+INT8U
+*)&
+gAnyOutLdo
+, 1);
+
+97 
+	}
+}
+
+100 
 INT8U
  
 	$GëR232VÆue
@@ -34671,7 +35309,7 @@ AutoMachöe
 am
 )
 
-92 
+102 
 INT8U
  
 rs232_vœue
@@ -34683,13 +35321,13 @@ cou¡
 rs232_rx_fifo_nŸ_em±y_Êag
 =0 ;
 
-93 
+103 
 INT8U
  
 ªtu∫_vÆue
  = 100;
 
-96 
+106 
 rs232_rx_fifo_nŸ_em±y_Êag
  = 
 am
@@ -34699,15 +35337,15 @@ am
 	`Cpu_GëU¨tFifoFœg
 ();
 
-98 if–
+108 if–
 rs232_rx_fifo_nŸ_em±y_Êag
  == 1 ) {
 
-99 
+109 
 cou¡
 ) {
 
-101 
+111 
 ãmp
  = 
 am
@@ -34717,11 +35355,11 @@ am
 	`Cpu_GëU¨tFifoD©a
 ();
 
-102 if('$' =
+112 if('$' =
 ãmp
 ) {
 
-103 
+113 
 rs232_vœue
 [
 cou¡
@@ -34729,11 +35367,11 @@ cou¡
 ãmp
 ;
 
-104 
+114 
 cou¡
 ++;
 
-108 
+118 
 rs232_vœue
 [
 cou¡
@@ -34745,11 +35383,11 @@ am
 	`Cpu_GëU¨tFifoD©a
 ();
 
-109 
+119 
 cou¡
 ++;
 
-112 
+122 
 rs232_vœue
 [
 cou¡
@@ -34761,115 +35399,571 @@ am
 	`Cpu_GëU¨tFifoD©a
 ();
 
-113 
+123 
 cou¡
 ++;
 
-114 
+124 
 rs232_vœue
 [1]) {
 
-116 
+126 
 rs232_vœue
 [2]) {
 
-118 
+128 
 ªtu∫_vÆue
- = 0;
-
-121 
-ªtu∫_vÆue
- = 1;
-
-124 
-ªtu∫_vÆue
- = 2;
-
-127 
-ªtu∫_vÆue
- = 3;
+ = 0; ;
 
 130 
 ªtu∫_vÆue
- = 100;
+ = 1; ;
 
-135 
+132 
+ªtu∫_vÆue
+ = 2; ;
+
+134 
+ªtu∫_vÆue
+ = 3; ;
+
+136 
+ªtu∫_vÆue
+ = 100; ;
+
+140 
 rs232_vœue
 [2]) {
 
-137 
+142 
 ªtu∫_vÆue
- = 200;
+ = 200; ;
 
-140 
+144 
 ªtu∫_vÆue
- = 201;
+ = 201; ;
 
-147 
+150 
 rs232_vœue
 [2]) {
 
-148 '0': 
+151 '0': 
 gI¸DlyTime
  = 100; ;
 
-149 '1': 
+152 '1': 
 gI¸DlyTime
  = 200; ;
 
-150 '2': 
+153 '2': 
 gI¸DlyTime
  = 300; ;
 
-151 '3': 
+154 '3': 
 gI¸DlyTime
  = 400; ;
 
-152 '4': 
+155 '4': 
 gI¸DlyTime
  = 500; ;
 
-153 '5': 
+156 '5': 
 gI¸DlyTime
  = 600; ;
 
-154 '6': 
+157 '6': 
 gI¸DlyTime
  = 700; ;
 
-155 '7': 
+158 '7': 
 gI¸DlyTime
  = 800; ;
 
-156 '8': 
+159 '8': 
 gI¸DlyTime
  = 900; ;
 
-157 '9': 
+160 '9': 
 gI¸DlyTime
  = 1000; ;
 
-162 
-ªtu∫_vÆue
- = 100;
+166 
+rs232_vœue
+[2]) {
 
-165  
+167 '0': 
+gAnyOutLdo
+ = 
+V365
+; ;
+
+168 '1': 
+gAnyOutLdo
+ = 
+V360
+; ;
+
+169 '2': 
+gAnyOutLdo
+ = 
+V355
+; ;
+
+170 '3': 
+gAnyOutLdo
+ = 
+V350
+; ;
+
+171 '4': 
+gAnyOutLdo
+ = 
+V345
+; ;
+
+172 '5': 
+gAnyOutLdo
+ = 
+V340
+; ;
+
+173 '6': 
+gAnyOutLdo
+ = 
+V335
+; ;
+
+174 '7': 
+gAnyOutLdo
+ = 
+V330
+; ;
+
+175 '8': 
+gAnyOutLdo
+ = 
+V325
+; ;
+
+176 '9': 
+gAnyOutLdo
+ = 
+V320
+; ;
+
+177 'A': 
+gAnyOutLdo
+ = 
+V315
+; ;
+
+178 'B': 
+gAnyOutLdo
+ = 
+V310
+; ;
+
+179 'C': 
+gAnyOutLdo
+ = 
+V305
+; ;
+
+180 'D': 
+gAnyOutLdo
+ = 
+V300
+; ;
+
+181 'E': 
+gAnyOutLdo
+ = 
+V295
+; ;
+
+182 'F': 
+gAnyOutLdo
+ = 
+V290
+; ;
+
+185 
+	`AnyOutLdoInô
+(
+am
+);
+
+186 
+am
+->
+˛ass
+->
+	`Mcu_Dly
+(500);
+
+189 
+rs232_vœue
+[2]) {
+
+190 '0': 
+gAnyOutLdo
+ = 
+V285
+; ;
+
+191 '1': 
+gAnyOutLdo
+ = 
+V280
+; ;
+
+192 '2': 
+gAnyOutLdo
+ = 
+V275
+; ;
+
+193 '3': 
+gAnyOutLdo
+ = 
+V270
+; ;
+
+194 '4': 
+gAnyOutLdo
+ = 
+V265
+; ;
+
+195 '5': 
+gAnyOutLdo
+ = 
+V260
+; ;
+
+196 '6': 
+gAnyOutLdo
+ = 
+V255
+; ;
+
+197 '7': 
+gAnyOutLdo
+ = 
+V250
+; ;
+
+198 '8': 
+gAnyOutLdo
+ = 
+V245
+; ;
+
+199 '9': 
+gAnyOutLdo
+ = 
+V240
+; ;
+
+200 'A': 
+gAnyOutLdo
+ = 
+V235
+; ;
+
+201 'B': 
+gAnyOutLdo
+ = 
+V230
+; ;
+
+202 'C': 
+gAnyOutLdo
+ = 
+V225
+; ;
+
+203 'D': 
+gAnyOutLdo
+ = 
+V220
+; ;
+
+204 'E': 
+gAnyOutLdo
+ = 
+V215
+; ;
+
+205 'F': 
+gAnyOutLdo
+ = 
+V210
+; ;
+
+208 
+	`AnyOutLdoInô
+(
+am
+);
+
+209 
+am
+->
+˛ass
+->
+	`Mcu_Dly
+(500);
+
+212 
+rs232_vœue
+[2]) {
+
+213 '0': 
+gAnyOutLdo
+ = 
+V205
+; ;
+
+214 '1': 
+gAnyOutLdo
+ = 
+V200
+; ;
+
+215 '2': 
+gAnyOutLdo
+ = 
+V195
+; ;
+
+216 '3': 
+gAnyOutLdo
+ = 
+V190
+; ;
+
+217 '4': 
+gAnyOutLdo
+ = 
+V185
+; ;
+
+218 '5': 
+gAnyOutLdo
+ = 
+V180
+; ;
+
+219 '6': 
+gAnyOutLdo
+ = 
+V175
+; ;
+
+220 '7': 
+gAnyOutLdo
+ = 
+V170
+; ;
+
+221 '8': 
+gAnyOutLdo
+ = 
+V165
+; ;
+
+222 '9': 
+gAnyOutLdo
+ = 
+V160
+; ;
+
+223 'A': 
+gAnyOutLdo
+ = 
+V155
+; ;
+
+224 'B': 
+gAnyOutLdo
+ = 
+V150
+; ;
+
+225 'C': 
+gAnyOutLdo
+ = 
+V145
+; ;
+
+226 'D': 
+gAnyOutLdo
+ = 
+V140
+; ;
+
+227 'E': 
+gAnyOutLdo
+ = 
+V135
+; ;
+
+228 'F': 
+gAnyOutLdo
+ = 
+V130
+; ;
+
+231 
+	`AnyOutLdoInô
+(
+am
+);
+
+232 
+am
+->
+˛ass
+->
+	`Mcu_Dly
+(500);
+
+235 
+rs232_vœue
+[2]) {
+
+236 '0': 
+gAnyOutLdo
+ = 
+V125
+; ;
+
+237 '1': 
+gAnyOutLdo
+ = 
+V120
+; ;
+
+238 '2': 
+gAnyOutLdo
+ = 
+V115
+; ;
+
+239 '3': 
+gAnyOutLdo
+ = 
+V110
+; ;
+
+240 '4': 
+gAnyOutLdo
+ = 
+V105
+; ;
+
+241 '5': 
+gAnyOutLdo
+ = 
+V100
+; ;
+
+242 '6': 
+gAnyOutLdo
+ = 
+V095
+; ;
+
+243 '7': 
+gAnyOutLdo
+ = 
+V090
+; ;
+
+244 '8': 
+gAnyOutLdo
+ = 
+V085
+; ;
+
+245 '9': 
+gAnyOutLdo
+ = 
+V080
+; ;
+
+246 'A': 
+gAnyOutLdo
+ = 
+V075
+; ;
+
+247 'B': 
+gAnyOutLdo
+ = 
+V070
+; ;
+
+248 'C': 
+gAnyOutLdo
+ = 
+V065
+; ;
+
+249 'D': 
+gAnyOutLdo
+ = 
+V060
+; ;
+
+250 'E': 
+gAnyOutLdo
+ = 
+V055
+; ;
+
+251 'F': 
+gAnyOutLdo
+ = 
+V050
+; ;
+
+254 
+	`AnyOutLdoInô
+(
+am
+);
+
+255 
+am
+->
+˛ass
+->
+	`Mcu_Dly
+(500);
+
+258 
+ªtu∫_vÆue
+ = 100; ;
+
+260  
 ªtu∫_vÆue
 ;
 
-168 
+263 
 ªtu∫_vÆue
  = 100;
 
-169  
+264  
 ªtu∫_vÆue
 ;
 
-174 
+269 
 	}
 }
 
-176 
+271 
 INT8U
  
 	$waô_°¨t
@@ -34879,13 +35973,13 @@ AutoMachöe
 am
 )
 
-178 
+273 
 INT8U
  
 ãmp
 ;
 
-181 
+276 
 ãmp
  = 
 	`GëR232VÆue
@@ -34893,23 +35987,23 @@ INT8U
 am
 );
 
-183 if(
+278 if(
 ãmp
  == 200 )
 
-185 if(
+280 if(
 ãmp
  == 201 )
 
-187 
+282 
 	`Re£t
 ();
 
-192 
+287 
 	}
 }
 
-194 
+289 
 	$SèπI¸Te°
 (
 AutoMachöe
@@ -34917,19 +36011,37 @@ AutoMachöe
 am
 )
 
-196 
+291 
 INT8U
  
 ú_cou¡
 =0;
 
-197 
+292 
 INT16S
  
 i¸_vÆue
 =0;
 
-201 
+293 
+I¸Iãm
+ 
+i¸_num
+
+ICR_1
+;
+
+297 
+am
+->
+˛ass
+->
+	`I¸_Ch
+(
+i¸_num
+);
+
+298 
 am
 ->
 ˛ass
@@ -34937,9 +36049,11 @@ am
 	`I¸_Cål
 (
 _ON
+, 
+i¸_num
 );
 
-202 
+299 
 am
 ->
 ˛ass
@@ -34949,7 +36063,7 @@ am
 gI¸DlyTime
 );
 
-203 
+300 
 i¸_vÆue
  = 
 am
@@ -34959,17 +36073,17 @@ am
 	`I¸_Ród
 ();
 
-204 if(
+301 if(
 i¸_vÆue
  > 
 i¸_⁄_thªshﬁd
 )
 
-205 
+302 
 ú_cou¡
 ++;
 
-208 
+305 
 am
 ->
 ˛ass
@@ -34979,7 +36093,7 @@ am
 _OFF
 );
 
-209 
+306 
 am
 ->
 ˛ass
@@ -34987,29 +36101,33 @@ am
 	`Cpu_U¨tWr
 (
 MSG_Ng
-);
+[
+i¸_num
+]);
 
-210 
-	`waô_°¨t
-(
-am
-));
-
-211 
+311 
 ú_cou¡
  = 0;
 
-212 
+312 
+i¸_num
+ += 1;
+
+313 if(
+i¸_num
+ > 
+ICR_5
+)
+
+315 
 am
 ->
 ˛ass
 ->
-	`Led_Blue
-(
-_ON
-);
+	`Mcu_Dly
+(500);
 
-213 
+316 
 am
 ->
 ˛ass
@@ -35019,7 +36137,7 @@ am
 _ON
 );
 
-216 
+323 
 am
 ->
 ˛ass
@@ -35027,9 +36145,11 @@ am
 	`I¸_Cål
 (
 _OFF
+, 
+i¸_num
 );
 
-217 
+324 
 am
 ->
 ˛ass
@@ -35039,7 +36159,7 @@ am
 gI¸DlyTime
 );
 
-218 
+325 
 i¸_vÆue
  = 
 am
@@ -35049,17 +36169,17 @@ am
 	`I¸_Ród
 ();
 
-219 if(
+326 if(
 i¸_vÆue
  < 
 i¸_off_thªshﬁd
  )
 
-220 
+327 
 ú_cou¡
 ++;
 
-223 
+330 
 am
 ->
 ˛ass
@@ -35069,7 +36189,7 @@ am
 _OFF
 );
 
-224 
+331 
 am
 ->
 ˛ass
@@ -35077,29 +36197,33 @@ am
 	`Cpu_U¨tWr
 (
 MSG_Ng
-);
+[
+i¸_num
+]);
 
-225 
-	`waô_°¨t
-(
-am
-));
-
-226 
+336 
 ú_cou¡
  = 0;
 
-227 
+337 
+i¸_num
+ += 1;
+
+338 if(
+i¸_num
+ > 
+ICR_5
+)
+
+340 
 am
 ->
 ˛ass
 ->
-	`Led_Blue
-(
-_ON
-);
+	`Mcu_Dly
+(500);
 
-228 
+341 
 am
 ->
 ˛ass
@@ -35109,21 +36233,11 @@ am
 _ON
 );
 
-231 if(
+348 if(
 ú_cou¡
  >= 6)
 
-233 
-am
-->
-˛ass
-->
-	`Led_Blue
-(
-_OFF
-);
-
-234 
+350 
 am
 ->
 ˛ass
@@ -35131,31 +36245,33 @@ am
 	`Cpu_U¨tWr
 (
 MSG_Ok
-);
+[
+i¸_num
+]);
 
-235 
+351 
+ú_cou¡
+ = 0;
+
+352 
 am
 ->
 ˛ass
 ->
 	`Mcu_Dly
-(1000);
+(500);
 
-236 
-ú_cou¡
- = 0;
+355 
+i¸_num
+ += 1;
 
-237 
-am
-->
-˛ass
-->
-	`Led_Blue
-(
-_ON
-);
+356 if(
+i¸_num
+ > 
+ICR_5
+)
 
-238 
+358 
 am
 ->
 ˛ass
@@ -35165,27 +36281,27 @@ am
 _ON
 );
 
-242 
+363 
 	}
 }
 
-244 
+365 
 	$maö
 ()
 
-247 
+368 
 AutoMachöe
  
 am
 ;
 
-248 
+369 
 INT8U
  
 ãmp
 =0;
 
-250 
+371 
 am
 .
 ˛ass
@@ -35193,7 +36309,7 @@ am
 __automachöe˛ass
 ;
 
-251 
+372 
 am
 .
 ˛ass
@@ -35201,7 +36317,7 @@ am
 	`Cpu_Inô
 (&am);
 
-253 
+374 
 am
 .
 ˛ass
@@ -35211,7 +36327,7 @@ am
 £rvo_90DC
 );
 
-254 
+375 
 am
 .
 ˛ass
@@ -35221,7 +36337,7 @@ am
 MSG_Sèπ
 );
 
-255 
+376 
 am
 .
 ˛ass
@@ -35231,13 +36347,13 @@ am
 _ON
 );
 
-257 
+378 
 	`waô_°¨t
 (&
 am
 ));
 
-258 
+379 
 am
 .
 ˛ass
@@ -35247,13 +36363,13 @@ am
 MSG_öô
 );
 
-262 
+382 
 	`GëR232VÆue
 (&
 am
 ))
 
-265 
+385 
 am
 .
 ˛ass
@@ -35263,7 +36379,25 @@ am
 MSG_AŒTe°
 );
 
-267 
+387 
+am
+.
+˛ass
+->
+	`Mcu_SîvoDC
+(
+£rvo_90DC
+);
+
+388 
+am
+.
+˛ass
+->
+	`Mcu_Dly
+(1000);
+
+389 
 am
 .
 ˛ass
@@ -35273,13 +36407,31 @@ am
 MSG_0_degªe
 );
 
-268 
+390 
 	`SèπI¸Te°
 (&
 am
 );
 
-270 
+392 
+am
+.
+˛ass
+->
+	`Mcu_SîvoDC
+(
+£rvo_0DC
+);
+
+393 
+am
+.
+˛ass
+->
+	`Mcu_Dly
+(1000);
+
+394 
 am
 .
 ˛ass
@@ -35289,13 +36441,31 @@ am
 MSG_90_degªe
 );
 
-271 
+395 
 	`SèπI¸Te°
 (&
 am
 );
 
-273 
+397 
+am
+.
+˛ass
+->
+	`Mcu_SîvoDC
+(
+£rvo_n90DC
+);
+
+398 
+am
+.
+˛ass
+->
+	`Mcu_Dly
+(1000);
+
+399 
 am
 .
 ˛ass
@@ -35305,13 +36475,13 @@ am
 MSG_180_degªe
 );
 
-274 
+400 
 	`SèπI¸Te°
 (&
 am
 );
 
-275 
+401 
 am
 .
 ˛ass
@@ -35321,7 +36491,25 @@ am
 MSG_Föish
 );
 
-279 
+405 
+am
+.
+˛ass
+->
+	`Mcu_SîvoDC
+(
+£rvo_90DC
+);
+
+406 
+am
+.
+˛ass
+->
+	`Mcu_Dly
+(1000);
+
+407 
 am
 .
 ˛ass
@@ -35331,13 +36519,13 @@ am
 MSG_0_degªe
 );
 
-280 
+408 
 	`SèπI¸Te°
 (&
 am
 );
 
-281 
+409 
 am
 .
 ˛ass
@@ -35347,7 +36535,25 @@ am
 MSG_Föish
 );
 
-285 
+413 
+am
+.
+˛ass
+->
+	`Mcu_SîvoDC
+(
+£rvo_0DC
+);
+
+414 
+am
+.
+˛ass
+->
+	`Mcu_Dly
+(1000);
+
+415 
 am
 .
 ˛ass
@@ -35357,13 +36563,13 @@ am
 MSG_90_degªe
 );
 
-286 
+416 
 	`SèπI¸Te°
 (&
 am
 );
 
-287 
+417 
 am
 .
 ˛ass
@@ -35373,7 +36579,25 @@ am
 MSG_Föish
 );
 
-291 
+421 
+am
+.
+˛ass
+->
+	`Mcu_SîvoDC
+(
+£rvo_n90DC
+);
+
+422 
+am
+.
+˛ass
+->
+	`Mcu_Dly
+(1000);
+
+423 
 am
 .
 ˛ass
@@ -35383,13 +36607,13 @@ am
 MSG_180_degªe
 );
 
-292 
+424 
 	`SèπI¸Te°
 (&
 am
 );
 
-293 
+425 
 am
 .
 ˛ass
@@ -35399,21 +36623,11 @@ am
 MSG_Föish
 );
 
-296 
+428 
 	`Re£t
 ();
 
-302 
-am
-.
-˛ass
-->
-	`Cpu_U¨tWr
-(
-MSG_öô
-);
-
-304 
+435 
 	}
 }
 
@@ -35654,21 +36868,23 @@ Led_Red
 	)
 
 30 
-	#McuCœssMembî_LedBlueCål
+	#McuCœssMembî_I¸Cål
 (
 OBJ
+, 
+OBJ1
 Ë(*
-Led_Blue
-)(OBJ)
+I¸_Cål
+)(OBJ, OBJ1)
 
 	)
 
 31 
-	#McuCœssMembî_I¸Cål
+	#McuCœssMembî_I¸Ch
 (
 OBJ
 Ë(*
-I¸_Cål
+I¸_Ch
 )(OBJ)
 
 	)
@@ -35712,6 +36928,18 @@ I¸_Ród
 	)
 
 36 
+	#McuCœssMembî_LdoWrôe
+ (*
+Ldo_Wrôe
+)(
+INT8U
+ *,INT8U *,
+INT16U
+ )
+
+	)
+
+37 
 	#McuCœssMembî_PîùhîÆ
  (*
 Cpu_PîiInô
@@ -35721,11 +36949,11 @@ McuPîùhîÆNum
 
 	)
 
-38 #i‡
+39 #i‡
 _HI_TECH
 
 
-39 
+40 
 	#McuCœssMembî_U¨tWr
  (*
 Cpu_U¨tWr
@@ -35735,11 +36963,11 @@ INT8S
 
 	)
 
-40 #ñi‡
+41 #ñi‡
 _PIC_C18
 
 
-41 
+42 
 	#McuCœssMembî_U¨tWr
  (*
 Cpu_U¨tWr
@@ -35749,107 +36977,113 @@ INT8C
 
 	)
 
-48 
+49 
 	g_AutoMachöe
 ;
 
-50 
+51 
 	s_AutoMachöeCœss
 
 
-52 
+53 
 CmosCœssMembî_Inô
 –
 _AutoMachöe
  );
 
-53 
+54 
 	mCmosCœssMembî_Ród
 ;
 
-54 
+55 
 	mCmosCœssMembî_Wrôe
 ;
 
-55 
+56 
 	mCmosCœssMembî_RamWrôe
 ;
 
-56 
+57 
 McuCœssMembî_Inô
 –
 _AutoMachöe
  );
 
-57 
+58 
 	mMcuCœssMembî_U¨tWr
 ;
 
-58 
+59 
 	mMcuCœssMembî_GëU¨tFifoFÆg
 ;
 
-59 
+60 
 	mMcuCœssMembî_GëU¨tFifoD©a
 ;
 
-60 
+61 
 McuCœssMembî_Ir_EmCål
 (
 INT16U
  );
 
-61 
+62 
 McuCœssMembî_LedRedCål
 (
 INT16U
  );
 
-62 
-McuCœssMembî_LedBlueCål
-(
-INT16U
- );
-
 63 
-McuCœssMembî_I¸Cål
+McuCœssMembî_I¸Ch
 (
-INT16U
+I¸Iãm
  );
 
 64 
+McuCœssMembî_I¸Cål
+(
+INT16U
+, 
+I¸Iãm
+ );
+
+65 
 	mMcuCœssMembî_IrReCål
 ;
 
-65 
+66 
 McuCœssMembî_Dñay
 (
 INT16U
 );
 
-66 
+67 
 McuCœssMembî_SîvoDC
 (
 SîvoDC
 );
 
-67 
+68 
 	mMcuCœssMembî_AdcRód
 ;
 
-68 
+69 
+	mMcuCœssMembî_LdoWrôe
+;
+
+70 
 	mMcuCœssMembî_PîùhîÆ
 ;
 
-69 }
+71 }
 	tAutoMachöeCœss
 ;
 
-71 
+73 
 	s_AutoMachöe
 
 
-73 
+75 
 rom
  
 AutoMachöeCœss
@@ -35857,51 +37091,51 @@ AutoMachöeCœss
 	m˛ass
 ;
 
-76 
+78 
 INT8U
  
 	mgaövÆ
 [2];
 
-77 
+79 
 INT8U
  
 	mexpovÆ
 [2];
 
-79 
+81 
 	s_Êag
 {
 
-80 
+82 
 INT8U
  
 	mmúr‹
  : 1;
 
-81 
+83 
 INT8U
  
 	mhóãr
  : 1;
 
-82 
+84 
 	mINT8U
  : 6;
 
-83 }
+85 }
 	mÊag
 ;
 
-85 }
+87 }
 	tAutoMachöe
 ;
 
-94 #i‡
+96 #i‡
 _HI_TECH
 
 
-95 
+97 
 WrôeCmosC⁄fig
 –
 INT8U
@@ -35919,11 +37153,11 @@ INT16U
 ôem_num
 );
 
-96 #ñi‡ 
+98 #ñi‡ 
 _PIC_C18
 
 
-97 
+99 
 WrôeCmosC⁄fig
 –
 rom
@@ -35943,7 +37177,7 @@ INT16U
 ôem_num
 );
 
-100 
+102 
 RamWrôeCmosC⁄fig
 –
 INT8U
@@ -35961,7 +37195,7 @@ INT16U
 ôem_num
 );
 
-101 
+103 
 ASX340Ród
 –
 INT8U
@@ -35975,7 +37209,7 @@ lﬂddr
 size
 );
 
-103 
+105 
 Sís‹Inô
 –
 AutoMachöe
@@ -35983,7 +37217,7 @@ AutoMachöe
 am_vÆ
 );
 
-104 
+106 
 Sís‹Inô
 –
 AutoMachöe
@@ -35991,7 +37225,7 @@ AutoMachöe
 am_vÆ
 );
 
-106 
+108 
 McuInô
 –
 AutoMachöe
@@ -35999,7 +37233,7 @@ AutoMachöe
 am_vÆ
 );
 
-107 
+109 
 McuInô
 –
 AutoMachöe
@@ -36007,37 +37241,37 @@ AutoMachöe
 am_vÆ
 );
 
-108 
+110 
 McuI2CInô
 ();
 
-109 
+111 
 McuTimîInô
 ();
 
-110 
+112 
 McuEußπWr
 –
 INT8C
  *);
 
-111 
+113 
 McuEußπInô
 ();
 
-112 
+114 
 INT8U
  
 McuGëU¨tFifoD©a
 ();
 
-113 vﬁ©ûê
+115 vﬁ©ûê
 INT8U
  
 McuGëU¨tFifoFœg
 ();
 
-114 
+116 
 Time0Cou¡
 –
 INT16U
@@ -36045,7 +37279,7 @@ INT16U
 num
 );
 
-115 
+117 
 Time2Cou¡
 –
 SîvoDC
@@ -36053,28 +37287,12 @@ SîvoDC
 ôem
 );
 
-116 
+118 
 McuIoInô
 ();
 
-117 
-McuIrEmôCål
-(
-INT16U
- 
-vÆ
- );
-
-118 
-McuLedRedCål
-(
-INT16U
- 
-vÆ
- );
-
 119 
-McuLedBlueCål
+McuIrEmôCål
 (
 INT16U
  
@@ -36082,36 +37300,70 @@ vÆ
  );
 
 120 
-McuI¸Cål
+McuLedRedCål
 (
 INT16U
  
 vÆ
  );
 
-121 
+121 
+McuI¸Cål
+(
+INT16U
+ 
+vÆ
+, 
+I¸Iãm
+ 
+ôem
+ );
+
+122 
 INT8U
  
 McuLedRe˚iveCål
 ();
 
-122 
+123 
 McuAdcInô
 ();
 
-123 
+124 
 AdcRód
 ();
 
-124 
+125 
 McuPwmInô
 ();
 
-126 #¥agm®
+126 
+AdcI¸Ch
+–
+I¸Iãm
+ 
+ôem
+ );
+
+127 
+WrôeLdoC⁄fig
+–
+INT8U
+ *
+cmd
+, INT8U *
+d©a
+, 
+INT16U
+ 
+ôem_num
+);
+
+129 #¥agm®
 romd©a
 
 
-127 
+130 
 rom
  
 AutoMachöeCœss
@@ -36119,95 +37371,99 @@ AutoMachöeCœss
 	g__automachöe˛ass
  =
 
-129 
+132 
 Sís‹Inô
 ,
 
-130 
+133 
 ASX340Ród
 ,
 
-131 
+134 
 WrôeCmosC⁄fig
 ,
 
-132 
+135 
 RamWrôeCmosC⁄fig
 ,
 
-133 
+136 
 McuInô
 ,
 
-134 
+137 
 McuEußπWr
 ,
 
-135 
+138 
 McuGëU¨tFifoFœg
 ,
 
-136 
+139 
 McuGëU¨tFifoD©a
 ,
 
-137 
+140 
 McuIrEmôCål
 ,
 
-138 
+141 
 McuLedRedCål
 ,
 
-139 
-McuLedBlueCål
-,
-
-140 
-McuI¸Cål
-,
-
-141 
-McuLedRe˚iveCål
-,
-
 142 
-Time0Cou¡
+AdcI¸Ch
 ,
 
 143 
-Time2Cou¡
+McuI¸Cål
 ,
 
 144 
-AdcRód
+McuLedRe˚iveCål
 ,
 
 145 
-McuI2CInô
+Time0Cou¡
 ,
 
 146 
-McuTimîInô
+Time2Cou¡
 ,
 
 147 
-McuEußπInô
+AdcRód
 ,
 
 148 
-McuIoInô
+WrôeLdoC⁄fig
 ,
 
 149 
-McuAdcInô
+McuI2CInô
 ,
 
 150 
+McuTimîInô
+,
+
+151 
+McuEußπInô
+,
+
+152 
+McuIoInô
+,
+
+153 
+McuAdcInô
+,
+
+154 
 McuPwmInô
 
 
-153 #¥agm®
+157 #¥agm®
 romd©a
 
 
@@ -36717,11 +37973,157 @@ _PIC_C18
 	}
 }
 
-155 #i‡
+154 
+	$wrôe_ldo_c⁄fig
+–
+INT8U
+ *
+cmd
+, INT8U *
+d©a
+, 
+INT16U
+ 
+ôem_num
+)
+
+156 
+INT8S
+ 
+Ru¡
+,
+a
+,
+b
+;
+
+157 
+INT16U
+ 
+ödex
+;
+
+159 
+ödex
+=0 ; index < 
+ôem_num
+ ; index++)
+
+161 
+a
+ = 
+cmd
+[
+ödex
+];
+
+162 
+b
+ = 
+d©a
+[
+ödex
+];
+
+163 
+	`N›
+();
+
+164 
+	`N›
+();
+
+165 
+	`N›
+();
+
+166 
+	`IdÀI2C
+();
+
+167 
+	`SèπI2C
+();
+
+168 
+	`I2C_D⁄e
+();
+
+170 
+Ru¡
+ = 
+	`WrôeI2C
+–
+PCA9557ID
+| 
+WπCmd
+);
+
+171 
+	`I2C_D⁄e
+();
+
+174 
+Ru¡
+ = 
+	`WrôeI2C
+(
+a
+);
+
+175 
+	`I2C_D⁄e
+();
+
+178 
+Ru¡
+ = 
+	`WrôeI2C
+(
+b
+);
+
+179 
+	`I2C_D⁄e
+();
+
+181 
+	`St›I2C
+();
+
+182 
+	`I2C_D⁄e
+();
+
+184 if–
+Ru¡
+ < 0 )
+
+186 #i‡
 _HI_TECH
 
 
-156 
+187 
+	`RESET
+();
+
+188 #ñif 
+_PIC_C18
+
+
+189 
+	`Re£t
+();
+
+194 
+	}
+}
+
+197 #i‡
+_HI_TECH
+
+
+198 
 	$WrôeCmosC⁄fig
 –
 INT8U
@@ -36739,11 +38141,11 @@ INT16U
 ôem_num
 )
 
-157 #ñi‡ 
+199 #ñi‡ 
 _PIC_C18
 
 
-158 
+200 
 	$WrôeCmosC⁄fig
 –
 rom
@@ -36763,7 +38165,7 @@ INT16U
 ôem_num
 )
 
-162 
+204 
 	`wrôe_cmos_vÆue
 –
 hüddr
@@ -36777,11 +38179,11 @@ dnum
 ôem_num
 );
 
-163 
+205 
 	}
 }
 
-165 
+207 
 	$RamWrôeCmosC⁄fig
 –
 INT8U
@@ -36799,7 +38201,7 @@ INT16U
 ôem_num
 )
 
-167 
+209 
 	`øm_wrôe_cmos_vÆue
 –
 hüddr
@@ -36813,15 +38215,43 @@ dnum
 ôem_num
 );
 
-168 
+210 
 	}
 }
 
-169 #ñi‡ 
+212 
+	$WrôeLdoC⁄fig
+–
+INT8U
+ *
+cmd
+, INT8U *
+d©a
+, 
+INT16U
+ 
+ôem_num
+)
+
+214 
+	`wrôe_ldo_c⁄fig
+(
+cmd
+, 
+d©a
+, 
+ôem_num
+ );
+
+215 
+	}
+}
+
+217 #ñi‡ 
 _OV
 
 
-260 
+308 
 	$ASX340Ród
 –
 INT8U
@@ -36835,7 +38265,7 @@ lﬂddr
 size
 )
 
-265 
+313 
 	}
 }
 
@@ -37219,14 +38649,14 @@ T2_POST_1_10
 
 51 
 PR2
- = 49;
+ = 9;
 
-54 
+53 
 T2CONbôs
 .
 TMR2ON
  = 
-_OFF
+_ON
 ;
 
 55 
@@ -37289,6 +38719,10 @@ T0_PS_1_1
 	`Timî0Inô
 ();
 
+74 
+	`Timî2Inô
+();
+
 75 
 	}
 }
@@ -37314,8 +38748,8 @@ Timî0Inô
 .
 1
 /usr/include
-22
-220
+23
+226
 Parameter.h
 __p18f25k20.h
 __pconfig.h
@@ -37327,6 +38761,7 @@ i2c.c
 i2c.h
 interrupt.c
 io.c
+ldo.h
 main.c
 mid_api.c
 mid_api.h
